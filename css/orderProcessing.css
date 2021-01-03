@@ -28,7 +28,7 @@
     color: white;
 }
 .item{
-    color: rgb(49, 49, 49);
+    /* color: rgb(49, 49, 49); */
     border-bottom: 1px solid gray;
     padding: 8px;
     display: flex;
