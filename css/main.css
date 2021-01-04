@@ -67,6 +67,7 @@ div.sidebarActive{
     margin-top: 10px;
     margin-bottom: 3px;
     font-size: 24px;
+    
 }
 
 .sidebarList {
@@ -79,7 +80,7 @@ div.sidebarActive{
 
 .sidebarList li a {
     color: rgb(102,31,178);
-    font-weight: bold;
+    font-weight: 600;
     display: block;
     padding: 10px;
     text-decoration: none;
@@ -140,9 +141,9 @@ div.sidebarActive{
     border: none;
     color:white;
 }
-::placeholder{
+/* ::placeholder{
     color:white;
-}
+} */
 #searchBox:focus{
     outline: none;
 }

@@ -1,36 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/signup.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/orderProcessing.css">
-    <style>
-        .searchBar h3 {
-            display: block;
-            font-family: 'Montserrat';
-        font-size: 1.17em;
-        margin-block-start: 0em;
-        margin-block-end: 0em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-        font-weight: bold;
-        }
-        .topBar a {
-            color: white;
-            text-decoration: none;
-        }
-        .fixedPosition {
-            max-width: 720px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    </style>
+    <link rel="stylesheet" href="css/signup.css">
 </head>
+
 <body>
     <div class="mobileSidebar">
         <div class="top_section_sidebar">
@@ -61,21 +42,18 @@
             <li><a href=""><i class="fa fa-lightbulb-o"></i> Change mode</a></li>
         </ul>
     </div>
-    
     <div class="fixedPosition">
         <div class="topBar">
-            <a href="#" class="sidebarToggler"><i class="fa fa-bars"
-                    style="font-size: 20px; font-weight: 100;"></i></a>
-                    <div class="searchBar">
-                        <h3>Sign-up</h3>
-                    </div>
+            <a href="#" class="sidebarToggler"><i class="fa fa-bars" style="font-size: 20px; font-weight: 100;"></i></a>
+            <div class="searchBar">
+                <h3>Sign-up</h3>
+            </div>
             <a href="index.html" class="backBtn"><i class="fa fa-angle-left"
                     style="font-size: 20px; font-weight: 100;"></i></a>
-            <a href="login.html" class="backBtn"><i class="fa fa-angle-right"
-                     style="font-size: 20px; font-weight: 100;"></i></a>
+            <a href="#" class="backBtn"><i class="fa fa-angle-right"
+                    style="font-size: 20px; font-weight: 100;"></i></a>
         </div>
     </div>
-    
     <div class="container-fluid" style="padding-top: 0px;">
         <div class="row justify-content-center">
             <div class="col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
@@ -83,55 +61,103 @@
                     <form id="msform">
                         <!-- progressbar -->
                         <ul id="progressbar">
-                            <li class="active" id="account"><strong>Account</strong></li>
-                            <li id="personal"><strong>Personal</strong></li>
-                            <li id="payment"><strong>Image</strong></li>
-                            <li id="confirm"><strong>Finish</strong></li>
+                            <li id="personal" class="active"><strong>Personal</strong></li>
+                            <li  id="account"><strong>Account</strong></li>
+                            <li id="payment"><strong>Genres</strong></li>
+                            <li id="confirm"><strong>Login</strong></li>
                         </ul>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                                aria-valuemin="0" aria-valuemax="100"></div>
                         </div> <br> <!-- fieldsets -->
                         <fieldset>
                             <div class="form-card">
                                 <div class="row">
                                     <div class="col-7">
-                                        <h2 class="fs-title">Account Information:</h2>
+                                        <h2 class="fs-title">Personal Information</h2>
                                     </div>
                                     <div class="col-5">
                                         <h2 class="steps">Step 1 - 4</h2>
                                     </div>
-                                </div> <label class="fieldlabels">Email: *</label> <input type="email" name="email" placeholder="Email Id" /> <label class="fieldlabels">Username: *</label> <input type="text" name="uname" placeholder="UserName" /> <label class="fieldlabels">Password: *</label> <input type="password" name="pwd" placeholder="Password" /> <label class="fieldlabels">Confirm Password: *</label> <input type="password" name="cpwd" placeholder="Confirm Password" />
-                            </div> <input type="button" name="next" class="next action-button" value="Next" />
+                                </div>  <label class="fieldlabels">First Name : *</label> <input type="text" name="fname"
+                                placeholder="First Name" /> <label class="fieldlabels">Last Name : *</label> <input
+                                type="text" name="lname" placeholder="Last Name" /> <label
+                                class="fieldlabels">Contact No : (optional) </label> <input type="text" name="phno"
+                                placeholder="Contact No." /> <label class="fieldlabels">Delivery Address :
+                                *</label> <input type="text" name="address" placeholder="Delivery Address" />
+                        </div> <input type="button" name="next" class="next action-button" value="Next" />
                         </fieldset>
                         <fieldset>
                             <div class="form-card">
                                 <div class="row">
                                     <div class="col-6">
-                                        <h2 class="fs-title">Personal Information:</h2>
+                                        <h2 class="fs-title">Account Info</h2>
                                     </div>
                                     <div class="col-6">
                                         <h2 class="steps">Step 2 - 4</h2>
                                     </div>
-                                </div> <label class="fieldlabels">First Name: *</label> <input type="text" name="fname" placeholder="First Name" /> <label class="fieldlabels">Last Name: *</label> <input type="text" name="lname" placeholder="Last Name" /> <label class="fieldlabels">Contact No.: *</label> <input type="text" name="phno" placeholder="Contact No." /> <label class="fieldlabels">Alternate Contact No.: *</label> <input type="text" name="phno_2" placeholder="Alternate Contact No." />
-                            </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                                </div><label class="fieldlabels">Email: *</label> <input type="email" name="email"
+                                placeholder="Email Id"  /> <label class="fieldlabels">Username: *</label> <input
+                                type="text" name="uname" placeholder="UserName" /> <label
+                                class="fieldlabels">Password: *</label> <input type="password" name="pwd"
+                                placeholder="Password" autocomplete="on"/> <label class="fieldlabels">Confirm Password: *</label>
+                            <input type="password" name="cpwd" placeholder="Confirm Password" autocomplete="on" />
+                        </div> <input type="button" name="next" class="next action-button" value="Next" /><input
+                                type="button" name="previous" class="previous action-button-previous"
+                                value="Previous" />
                         </fieldset>
                         <fieldset>
                             <div class="form-card">
                                 <div class="row">
                                     <div class="col-6">
-                                        <h2 class="fs-title">Image Upload:</h2>
+                                        <h2 class="fs-title">Pick Genres</h2>
                                     </div>
                                     <div class="col-6">
                                         <h2 class="steps">Step 3 - 4</h2>
                                     </div>
-                                </div> <label class="fieldlabels">Upload Your Photo:</label> <input type="file" name="pic" accept="image/*"> <label class="fieldlabels">Upload Signature Photo:</label> <input type="file" name="pic" accept="image/*">
-                            </div> <input type="button" name="next" class="next action-button" value="Submit" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                                </div>
+                                <div class="pillsContainer">
+                                    <p class="pill signupGenre">Action</p>
+                                    <p class="pill signupGenre">Adventure</p>
+                                    <p class="pill signupGenre">Biography</p>
+                                    <p class="pill signupGenre">Business</p>
+                                    <p class="pill signupGenre">Crime Thriller</p>
+                                    <p class="pill signupGenre">Comics</p>
+                                    <p class="pill signupGenre">Classics</p>
+                                    <p class="pill signupGenre">Cooking</p>
+                                    <p class="pill signupGenre">Contemporary</p>
+                                    <p class="pill signupGenre">Detective</p>
+                                    <p class="pill signupGenre">Economics</p>
+                                    <p class="pill signupGenre">Fantasy</p>
+                                    <p class="pill signupGenre">Fiction</p>
+                                    <p class="pill signupGenre">History</p>
+                                    <p class="pill signupGenre">Historical Fiction</p>
+                                    <p class="pill signupGenre">Horror</p>
+                                    <p class="pill signupGenre">Mystery</p>
+                                    <p class="pill signupGenre">Music</p>
+                                    <p class="pill signupGenre">Manga</p>
+                                    <p class="pill signupGenre">Paranormal</p>
+                                    <p class="pill signupGenre">Poetry</p>
+                                    <p class="pill signupGenre">Pyschology</p>
+                                    <p class="pill signupGenre">Romance</p>
+                                    <p class="pill signupGenre">Religion</p>
+                                    <p class="pill signupGenre">Self Help</p>
+                                    <p class="pill signupGenre">Science</p>
+                                    <p class="pill signupGenre">Science Fiction</p>
+                                    <p class="pill signupGenre">Sports</p>
+                                    <p class="pill signupGenre">Suspense</p>
+                                    <p class="pill signupGenre">Young Adult</p>
+                                    <p class="pill signupGenre">Other</p>
+                                </div>
+                            </div> <input type="button" name="next" class="next action-button submit" value="Submit" /> <input
+                                type="button" name="previous" class="previous action-button-previous"
+                                value="Previous" />
                         </fieldset>
                         <fieldset>
                             <div class="form-card">
                                 <div class="row">
                                     <div class="col-7">
-                                        <h2 class="fs-title">Finish:</h2>
+                                        <h2 class="fs-title">Finish</h2>
                                     </div>
                                     <div class="col-5">
                                         <h2 class="steps">Step 4</h2>
@@ -139,7 +165,8 @@
                                 </div> <br><br>
                                 <h2 class="purple-text text-center"><strong>SUCCESS !</strong></h2> <br>
                                 <div class="row justify-content-center">
-                                    <div class="col-3"> <img src="https://i.imgur.com/GwStPmg.png" class="fit-image"> </div>
+                                    <div class="col-3"> <img src="https://i.imgur.com/GwStPmg.png" class="fit-image">
+                                    </div>
                                 </div> <br><br>
                                 <div class="row justify-content-center">
                                     <div class="col-7 text-center">
@@ -157,4 +184,5 @@
     <script src="js/signup.js"></script>
     <script src="js/main.js"></script>
 </body>
+
 </html>

@@ -74,3 +74,30 @@ $(document).ready(function(){
     })
     
     });
+
+var signupGenres = document.getElementsByClassName('signupGenre');
+var submitBtn = document.getElementsByClassName('submit')[0];
+var selectedGenre = document.getElementsByClassName('selected')
+submitBtn.disabled = true;
+submitBtn.style.background = '#cccccc';
+submitBtn.style.color = ' #666666';
+for (i=0;i<signupGenres.length;i++){
+    signupGenres[i].addEventListener('click', (e)=>{
+        var clickedGenre = e.target;
+        clickedGenre.classList.toggle('selected')
+        if (selectedGenre.length > 0) {
+            submitBtn.disabled = false;
+            submitBtn.style.background = '#673AB7';
+            submitBtn.style.color = ' white';
+        }
+        else {
+            submitBtn.disabled = true;
+            submitBtn.style.background = '#cccccc';
+            submitBtn.style.color = ' #666666';
+        }
+    })
+    
+    
+}
+
+

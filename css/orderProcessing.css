@@ -28,7 +28,7 @@
     color: white;
 }
 .item{
-    /* color: rgb(49, 49, 49); */
+    color:  #504e4e;
     border-bottom: 1px solid gray;
     padding: 8px;
     display: flex;
@@ -75,7 +75,7 @@
     background-color: white;
 }
 .qty button i, .options button i,.options button {
-    color: rgb(49, 49, 49);
+    color: #504e4e;
 }
 .options button{
     padding: 2px 3px;
