@@ -47,7 +47,7 @@ div.sidebarActive{
     align-items: flex-start;
 }
 .cross i {
-    color: #666464;
+    color: rgb(102,31,178);
 }
 .imgbox4 a {
     background: #949393;
@@ -62,7 +62,7 @@ div.sidebarActive{
 
 
 .userInfo h3 {
-    color: #666464;
+    color: rgb(102,31,178);
     font-weight: 600;
     margin-top: 10px;
     margin-bottom: 3px;
@@ -78,7 +78,7 @@ div.sidebarActive{
 }
 
 .sidebarList li a {
-    color: #666464;
+    color: rgb(102,31,178);
     font-weight: bold;
     display: block;
     padding: 10px;
@@ -124,24 +124,24 @@ div.sidebarActive{
 }
 .searchBtn {
     position: absolute;
-    top:8px;
+    top:6px;
     right:7px;
-    color:#b3b4b3 ;
+    color:white ;
 }
 #searchBox{
     max-width: 1200px;
     width: 100%;
-    padding:8px;
+    padding:5px;
     padding-left: 6px;
     padding-right: 30px;
     font-size: 15px;
     font-weight: 3000;
-    background-color: #F3F3F3;
+    background-color: rgb(102,31,178);
     border: none;
-    color:gray;
+    color:white;
 }
 ::placeholder{
-    color:gray;
+    color:white;
 }
 #searchBox:focus{
     outline: none;
@@ -154,7 +154,7 @@ div.sidebarActive{
     text-decoration: none;
     width: 53px;
     height: 53px;
-    color: #CECFCD;
+    color: rgb(102,31,178);
 }
 
 .booksSection{
@@ -174,7 +174,7 @@ div.sidebarActive{
     text-decoration: none;
     font-size: 12px;
     font-weight: bolder;
-    color: gray;
+    color: rgb(102,31,178);
 }
 .booksHolder{
     display: flex;
@@ -223,14 +223,15 @@ div.sidebarActive{
     white-space: nowrap;
     width: auto;
     text-decoration: none;
-    background-color: #F3F3F3;
+    background-color: rgb(102,31,178);
     padding:6px;
     padding-left: 8px;
     padding-right: 8px;
-    color:gray;
+    color:white;
     font-size: 10px;
     margin-right: 5px;
     border-radius: 12px;
+    letter-spacing: 0.8px;
 }
 
 
