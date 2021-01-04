@@ -2,7 +2,7 @@
     color: white;
 }
 .topBar{
-    background: rgb(49, 49, 49);
+    background: rgb(102,31,178);
 }
 .searchBar h3{
     color:white;
@@ -16,7 +16,7 @@
     width: 100%;
     padding:8px;
     height: 50px;
-    background-color:rgb(49, 49, 49) ;
+    background-color:rgb(102,31,178);
 }
 .moveToCheckout {
     border-top:1px solid white ;
