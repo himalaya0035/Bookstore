@@ -118,65 +118,65 @@ for (i=0;i<signupGenres.length;i++){
 
 
 // form validation starts now
-// var firstSectionBtn = document.getElementById('sectionFirstBtn');
-// var firstSection = document.getElementsByClassName('sectionFirst');
-// var contact = document.getElementById('contact');
-// var address = document.getElementById('address');
+var firstSectionBtn = document.getElementById('sectionFirstBtn');
+var firstSection = document.getElementsByClassName('sectionFirst');
+var contact = document.getElementById('contact');
+var address = document.getElementById('address');
 
 
-// disableBtn(firstSectionBtn);
+disableBtn(firstSectionBtn);
 
-// for (i=0;i<firstSection.length;i++){
-//     firstSection[i].addEventListener('input', ()=>{
-//         validateFirstSection();
-//     })
-// }
+for (i=0;i<firstSection.length;i++){
+    firstSection[i].addEventListener('input', ()=>{
+        validateFirstSection();
+    })
+}
 
-// function validateFirstSection(){
-//     for (i=0;i<firstSection.length;i++){
-//         if(firstSection[i].value != '' && address.value.length >= 30 && contact.value.length > 9 && contact.value.length <13 ){
-//           enableBtn(firstSectionBtn);
-//         }
-//         else {
-//            disableBtn(firstSectionBtn);
-//         }
-//     }
-// }
+function validateFirstSection(){
+    for (i=0;i<firstSection.length;i++){
+        if(firstSection[i].value != '' && address.value.length >= 30 && contact.value.length > 9 && contact.value.length <13 ){
+          enableBtn(firstSectionBtn);
+        }
+        else {
+           disableBtn(firstSectionBtn);
+        }
+    }
+}
 
 
 
-// var secondSectionBtn = document.getElementById('sectionSecondBtn');
-// var secondSection = document.getElementsByClassName('sectionSecond');
-// var password = document.getElementById('password');
-// var confirmPass = document.getElementById('confirmPassword');
-// var username = document.getElementById('username')
-// var email = document.getElementById('email')
+var secondSectionBtn = document.getElementById('sectionSecondBtn');
+var secondSection = document.getElementsByClassName('sectionSecond');
+var password = document.getElementById('password');
+var confirmPass = document.getElementById('confirmPassword');
+var username = document.getElementById('username')
+var email = document.getElementById('email')
 
-// disableBtn(secondSectionBtn);
+disableBtn(secondSectionBtn);
 
-// for (i=0;i<secondSection.length;i++){
-//     secondSection[i].addEventListener('input', ()=>{
-//         validateSecondSection();
-//     })
-// }
+for (i=0;i<secondSection.length;i++){
+    secondSection[i].addEventListener('input', ()=>{
+        validateSecondSection();
+    })
+}
 
-// function validateSecondSection(){
-//     for (i=0;i<secondSection.length;i++){
-//         if(secondSection[i].value != '' && username.value.length >= 6 && password.value.length > 7 && confirmPass.value.length > 7){
-//             if (isPassowrdsEqual() && isEmailOK()){
-//                 enableBtn(secondSectionBtn);
-//             }
-//             else {
-//                 disableBtn(secondSectionBtn);
-//             }
-//         }
-//         else {
-//             disableBtn(secondSectionBtn);
-//         }
+function validateSecondSection(){
+    for (i=0;i<secondSection.length;i++){
+        if(secondSection[i].value != '' && username.value.length >= 6 && password.value.length > 7 && confirmPass.value.length > 7){
+            if (isPassowrdsEqual() && isEmailOK()){
+                enableBtn(secondSectionBtn);
+            }
+            else {
+                disableBtn(secondSectionBtn);
+            }
+        }
+        else {
+            disableBtn(secondSectionBtn);
+        }
         
-//     }
+    }
     
-// }
+}
 
 function isPassowrdsEqual(){
     if (password.value == confirmPass.value){
