@@ -75,25 +75,41 @@ $(document).ready(function(){
     
     });
 
+function disableBtn(ele){
+    ele.disabled = true;
+    ele.style.background = '#cccccc';
+    ele.style.color = '#666666';
+}
+    
+function enableBtn(ele){
+    ele.disabled = false;
+    ele.style.background = '#673AB7';
+    ele.style.color = 'white';
+}
+
+function displayErrorMsg(msg){
+    document.getElementById('message').innerText = msg;
+}
+
+function removeErrorMsg(){
+    document.getElementById('message').innerText = '';
+}
+
 var signupGenres = document.getElementsByClassName('signupGenre');
 var submitBtn = document.getElementsByClassName('submit')[0];
 var selectedGenre = document.getElementsByClassName('selected')
-submitBtn.disabled = true;
-submitBtn.style.background = '#cccccc';
-submitBtn.style.color = ' #666666';
+
+disableBtn(submitBtn);
+
 for (i=0;i<signupGenres.length;i++){
     signupGenres[i].addEventListener('click', (e)=>{
         var clickedGenre = e.target;
         clickedGenre.classList.toggle('selected')
         if (selectedGenre.length > 0) {
-            submitBtn.disabled = false;
-            submitBtn.style.background = '#673AB7';
-            submitBtn.style.color = ' white';
+           enableBtn(submitBtn)
         }
         else {
-            submitBtn.disabled = true;
-            submitBtn.style.background = '#cccccc';
-            submitBtn.style.color = ' #666666';
+            disableBtn(submitBtn)
         }
     })
     
@@ -101,3 +117,98 @@ for (i=0;i<signupGenres.length;i++){
 }
 
 
+// form validation starts now
+// var firstSectionBtn = document.getElementById('sectionFirstBtn');
+// var firstSection = document.getElementsByClassName('sectionFirst');
+// var contact = document.getElementById('contact');
+// var address = document.getElementById('address');
+
+
+// disableBtn(firstSectionBtn);
+
+// for (i=0;i<firstSection.length;i++){
+//     firstSection[i].addEventListener('input', ()=>{
+//         validateFirstSection();
+//     })
+// }
+
+// function validateFirstSection(){
+//     for (i=0;i<firstSection.length;i++){
+//         if(firstSection[i].value != '' && address.value.length >= 30 && contact.value.length > 9 && contact.value.length <13 ){
+//           enableBtn(firstSectionBtn);
+//         }
+//         else {
+//            disableBtn(firstSectionBtn);
+//         }
+//     }
+// }
+
+
+
+// var secondSectionBtn = document.getElementById('sectionSecondBtn');
+// var secondSection = document.getElementsByClassName('sectionSecond');
+// var password = document.getElementById('password');
+// var confirmPass = document.getElementById('confirmPassword');
+// var username = document.getElementById('username')
+// var email = document.getElementById('email')
+
+// disableBtn(secondSectionBtn);
+
+// for (i=0;i<secondSection.length;i++){
+//     secondSection[i].addEventListener('input', ()=>{
+//         validateSecondSection();
+//     })
+// }
+
+// function validateSecondSection(){
+//     for (i=0;i<secondSection.length;i++){
+//         if(secondSection[i].value != '' && username.value.length >= 6 && password.value.length > 7 && confirmPass.value.length > 7){
+//             if (isPassowrdsEqual() && isEmailOK()){
+//                 enableBtn(secondSectionBtn);
+//             }
+//             else {
+//                 disableBtn(secondSectionBtn);
+//             }
+//         }
+//         else {
+//             disableBtn(secondSectionBtn);
+//         }
+        
+//     }
+    
+// }
+
+function isPassowrdsEqual(){
+    if (password.value == confirmPass.value){
+        removeErrorMsg();
+        return true;
+    }
+    else {
+        displayErrorMsg('Password Does Not Match')
+        return false;
+    }
+}
+
+function isEmailOK(){
+    if (email.value.includes('@') && (email.value.includes('.com') || email.value.includes('.mail'))){
+        removeErrorMsg();
+        return true
+    }
+    else {
+        displayErrorMsg('Email is not Valid');
+        return false;
+    }
+}
+var timer = document.getElementById('timer');
+submitBtn.addEventListener('click',()=>{
+    var timeleft = 0;
+var downloadTimer = setInterval(function(){
+  if(timeleft > 4){
+      clearInterval(downloadTimer);
+    window.location.replace("http://127.0.0.1:5501/index.html");
+  }
+  var remain = 5 - timeleft;
+ timer.innerText = 'Logging You in ' + remain + 's';
+  timeleft += 1;
+}, 1000);
+})
