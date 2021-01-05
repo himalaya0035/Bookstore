@@ -169,8 +169,9 @@ div.sidebarActive{
     justify-content: space-between;
     align-content: center;
     margin-bottom: 10px;
-    color: rgb(82, 80, 80);
+    color:#504f4f;
 }
+
 .headerRow a {
     text-decoration: none;
     font-size: 12px;
@@ -236,10 +237,6 @@ div.sidebarActive{
 }
 
 
-
-
-
-
 @media screen and (min-width:720px){
     .pillsScroller{
         justify-content: center;
@@ -269,4 +266,73 @@ div.sidebarActive{
     ::-webkit-scrollbar-thumb:hover {
         background: rgb(114, 113, 113);
     }
+}
+
+/* css for genresList.html */
+
+.genresContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 12px;
+    padding-top: 16px;
+}
+.boxGenre {
+    width: 100px;
+    height: 140px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    box-shadow: 1px 1px 1px #808080;
+}
+.genreImgHolder {
+    height: 115px;
+    width: 100%;
+    background-color: #808080;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.genreImgHolder img {
+    height: 115px;
+    width: 98px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    object-fit: cover;
+    object-position: top;
+}
+.genreName {
+    text-decoration: none;
+    color: #242424;
+    height: 25px;
+    padding: 3px 2px 3px 2px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#mostPopular,#others {
+    margin-top: 12px;
+    clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 0 100%, 0% 50%, 0 0);
+    background-color: #673AB7;
+    opacity: 0.7;
+    padding: 15px;
+    width: 80%;
+}
+#mostPopular h5, #others h5{
+    font-size: 15px;
+    color: white;
+}
+#others {
+    float:right;
+    margin-top: 0px;
+    clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 25% 50%, 0% 0%);
+    width: 70%;
+}
+#others h5 {
+    float: right;
 }
