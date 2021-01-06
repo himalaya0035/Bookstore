@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -315,26 +315,18 @@ div.sidebarActive{
     text-overflow: ellipsis;
 }
 
-#mostPopular,#acaedmic, #others {
+.shapesHeading {
+    display: inline-block;
     margin-top: 12px;
     clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 0 100%, 0% 50%, 0 0);
     background-color: #673AB7;
-    opacity: 0.7;
     padding: 15px;
-    width: 80%;
+    padding-right: 70px;
+    margin-bottom: 5px;
 }
-#mostPopular h5, #others h5,#acaedmic h5{
+.shapesHeading h5{
     font-size: 15px;
     color: white;
 }
-#acaedmic {
-    float:right;
-    clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 25% 50%, 0% 0%);
-    width: 70%;
-}
-#others, #acaedmic {
-    margin-top: 0px;
-}
-#acaedmic h5 {
-    float: right;
-}
+
+

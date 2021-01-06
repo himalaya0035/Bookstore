@@ -16,3 +16,5 @@ for (i = 0; i < bookNames.length; i++) {
         bookNames[i].innerText = bookNames[i].innerText.substring(0, 25) + ' ...';
     }
 }
+
+
