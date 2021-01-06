@@ -315,7 +315,7 @@ div.sidebarActive{
     text-overflow: ellipsis;
 }
 
-#mostPopular,#others {
+#mostPopular,#acaedmic, #others {
     margin-top: 12px;
     clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 0 100%, 0% 50%, 0 0);
     background-color: #673AB7;
@@ -323,16 +323,18 @@ div.sidebarActive{
     padding: 15px;
     width: 80%;
 }
-#mostPopular h5, #others h5{
+#mostPopular h5, #others h5,#acaedmic h5{
     font-size: 15px;
     color: white;
 }
-#others {
+#acaedmic {
     float:right;
-    margin-top: 0px;
     clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 25% 50%, 0% 0%);
     width: 70%;
 }
-#others h5 {
+#others, #acaedmic {
+    margin-top: 0px;
+}
+#acaedmic h5 {
     float: right;
 }
