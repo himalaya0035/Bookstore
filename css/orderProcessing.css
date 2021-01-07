@@ -37,10 +37,15 @@
 .bookItem {
     padding:15px 10px 10px 10px;
     border: none;
+
+}
+.bookGenres {
+    margin-bottom: 10px;
 }
 .bookDesc{
     padding: 10px;
     padding-top: 0px;
+    margin-bottom: 10px;
 }
 .bookDesc p {
     color: #302f2f;
@@ -91,6 +96,9 @@
 }
 .options button{
     padding: 2px 3px;
+}
+.addToCart button {
+    background-color: #673AB7; color: white; padding: 8px;
 }
 input:focus {
     outline: none;
