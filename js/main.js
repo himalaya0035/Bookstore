@@ -18,3 +18,21 @@ for (i = 0; i < bookNames.length; i++) {
 }
 
 
+
+ function toggleButton(mainElementClass,toBeReplacedClass,checkClass,buttonInitialText,buttonFinalText){
+    var commonElement = document.getElementsByClassName(mainElementClass);
+    for (i=0;i<commonElement.length;i++){
+        commonElement[i].addEventListener('click',(e)=>{
+            var ele = e.target;
+            var child = ele.getElementsByTagName('i')[0];
+            if (child.classList.contains(checkClass)){
+            ele.innerHTML  = `<i class ="fa ${toBeReplacedClass}" style="color:white;"></i>` + ` ${buttonInitialText}`;
+            }
+            else {
+               ele.innerHTML  = `<i class ="fa ${checkClass}" style="color:white;"></i>` + ` ${buttonFinalText}`;   
+            }
+        })
+    }
+ }
+toggleButton('bookmark','fa-bookmark','fa-bookmark-o','Bookmarked','Bookmark');
+toggleButton('addToCartBtn','fa-check','fa-cart-plus','Added','Add to cart');

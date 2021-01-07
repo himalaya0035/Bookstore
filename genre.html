@@ -4,144 +4,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genres</title>
+    <title>Checkout</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/orderProcessing.css">
     <link rel="stylesheet" href="css/sections.css">
-    <link rel="stylesheet" href="css/genre.css">
     <style>
+        .bookItemContainer {
+            border-bottom: 1px solid #808080;
+        }
     </style>
 </head>
-<body>
-    <section id="#banner">
-        <a href="index.html"><i class="fa fa-arrow-left"></i></a>
-    </section>
-    <section id="content">
-        <div class="books">
-            <div class="homepageBook">
-                <div class="coverImgHolder">
-                    <a href="#"><img src="images/book1.jpeg" alt=""></a>
-                </div>
-                <p class="bookName">Rich Dad Poor Dad</p>
-            </div>
-            <div class="homepageBook">
-                <div class="coverImgHolder">
-                    <a href="#"><img src="images/book2.jpg" alt=""></a>
-                </div>
-                <p class="bookName">The subtle art of not giving a f*ck</p>
-            </div>
-            <div class="homepageBook">
-                <div class="coverImgHolder">
-                    <a href="#"><img src="images/book3.jpg" alt=""></a>
-                </div>
-                <p class="bookName">Animal Farm</p>
-            </div>
-            <div class="homepageBook">
-                <div class="coverImgHolder">
-                    <a href="#"><img src="images/book4.jpg" alt=""></a>
-                </div>
-                <p class="bookName">1984</p>
-            </div>
-            <div class="homepageBook">
-                <div class="coverImgHolder">
-                    <a href="#"><img src="images/book5.jpg" alt=""></a>
-                </div>
-                <p class="bookName">The Power of your subconsious mind</p>
-            </div>
-            <div class="homepageBook">
-                <div class="coverImgHolder">
-                    <a href="#"><img src="images/book9.jpg" alt=""></a>
-                </div>
-                <p class="bookName">The Alchemist</p>
-            </div>
-            <div class="homepageBook">
-                <div class="coverImgHolder">
-                    <a href="#"><img src="images/book6.jpg" alt=""></a>
-                </div>
-                <p class="bookName">Think and Grow Rich</p>
-            </div>
-            <div class="homepageBook ">
-                <div class="coverImgHolder">
-                    <a href="#"><img src="images/book7.jpg" alt=""></a>
-                </div>
-                <p class="bookName">Atomic Habits</p>
-            </div>
-            <div class="homepageBook">
-                <div class="coverImgHolder">
-                    <a href="#"><img src="images/book8.jpg" alt=""></a>
-                </div>
-                <p class="bookName">How to win freinds and influence people</p>
-            </div>
-            <div class="homepageBook">
-                <div class="coverImgHolder">
-                    <a href="#"><img src="images/book9.jpg" alt=""></a>
-                </div>
-                <p class="bookName">The Alchemist</p>
-            </div>
-            <div class="homepageBook">
-                <div class="coverImgHolder">
-                    <a href="#"><img src="images/book1.jpeg" alt=""></a>
-                </div>
-                <p class="bookName">Rich Dad Poor Dad</p>
-            </div>
-            <div class="homepageBook">
-                <div class="coverImgHolder">
-                    <a href="#"><img src="images/book2.jpg" alt=""></a>
-                </div>
-                <p class="bookName">The subtle art of not giving a f*ck</p>
-            </div>
-            <div class="homepageBook">
-                <div class="coverImgHolder">
-                    <a href="#"><img src="images/book3.jpg" alt=""></a>
-                </div>
-                <p class="bookName">Animal Farm</p>
-            </div>
-            <div class="homepageBook">
-                <div class="coverImgHolder">
-                    <a href="#"><img src="images/book4.jpg" alt=""></a>
-                </div>
-                <p class="bookName">1984</p>
-            </div>
-            <div class="homepageBook">
-                <div class="coverImgHolder">
-                    <a href="#"><img src="images/book5.jpg" alt=""></a>
-                </div>
-                <p class="bookName">The Power of your subconsious mind</p>
-            </div>
-            <div class="homepageBook">
-                <div class="coverImgHolder">
-                    <a href="#"><img src="images/book9.jpg" alt=""></a>
-                </div>
-                <p class="bookName">The Alchemist</p>
-            </div>
-            <div class="homepageBook">
-                <div class="coverImgHolder">
-                    <a href="#"><img src="images/book6.jpg" alt=""></a>
-                </div>
-                <p class="bookName">Think and Grow Rich</p>
-            </div>
-            <div class="homepageBook">
-                <div class="coverImgHolder">
-                    <a href="#"><img src="images/book7.jpg" alt=""></a>
-                </div>
-                <p class="bookName">Atomic Habits</p>
-            </div>
 
+<body>
+
+    <div class="mobileSidebar">
+        <div class="top_section_sidebar">
+            <div class="userInfo">
+                <div class="imgbox4">
+                    <a href="#"><img src="images/professor.jpg" alt=""></a>
+                </div>
+                <h3>Sergio Marquina</h3>
+
+            </div>
+            <div class="cross">
+                <i class="fa fa-close " style="color: #CECFCD;"></i>
+            </div>
         </div>
-    </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
-    <script>
-        // gsap.registerPlugin(ScrollTrigger);
-        // gsap.to('.middleSection', {
-        //     scrollTrigger : {
-        //         trigger:".middleSection",
-        //         scrub:true,
-        //         toggleActions : "restart pause reverse pause", 
-        //     },
-        //     height : 30, 
-        // }) 
-    </script>
+        <hr>
+        <ul class="sidebarList">
+            <li><a href=""><i class="fa fa-bar-chart"></i> Stats</a></li>
+            <li><a href=""><i class="fa fa-bookmark"></i> Bookmarked</a></li>
+            <li><a href=""><i class="fa fa-file"></i> Drafts</a></li>
+            <li><a href=""><i class="fa fa-plus"></i> Add Topics</a></li>
+        </ul>
+        <hr>
+        <ul class="sidebarList">
+            <li><a href=""><i class="fa fa-user"></i> Accounts</a></li>
+            <li><a href=""><i class="fa fa-lock"></i> Privacy</a></li>
+        </ul>
+        <hr>
+        <ul class="sidebarList">
+            <li><a href=""><i class="fa fa-lightbulb-o"></i> Change mode</a></li>
+            <li><a href=""><i class="fa fa-sign-out"></i> Logout</a></li>
+        </ul>
+    </div>
+    <div class="contentWrapper">
+        <div class="fixedPosition">
+            <div class="topBar">
+                <a href="#" class="sidebarToggler"><i class="fa fa-bars"
+                        style="font-size: 20px; font-weight: 100;"></i></a>
+                <div class="searchBar">
+                    <h3>{Genre}</h3>
+                </div>
+                <a href="index.html" class="backBtn"><i class="fa fa-angle-left"
+                        style="font-size: 20px; font-weight: 100;"></i></a>
+            </div>
+        </div>
+        <div class="bookList">
+            <div class="bookItemContainer">
+                <div class="bookItem">
+                    <div class="coverImgHolder">
+                        <img src="images/book2.jpg" alt="">
+                    </div>
+                    <div class="cartBookInfo">
+                        <p class="cartBookName">The Subtle art of not giving a fuck</p>
+                        <p class="authorName">Mark Manson</p>
+                        <div class="priceRating">
+                            <p class="cartBookPrice">Rs 394</p>
+                            <p class="cartBookRating"><i class="fa fa-star"></i> 4.5</p>
+                        </div>
+                        <div class="options bookOptions">
+                            <div class="qty addToCart">
+                                <button class="addToCartBtn"><i class="fa fa-cart-plus"
+                                        style="color: white; font-size: 1.1em;"></i>&nbsp;&nbsp;Add to cart</button>
+                            </div>
+                            <button class="bookmark" style="background-color: #673AB7; color: white; padding: 8px;"><i
+                                    class="fa fa-bookmark-o" style="color: white;"></i>&nbsp;&nbsp;Bookmark</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="pillsScroller bookGenres" style="padding-left:10px ;">
+                    <a href="genre.html" class="pill">Self Help</a>
+                    <a href="genre.html" class="pill">Non Fiction</a>
+                    <a href="genre.html" class="pill">Pyschology</a>
+                </div>
+            </div>
+            <div class="bookItemContainer">
+                <div class="bookItem">
+                    <div class="coverImgHolder">
+                        <img src="images/book1.jpeg" alt="">
+                    </div>
+                    <div class="cartBookInfo">
+                        <p class="cartBookName">Rich Dad Poor Dad</p>
+                        <p class="authorName">Robert T kiyosaki</p>
+                        <div class="priceRating">
+                            <p class="cartBookPrice">Rs 499</p>
+                            <p class="cartBookRating"><i class="fa fa-star"></i> 4.9</p>
+                        </div>
+                        <div class="options bookOptions">
+                            <div class="qty addToCart">
+                                <button class="addToCartBtn"><i class="fa fa-cart-plus"
+                                        style="color: white; font-size: 1.1em;"></i>&nbsp;&nbsp;Add to cart</button>
+                            </div>
+                            <button class="bookmark" style="background-color: #673AB7; color: white; padding: 8px;"><i
+                                    class="fa fa-bookmark-o" style="color: white;"></i>&nbsp;&nbsp;Bookmark</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="pillsScroller bookGenres" style="padding-left:10px ;">
+                    <a href="genre.html" class="pill">Self Help</a>
+                    <a href="genre.html" class="pill">Business</a>
+                    <a href="genre.html" class="pill">Pyschology</a>
+                </div>
+            </div>
+            <div class="bookItemContainer">
+                <div class="bookItem">
+                    <div class="coverImgHolder">
+                        <img src="images/book3.jpg" alt="">
+                    </div>
+                    <div class="cartBookInfo">
+                        <p class="cartBookName">Animal Farm</p>
+                        <p class="authorName">George Orwell</p>
+                        <div class="priceRating">
+                            <p class="cartBookPrice">Rs 199</p>
+                            <p class="cartBookRating"><i class="fa fa-star"></i> 4.3</p>
+                        </div>
+                        <div class="options bookOptions">
+                            <div class="qty addToCart">
+                                <button class="addToCartBtn"><i class="fa fa-cart-plus"
+                                        style="color: white; font-size: 1.1em;"></i>&nbsp;&nbsp;Add to cart</button>
+                            </div>
+                            <button class="bookmark" style="background-color: #673AB7; color: white; padding: 8px;"><i
+                                    class="fa fa-bookmark-o" style="color: white;"></i>&nbsp;&nbsp;Bookmark</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="pillsScroller bookGenres" style="padding-left:10px ;">
+                    <a href="genre.html" class="pill">Fiction</a>
+                    <a href="genre.html" class="pill">Pyschology</a>
+                </div>
+            </div>
+            <div class="bookItemContainer">
+                <div class="bookItem">
+                    <div class="coverImgHolder">
+                        <img src="images/book17.jpg" alt="">
+                    </div>
+                    <div class="cartBookInfo">
+                        <p class="cartBookName">The Fault in our stars</p>
+                        <p class="authorName">John Green</p>
+                        <div class="priceRating">
+                            <p class="cartBookPrice">Rs 265</p>
+                            <p class="cartBookRating"><i class="fa fa-star"></i> 4.5</p>
+                        </div>
+                        <div class="options bookOptions">
+                            <div class="qty addToCart">
+                                <button class="addToCartBtn"><i class="fa fa-cart-plus"
+                                        style="color: white; font-size: 1.1em;"></i>&nbsp;&nbsp;Add to cart</button>
+                            </div>
+                            <button class="bookmark" style="background-color: #673AB7; color: white; padding: 8px;"><i
+                                    class="fa fa-bookmark-o" style="color: white;"></i>&nbsp;&nbsp;Bookmark</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="pillsScroller bookGenres" style="padding-left:10px ;">
+                    <a href="genre.html" class="pill">Romance</a>
+                    <a href="genre.html" class="pill">Fiction</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
