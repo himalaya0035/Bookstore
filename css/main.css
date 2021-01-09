@@ -196,24 +196,32 @@ div.sidebarActive{
     font-weight: bold;
     letter-spacing: 0.5px;
 }
-.priceRating {
+.homepageBookPrice,.homepageBookRating {
+    color: white;
+    display: flex;
+    font-weight: normal;
+    background-color: #673AB7;
     position: absolute;
+}
+.homepageBookPrice {
     bottom: 40px;
     right: 0px;
-    width: 45px;
-    background-color: #673AB7;
+    width: 55px;
     padding: 3px;
-    display: flex;
     letter-spacing: 1px;
-    /* font-weight: bold; */
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
-.priceRating p {
-    color: white;
-    margin-top: 2px;
-    font-size: 10px;
+
+.homepageBookRating {
+    clip-path: circle(50% at 4% 4%);
+    top:0px;
+    left: 0px;
+    padding: 3px;
+    height: 50px;
+    width: 50px;
 }
+
 .priceRating p:last-of-type {
     color: #673AB7;
 }
