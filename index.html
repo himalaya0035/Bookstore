@@ -2,22 +2,26 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <title>BookStore</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css" />
     <style>
-        .sidebarToggler,.cartToggler{
+        .sidebarToggler,
+        .cartToggler {
             color: rgb(119, 60, 182);
         }
+
         #searchBox {
             color: white;
         }
+
         ::placeholder {
             color: white;
         }
     </style>
+    <link rel="stylesheet" href="css/authors.css">
 </head>
 
 <body>
@@ -25,42 +29,57 @@
         <div class="top_section_sidebar">
             <div class="userInfo">
                 <div class="imgbox4">
-                    <a href="#"><img src="images/professor.jpg" alt=""></a>
+                    <a href="#"><img src="images/professor.jpg" alt="" /></a>
                 </div>
                 <h3>Sergio Marquina</h3>
             </div>
             <div class="cross">
-                <i class="fa fa-close "></i>
+                <i class="fa fa-close"></i>
             </div>
         </div>
-        <hr>
+        <hr />
         <ul class="sidebarList">
-            <li><a href=""><i class="fa fa-bar-chart"></i> Stats</a></li>
-            <li><a href=""><i class="fa fa-bookmark"></i> Bookmarked</a></li>
-            <li><a href=""><i class="fa fa-file"></i> Drafts</a></li>
-            <li><a href=""><i class="fa fa-plus"></i> Add Topics</a></li>
+            <li>
+                <a href=""><i class="fa fa-bar-chart"></i> Stats</a>
+            </li>
+            <li>
+                <a href=""><i class="fa fa-bookmark"></i> Bookmarked</a>
+            </li>
+            <li>
+                <a href=""><i class="fa fa-file"></i> Drafts</a>
+            </li>
+            <li>
+                <a href=""><i class="fa fa-plus"></i> Add Topics</a>
+            </li>
         </ul>
-        <hr>
+        <hr />
         <ul class="sidebarList">
-            <li><a href="login.html"><i class="fa fa-sign-in"></i> Login</a></li>
-            <li><a href="signup.html"><i class="fa fa-user"></i> Signup</a></li>
+            <li>
+                <a href="login.html"><i class="fa fa-sign-in"></i> Login</a>
+            </li>
+            <li>
+                <a href="signup.html"><i class="fa fa-user"></i> Signup</a>
+            </li>
         </ul>
-        <hr>
+        <hr />
         <ul class="sidebarList">
-            <li><a href=""><i class="fa fa-lightbulb-o"></i> Change mode</a></li>
+            <li>
+                <a href=""><i class="fa fa-lightbulb-o"></i> Change mode</a>
+            </li>
         </ul>
     </div>
     <div class="contentWrapper">
         <div class="fixedPosition">
             <div class="topBar">
                 <a href="#" class="sidebarToggler"><i class="fa fa-bars"
-                        style="font-size: 25px; font-weight: 100;"></i></a>
+                        style="font-size: 25px; font-weight: 100"></i></a>
                 <div class="searchBar">
-                    <input type="text"  spellcheck="false" name="" id="searchBox" placeholder="Search Books, Authors...">
-                    <a href="" class="searchBtn"><i class="fa fa-search" style="font-size: 15px;"></i></a>
+                    <input type="text" spellcheck="false" name="" id="searchBox"
+                        placeholder="Search Books, Authors..." />
+                    <a href="" class="searchBtn"><i class="fa fa-search" style="font-size: 15px"></i></a>
                 </div>
                 <a href="cart.html" class="cartToggler"><i class="fa fa-shopping-cart"
-                        style="font-size: 25px; font-weight: 100;"></i></a>
+                        style="font-size: 25px; font-weight: 100"></i></a>
             </div>
             <div class="categoriesPills">
                 <div class="pillsScroller">
@@ -82,61 +101,199 @@
             <div class="booksHolder">
                 <div class="homepageBook">
                     <div class="coverImgHolder">
-                        <a href="book.html"><img src="images/book1.jpeg" alt=""></a>
+                        <a href="book.html"><img src="images/book1.jpeg" alt="" /></a>
                     </div>
                     <p class="bookName">Rich Dad Poor Dad</p>
+                    <div class="priceRating">
+                        <p>Rs 399</p>
+                        <!-- <p>4.7 &#9733;</p> -->
+                    </div>
                 </div>
                 <div class="homepageBook">
                     <div class="coverImgHolder">
-                        <a href="book.html"><img src="images/book2.jpg" alt=""></a>
+                        <a href="book.html"><img src="images/book2.jpg" alt="" /></a>
                     </div>
                     <p class="bookName">The subtle art of not giving a f*ck</p>
                 </div>
                 <div class="homepageBook">
                     <div class="coverImgHolder">
-                        <a href="book.html"><img src="images/book3.jpg" alt=""></a>
+                        <a href="book.html"><img src="images/book3.jpg" alt="" /></a>
                     </div>
                     <p class="bookName">Animal Farm</p>
                 </div>
                 <div class="homepageBook">
                     <div class="coverImgHolder">
-                        <a href="#"><img src="images/book4.jpg" alt=""></a>
+                        <a href="#"><img src="images/book4.jpg" alt="" /></a>
                     </div>
                     <p class="bookName">1984</p>
                 </div>
                 <div class="homepageBook">
                     <div class="coverImgHolder">
-                        <a href="#"><img src="images/book5.jpg" alt=""></a>
+                        <a href="#"><img src="images/book5.jpg" alt="" /></a>
                     </div>
                     <p class="bookName">The Power of your subconsious mind</p>
                 </div>
                 <div class="homepageBook">
                     <div class="coverImgHolder">
-                        <a href="#"><img src="images/book9.jpg" alt=""></a>
+                        <a href="#"><img src="images/book9.jpg" alt="" /></a>
                     </div>
                     <p class="bookName">The Alchemist</p>
                 </div>
                 <div class="homepageBook">
                     <div class="coverImgHolder">
-                        <a href="#"><img src="images/book6.jpg" alt=""></a>
+                        <a href="#"><img src="images/book6.jpg" alt="" /></a>
                     </div>
                     <p class="bookName">Think and Grow Rich</p>
                 </div>
                 <div class="homepageBook">
                     <div class="coverImgHolder">
-                        <a href="#"><img src="images/book7.jpg" alt=""></a>
+                        <a href="#"><img src="images/book7.jpg" alt="" /></a>
                     </div>
                     <p class="bookName">Atomic Habits</p>
                 </div>
                 <div class="homepageBook">
                     <div class="coverImgHolder">
-                        <a href="#"><img src="images/book8.jpg" alt=""></a>
+                        <a href="#"><img src="images/book8.jpg" alt="" /></a>
                     </div>
                     <p class="bookName">How to win freinds and influence people</p>
                 </div>
             </div>
-            
         </div>
+        <div class="booksSection" id="Recommended">
+            <div class="headerRow">
+                <h4>Recommended For You</h4>
+                <a href="sections.html">More</a>
+            </div>
+            <div class="booksHolder">
+                <div class="homepageBook">
+                    <div class="coverImgHolder">
+                        <a href="#"><img src="images/book1.jpeg" alt="" /></a>
+                    </div>
+                    <p class="bookName">Rich Dad Poor Dad</p>
+                </div>
+                <div class="homepageBook">
+                    <div class="coverImgHolder">
+                        <a href="#"><img src="images/book2.jpg" alt="" /></a>
+                    </div>
+                    <p class="bookName">The subtle art of not giving a f*ck</p>
+                </div>
+                <div class="homepageBook">
+                    <div class="coverImgHolder">
+                        <a href="#"><img src="images/book3.jpg" alt="" /></a>
+                    </div>
+                    <p class="bookName">Animal Farm</p>
+                </div>
+                <div class="homepageBook">
+                    <div class="coverImgHolder">
+                        <a href="#"><img src="images/book4.jpg" alt="" /></a>
+                    </div>
+                    <p class="bookName">1984</p>
+                </div>
+                <div class="homepageBook">
+                    <div class="coverImgHolder">
+                        <a href="#"><img src="images/book5.jpg" alt="" /></a>
+                    </div>
+                    <p class="bookName">The Power of your subconsious mind</p>
+                </div>
+                <div class="homepageBook">
+                    <div class="coverImgHolder">
+                        <a href="#"><img src="images/book9.jpg" alt="" /></a>
+                    </div>
+                    <p class="bookName">The Alchemist</p>
+                </div>
+                <div class="homepageBook">
+                    <div class="coverImgHolder">
+                        <a href="#"><img src="images/book6.jpg" alt="" /></a>
+                    </div>
+                    <p class="bookName">Think and Grow Rich</p>
+                </div>
+                <div class="homepageBook">
+                    <div class="coverImgHolder">
+                        <a href="#"><img src="images/book7.jpg" alt="" /></a>
+                    </div>
+                    <p class="bookName">Atomic Habits</p>
+                </div>
+                <div class="homepageBook">
+                    <div class="coverImgHolder">
+                        <a href="#"><img src="images/book8.jpg" alt="" /></a>
+                    </div>
+                    <p class="bookName">How to win freinds and influence people</p>
+                </div>
+            </div>
+        </div>
+        <div class="" style="padding: 10px; padding-left: 5px;">
+            <div class="headerRow">
+                <h4>Top Authors</h4>
+            </div>
+            <div class="authorsHolder">
+                <div class="authorsScroller">
+                    <div class="authorBox">
+                        <div class="authorImgHolder">
+                            <a href="#"><img src="images/author1.jpg" height="135" width="90" alt="" /></a>
+                        </div>
+                        <p class="homepageAuthorName">Paulo coelho</p>
+                        <a href="#" class="viewAuthor">View</a>
+                    </div>
+                    <div class="authorBox">
+                        <div class="authorImgHolder">
+                            <a href="#"><img src="images/author2.jpg" alt="" /></a>
+                        </div>
+                        <p class="homepageAuthorName">Robert T. Kiyosaki</p>
+                        <a href="#" class="viewAuthor">View</a>
+                    </div>
+                    <div class="authorBox">
+                        <div class="authorImgHolder">
+                            <a href="#"><img src="images/author3.jpg" alt="" /></a>
+                        </div>
+                        <p class="homepageAuthorName">Napolean Hill</p>
+                        <a href="#" class="viewAuthor">View</a>
+                    </div>
+                    <div class="authorBox">
+                        <div class="authorImgHolder">
+                            <a href="#"><img src="images/author4.jpg" height="135" width="90" alt="" /></a>
+                        </div>
+                        <p class="homepageAuthorName">James Allen</p>
+                        <a href="#" class="viewAuthor">View</a>
+                    </div>
+                    <div class="authorBox">
+                        <div class="authorImgHolder">
+                            <a href="#"><img src="images/author5.jpg" alt="" /></a>
+                        </div>
+                        <p class="homepageAuthorName">Joseph Murphy</p>
+                        <a href="#" class="viewAuthor">View</a>
+                    </div>
+                    <div class="authorBox">
+                        <div class="authorImgHolder">
+                            <a href="#"><img src="images/author6.jpg" alt="" /></a>
+                        </div>
+                        <p class="homepageAuthorName">George Orwell</p>
+                        <a href="#" class="viewAuthor">View</a>
+                    </div>
+                    <div class="authorBox">
+                        <div class="authorImgHolder">
+                            <a href="#"><img src="images/author1.jpg" height="135" width="90" alt="" /></a>
+                        </div>
+                        <p class="homepageAuthorName">Paulo coelho</p>
+                        <a href="#" class="viewAuthor">View</a>
+                    </div>
+                    <div class="authorBox">
+                        <div class="authorImgHolder">
+                            <a href="#"><img src="images/author2.jpg" alt="" /></a>
+                        </div>
+                        <p class="homepageAuthorName">Paulo coelho</p>
+                        <a href="#" class="viewAuthor">View</a>
+                    </div>
+                    <div class="authorBox">
+                        <div class="authorImgHolder">
+                            <a href="#"><img src="images/author1.jpg" alt="" /></a>
+                        </div>
+                        <p class="homepageAuthorName">Paulo coelho</p>
+                        <a href="#" class="viewAuthor">View</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="booksSection" id="Popular">
             <div class="headerRow">
                 <h4>Popular</h4>
@@ -145,76 +302,61 @@
             <div class="booksHolder">
                 <div class="homepageBook">
                     <div class="coverImgHolder">
-                        <a href="#"><img src="images/book1.jpeg" alt=""></a>
+                        <a href="#"><img src="images/book1.jpeg" alt="" /></a>
                     </div>
                     <p class="bookName">Rich Dad Poor Dad</p>
                 </div>
                 <div class="homepageBook">
                     <div class="coverImgHolder">
-                        <a href="#"><img src="images/book2.jpg" alt=""></a>
+                        <a href="#"><img src="images/book2.jpg" alt="" /></a>
                     </div>
                     <p class="bookName">The subtle art of not giving a f*ck</p>
                 </div>
                 <div class="homepageBook">
                     <div class="coverImgHolder">
-                        <a href="#"><img src="images/book3.jpg" alt=""></a>
+                        <a href="#"><img src="images/book3.jpg" alt="" /></a>
                     </div>
                     <p class="bookName">Animal Farm</p>
                 </div>
                 <div class="homepageBook">
                     <div class="coverImgHolder">
-                        <a href="#"><img src="images/book4.jpg" alt=""></a>
+                        <a href="#"><img src="images/book4.jpg" alt="" /></a>
                     </div>
                     <p class="bookName">1984</p>
                 </div>
                 <div class="homepageBook">
                     <div class="coverImgHolder">
-                        <a href="#"><img src="images/book5.jpg" alt=""></a>
+                        <a href="#"><img src="images/book5.jpg" alt="" /></a>
                     </div>
                     <p class="bookName">The Power of your subconsious mind</p>
                 </div>
                 <div class="homepageBook">
                     <div class="coverImgHolder">
-                        <a href="#"><img src="images/book9.jpg" alt=""></a>
+                        <a href="#"><img src="images/book9.jpg" alt="" /></a>
                     </div>
                     <p class="bookName">The Alchemist</p>
                 </div>
                 <div class="homepageBook">
                     <div class="coverImgHolder">
-                        <a href="#"><img src="images/book6.jpg" alt=""></a>
+                        <a href="#"><img src="images/book6.jpg" alt="" /></a>
                     </div>
                     <p class="bookName">Think and Grow Rich</p>
                 </div>
                 <div class="homepageBook">
                     <div class="coverImgHolder">
-                        <a href="#"><img src="images/book7.jpg" alt=""></a>
+                        <a href="#"><img src="images/book7.jpg" alt="" /></a>
                     </div>
                     <p class="bookName">Atomic Habits</p>
                 </div>
                 <div class="homepageBook">
                     <div class="coverImgHolder">
-                        <a href="#"><img src="images/book8.jpg" alt=""></a>
+                        <a href="#"><img src="images/book8.jpg" alt="" /></a>
                     </div>
                     <p class="bookName">How to win freinds and influence people</p>
                 </div>
             </div>
-            
         </div>
-        <div class="booksSection AuthorsList">
-            <div class="headerRow">
-                <h4>Top Authors</h4>
-            </div>
-            <div class="booksHolder authorsHolder">
-                <div class="homepageBook">
-                    <div class="coverImgHolder">
-                        <a href="#"><img src="images/book1.jpeg" alt=""></a>
-                    </div>
-                    <p class="bookName">Rich Dad Poor Dad</p>
-                </div>
-            
-            </div>
-        </div>
-        <div class="booksSection" id="Classics">
+        <div class="booksSection" id="classic">
             <div class="headerRow">
                 <h4>Classic</h4>
                 <a href="sections.html">More</a>
@@ -222,60 +364,59 @@
             <div class="booksHolder">
                 <div class="homepageBook">
                     <div class="coverImgHolder">
-                        <a href="#"><img src="images/book1.jpeg" alt=""></a>
+                        <a href="#"><img src="images/book1.jpeg" alt="" /></a>
                     </div>
                     <p class="bookName">Rich Dad Poor Dad</p>
                 </div>
                 <div class="homepageBook">
                     <div class="coverImgHolder">
-                        <a href="#"><img src="images/book2.jpg" alt=""></a>
+                        <a href="#"><img src="images/book2.jpg" alt="" /></a>
                     </div>
                     <p class="bookName">The subtle art of not giving a f*ck</p>
                 </div>
                 <div class="homepageBook">
                     <div class="coverImgHolder">
-                        <a href="#"><img src="images/book3.jpg" alt=""></a>
+                        <a href="#"><img src="images/book3.jpg" alt="" /></a>
                     </div>
                     <p class="bookName">Animal Farm</p>
                 </div>
                 <div class="homepageBook">
                     <div class="coverImgHolder">
-                        <a href="#"><img src="images/book4.jpg" alt=""></a>
+                        <a href="#"><img src="images/book4.jpg" alt="" /></a>
                     </div>
                     <p class="bookName">1984</p>
                 </div>
                 <div class="homepageBook">
                     <div class="coverImgHolder">
-                        <a href="#"><img src="images/book5.jpg" alt=""></a>
+                        <a href="#"><img src="images/book5.jpg" alt="" /></a>
                     </div>
                     <p class="bookName">The Power of your subconsious mind</p>
                 </div>
                 <div class="homepageBook">
                     <div class="coverImgHolder">
-                        <a href="#"><img src="images/book9.jpg" alt=""></a>
+                        <a href="#"><img src="images/book9.jpg" alt="" /></a>
                     </div>
                     <p class="bookName">The Alchemist</p>
                 </div>
                 <div class="homepageBook">
                     <div class="coverImgHolder">
-                        <a href="#"><img src="images/book6.jpg" alt=""></a>
+                        <a href="#"><img src="images/book6.jpg" alt="" /></a>
                     </div>
                     <p class="bookName">Think and Grow Rich</p>
                 </div>
                 <div class="homepageBook">
                     <div class="coverImgHolder">
-                        <a href="#"><img src="images/book7.jpg" alt=""></a>
+                        <a href="#"><img src="images/book7.jpg" alt="" /></a>
                     </div>
                     <p class="bookName">Atomic Habits</p>
                 </div>
                 <div class="homepageBook">
                     <div class="coverImgHolder">
-                        <a href="#"><img src="images/book8.jpg" alt=""></a>
+                        <a href="#"><img src="images/book8.jpg" alt="" /></a>
                     </div>
                     <p class="bookName">How to win freinds and influence people</p>
                 </div>
             </div>
-            
         </div>
     </div>
     <script src="js/main.js"></script>

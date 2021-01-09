@@ -34,5 +34,5 @@ for (i=0; i<loginFields.length;i++){
 }
 
 loginBtn.onclick = () =>{
-    window.location.replace('http://127.0.0.1:5501/index.html');
+    window.location.replace('http://127.0.0.1:5500/index.html');
 }

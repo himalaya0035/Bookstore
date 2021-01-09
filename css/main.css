@@ -182,10 +182,12 @@ div.sidebarActive{
     display: flex;
     overflow-x: auto;
 }
+
 .homepageBook{
+    position: relative;
     margin-right: 12px;
 }
-.homepageBook p {
+.homepageBook > p {
     font-size: 10px;
     width: 80px;
     height: 24px;
@@ -193,6 +195,27 @@ div.sidebarActive{
     overflow-y: hidden;
     font-weight: bold;
     letter-spacing: 0.5px;
+}
+.priceRating {
+    position: absolute;
+    bottom: 40px;
+    right: 0px;
+    width: 45px;
+    background-color: #673AB7;
+    padding: 3px;
+    display: flex;
+    letter-spacing: 1px;
+    /* font-weight: bold; */
+    justify-content: space-between;
+    align-items: center;
+}
+.priceRating p {
+    color: white;
+    margin-top: 2px;
+    font-size: 10px;
+}
+.priceRating p:last-of-type {
+    color: #673AB7;
 }
 .coverImgHolder {
     width: 90px;
@@ -235,6 +258,7 @@ div.sidebarActive{
     border-radius: 12px;
     letter-spacing: 0.8px;
 }
+
 
 
 @media screen and (min-width:720px){

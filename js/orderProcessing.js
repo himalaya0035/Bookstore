@@ -2,6 +2,7 @@ var increase = document.getElementsByClassName('increaseQuantity');
 var decrease = document.getElementsByClassName('decreaseQuantity');
 var inputElements = document.getElementsByClassName('itemQuantity');
 var prices = document.getElementsByClassName('cartBookPrice');
+var deleteBtns = document.getElementsByClassName('deleteCartItem');
 
 for (i=0;i<increase.length;i++){
     increase[i].addEventListener('click',manageQuantity);
@@ -53,4 +54,13 @@ function getTotalQuantityAndAmount(){
     }
     document.getElementById('totalQuantity').innerText = totalQty;
     document.getElementById('totalAmount').innerText = 'Rs ' + totalAmt;
+}
+
+for (i=0;i<deleteBtns.length;i++){
+    deleteBtns[i].addEventListener('click',(e)=>{
+        var clickedDeleteBtn = e.target;
+        var cartItem = clickedDeleteBtn.closest('.item');
+        // api call here
+        cartItem.remove();
+    })
 }
