@@ -71,8 +71,11 @@
     font-size: 25px;
 }
 .sectionBottom {
-    height: 83vh;
     background-color:white;
     z-index: 2;
+}
+.authorBooks {
+    padding-bottom:10px ;
+    margin-top:6px;
 }
 /* css for the author page ends here */

@@ -57,7 +57,7 @@
         <div class="authorInfoContainer">
             
         </div>
-        <div class="sectionBottom rellax" data-rellax-speed="+3">
+        <div class="sectionBottom rellax" data-rellax-speed="0">
             <div class="bookDesc" style="margin-bottom: 0px;">
                 <div class="shapesHeading" style="transform: translateX(-15px); width: 50%; margin-bottom: 10px;">
                     <h5>About</h5>
@@ -66,68 +66,102 @@
                     Paulo Coelho was born in Rio de Janeiro, Brazil, and attended a Jesuit school. At 17, Coelho's parents committed him to a mental institution from which he escaped three times before being released at the age of 20. Coelho was born into a Catholic family, and his parents were strict about the religion and faith...
                 </p>
             </div>
-            <div class="booksSection">
+            <div class="booksSection authorBooks">
                 <div class="headerRow">
                     <h4>Author's Books</h4>
-                    <a href="sections.html">More</a>
                 </div>
                 <div class="booksHolder">
                     <div class="homepageBook">
                         <div class="coverImgHolder">
-                            <a href="book.html"><img src="images/book1.jpeg" alt=""></a>
+                            <a href="book.html"><img src="images/book1.jpeg" alt="" /></a>
                         </div>
                         <p class="bookName">Rich Dad Poor Dad</p>
+                        <div class="ratingAndPrice">
+                            <h6 class="homepageBookPrice">Rs 399</h6>
+                            <h6 class="homepageBookRating">4.7&#9733;</h6>
+                        </div>
                     </div>
                     <div class="homepageBook">
                         <div class="coverImgHolder">
-                            <a href="book.html"><img src="images/book2.jpg" alt=""></a>
+                            <a href="book.html"><img src="images/book2.jpg" alt="" /></a>
                         </div>
                         <p class="bookName">The subtle art of not giving a f*ck</p>
+                        <div class="ratingAndPrice">
+                            <h6 class="homepageBookPrice">Rs 150</h6>
+                            <h6 class="homepageBookRating">4.0&#9733;</h6>
+                        </div>
                     </div>
                     <div class="homepageBook">
                         <div class="coverImgHolder">
-                            <a href="book.html"><img src="images/book3.jpg" alt=""></a>
+                            <a href="book.html"><img src="images/book3.jpg" alt="" /></a>
                         </div>
                         <p class="bookName">Animal Farm</p>
+                        <div class="ratingAndPrice">
+                            <h6 class="homepageBookPrice">Rs 299</h6>
+                            <h6 class="homepageBookRating">4.2&#9733;</h6>
+                        </div>
                     </div>
                     <div class="homepageBook">
                         <div class="coverImgHolder">
-                            <a href="#"><img src="images/book4.jpg" alt=""></a>
+                            <a href="#"><img src="images/book4.jpg" alt="" /></a>
                         </div>
                         <p class="bookName">1984</p>
+                        <div class="ratingAndPrice">
+                            <h6 class="homepageBookPrice">Rs 299</h6>
+                            <h6 class="homepageBookRating">4.4&#9733;</h6>
+                        </div>
                     </div>
                     <div class="homepageBook">
                         <div class="coverImgHolder">
-                            <a href="#"><img src="images/book5.jpg" alt=""></a>
+                            <a href="#"><img src="images/book5.jpg" alt="" /></a>
                         </div>
                         <p class="bookName">The Power of your subconsious mind</p>
+                        <div class="ratingAndPrice">
+                            <h6 class="homepageBookPrice">Rs 199</h6>
+                            <h6 class="homepageBookRating">4.1&#9733;</h6>
+                        </div>
                     </div>
                     <div class="homepageBook">
                         <div class="coverImgHolder">
-                            <a href="#"><img src="images/book9.jpg" alt=""></a>
+                            <a href="#"><img src="images/book9.jpg" alt="" /></a>
                         </div>
                         <p class="bookName">The Alchemist</p>
+                        <div class="ratingAndPrice">
+                            <h6 class="homepageBookPrice">Rs 199</h6>
+                            <h6 class="homepageBookRating">4.1&#9733;</h6>
+                        </div>
                     </div>
                     <div class="homepageBook">
                         <div class="coverImgHolder">
-                            <a href="#"><img src="images/book6.jpg" alt=""></a>
+                            <a href="#"><img src="images/book6.jpg" alt="" /></a>
                         </div>
                         <p class="bookName">Think and Grow Rich</p>
+                        <div class="ratingAndPrice">
+                            <h6 class="homepageBookPrice">Rs 199</h6>
+                            <h6 class="homepageBookRating">4.1&#9733;</h6>
+                        </div>
                     </div>
                     <div class="homepageBook">
                         <div class="coverImgHolder">
-                            <a href="#"><img src="images/book7.jpg" alt=""></a>
+                            <a href="#"><img src="images/book7.jpg" alt="" /></a>
                         </div>
                         <p class="bookName">Atomic Habits</p>
+                        <div class="ratingAndPrice">
+                            <h6 class="homepageBookPrice">Rs 199</h6>
+                            <h6 class="homepageBookRating">4.1&#9733;</h6>
+                        </div>
                     </div>
                     <div class="homepageBook">
                         <div class="coverImgHolder">
-                            <a href="#"><img src="images/book8.jpg" alt=""></a>
+                            <a href="#"><img src="images/book8.jpg" alt="" /></a>
                         </div>
                         <p class="bookName">How to win freinds and influence people</p>
+                        <div class="ratingAndPrice">
+                            <h6 class="homepageBookPrice">Rs 199</h6>
+                            <h6 class="homepageBookRating">4.1&#9733;</h6>
+                        </div>
                     </div>
                 </div>
-                
             </div>
         </div>
     </div>
@@ -137,7 +171,6 @@
         var rellax = new Rellax('.rellax');
         var authorInfoContainer = document.getElementsByClassName('authorInfoContainer')[0];
         window.onscroll = ()=>{
-
             if (window.scrollY > 0 && window.scrollY < 20){
                 authorInfoContainer.style.opacity = 0.9;
             }
@@ -157,14 +190,21 @@
                 authorInfoContainer.style.opacity = 0.4;
             }
             else if (window.scrollY >= 120 && window.scrollY < 140){
+                authorInfoContainer.style.opacity = 0.3;
+            }
+            else if (window.scrollY >= 140 && window.scrollY < 160){
                 authorInfoContainer.style.opacity = 0.2;
+            }
+            else if (window.scrollY >= 160 && window.scrollY < 170){
+                authorInfoContainer.style.opacity = 0.1;
+            }
+            else if (window.scrollY >= 170){
+                authorInfoContainer.style.opacity = 0;
             }
             else {
                 authorInfoContainer.style.opacity = 1;
             }
         }
-       
-
     </script>
 </body>
 </html>
