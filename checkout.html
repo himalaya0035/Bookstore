@@ -4,9 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/orderProcessing.css">
+    <link rel="stylesheet" href="css/signup.css">
+    <style>
+        .sidebarList {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        hr {
+            margin: 0px;
+        }
+        h6 {
+            margin: 0px;
+        }
+    </style>
 </head>
 <body>
     <div class="mobileSidebar">
@@ -16,7 +30,6 @@
                     <a href="#"><img src="images/professor.jpg" alt=""></a>
                 </div>
                 <h3>Sergio Marquina</h3>
-        
             </div>
             <div class="cross">
                 <i class="fa fa-close "></i>
@@ -54,8 +67,55 @@
                          style="font-size: 20px; font-weight: 100;"></i></a>
             </div>
         </div>
-        
+        <div class="container-fluid" style="padding-top: 0px;">
+            <div class="row justify-content-center">
+                <div class="col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
+                    <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                       
+                        <form id="msform">
+                            <!-- progressbar -->
+                      
+                           <!-- fieldsets -->
+                            <fieldset>
+                                <div class="form-card">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h4 class="fs-title">Delivery Info</h4>
+                                            <p>Edit Form For Different Delivery Address</p>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12" style="margin-left: 18px;">
+                                            <h6 id="message" style="color: rgb(243, 51, 51);"></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                        <h6 id="message" style="color: rgb(243, 51, 51);"></h6>
+                                        </div>
+                                    </div>
+                                     <label class="fieldlabels">FirstName :</label> <input
+                                    type="text" name="firstName" placeholder="First Name" id="fname" class="loginField" /> <label
+                                    class="fieldlabels">Contact No :</label> <input type="number" name="pwd"
+                                    placeholder="Contact No" id="contactNo" class="loginField"/> 
+                                    <label class="fieldlabels">Email :</label> <input
+                                    type="email" name="email" placeholder="Email" id="emailId" class="loginField" /> 
+                                    <label class="fieldlabels">Delivery Address : (Min 30 characters)</label> <input
+                                    type="text" name="DeliveryAddress" placeholder="Delivery Address" id="deliveryAddress" class="loginField" /> 
+                            </div> 
+                            </fieldset>
+                        
+                           
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="moveToCheckout proceedToPayment" style="display: flex; align-items: center; justify-content: center;">
+            <a href="payment.html" style="color: white; text-decoration: none; font-weight: bold; font-size: 1.17em; display: block;">Proceed For Payment <i class="fa fa-angle-right" style="font-weight: normal;"></i></a>
+        </div>
     </div>
+   
     <script src="js/main.js"></script>
 </body>
 </html>
