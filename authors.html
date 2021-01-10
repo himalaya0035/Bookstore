@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/orderProcessing.css">
+    <link rel="stylesheet" href="css/authors.css">
+</head>
+<body>
+    <div class="mobileSidebar">
+        <div class="top_section_sidebar">
+            <div class="userInfo">
+                <div class="imgbox4">
+                    <a href="#"><img src="images/professor.jpg" alt=""></a>
+                </div>
+                <h3>Sergio Marquina</h3>
+        
+            </div>
+            <div class="cross">
+                <i class="fa fa-close "></i>
+            </div>
+        </div>
+        <hr>
+        <ul class="sidebarList">
+            <li><a href=""><i class="fa fa-bar-chart"></i> Stats</a></li>
+            <li><a href=""><i class="fa fa-bookmark"></i> Bookmarked</a></li>
+            <li><a href=""><i class="fa fa-file"></i> Drafts</a></li>
+            <li><a href=""><i class="fa fa-plus"></i> Add Topics</a></li>
+        </ul>
+        <hr>
+        <ul class="sidebarList">
+            <li><a href=""><i class="fa fa-user"></i> Accounts</a></li>
+            <li><a href=""><i class="fa fa-lock"></i> Privacy</a></li>
+        </ul>
+        <hr>
+        <ul class="sidebarList">
+            <li><a href=""><i class="fa fa-lightbulb-o"></i> Change mode</a></li>
+            <li><a href=""><i class="fa fa-sign-out"></i> Logout</a></li>
+        </ul>
+    </div>
+    <div class="contentWrapper">
+        <div class="fixedPosition">
+            <div class="topBar">
+                <a href="#" class="sidebarToggler"><i class="fa fa-bars"
+                        style="font-size: 20px; font-weight: 100;"></i></a>
+                        <div class="searchBar">
+                            <h3>Paulo Coelho</h3>
+                        </div>
+                <a href="index.html" class="backBtn"><i class="fa fa-angle-left"
+                        style="font-size: 20px; font-weight: 100;"></i></a>
+              
+            </div>
+        </div>
+        <div class="authorInfoContainer">
+            
+        </div>
+        <div class="sectionBottom rellax" data-rellax-speed="+3">
+            <div class="bookDesc" style="margin-bottom: 0px;">
+                <div class="shapesHeading" style="transform: translateX(-15px); width: 50%; margin-bottom: 10px;">
+                    <h5>About</h5>
+                </div>
+                <p>Paulo Coelho de Souza is a Brazilian lyricist and novelist, best known for his novel The Alchemist. In 2014, he uploaded his personal papers online to create a virtual Paulo Coelho Foundation.
+                    Paulo Coelho was born in Rio de Janeiro, Brazil, and attended a Jesuit school. At 17, Coelho's parents committed him to a mental institution from which he escaped three times before being released at the age of 20. Coelho was born into a Catholic family, and his parents were strict about the religion and faith...
+                </p>
+            </div>
+            <div class="booksSection">
+                <div class="headerRow">
+                    <h4>Author's Books</h4>
+                    <a href="sections.html">More</a>
+                </div>
+                <div class="booksHolder">
+                    <div class="homepageBook">
+                        <div class="coverImgHolder">
+                            <a href="book.html"><img src="images/book1.jpeg" alt=""></a>
+                        </div>
+                        <p class="bookName">Rich Dad Poor Dad</p>
+                    </div>
+                    <div class="homepageBook">
+                        <div class="coverImgHolder">
+                            <a href="book.html"><img src="images/book2.jpg" alt=""></a>
+                        </div>
+                        <p class="bookName">The subtle art of not giving a f*ck</p>
+                    </div>
+                    <div class="homepageBook">
+                        <div class="coverImgHolder">
+                            <a href="book.html"><img src="images/book3.jpg" alt=""></a>
+                        </div>
+                        <p class="bookName">Animal Farm</p>
+                    </div>
+                    <div class="homepageBook">
+                        <div class="coverImgHolder">
+                            <a href="#"><img src="images/book4.jpg" alt=""></a>
+                        </div>
+                        <p class="bookName">1984</p>
+                    </div>
+                    <div class="homepageBook">
+                        <div class="coverImgHolder">
+                            <a href="#"><img src="images/book5.jpg" alt=""></a>
+                        </div>
+                        <p class="bookName">The Power of your subconsious mind</p>
+                    </div>
+                    <div class="homepageBook">
+                        <div class="coverImgHolder">
+                            <a href="#"><img src="images/book9.jpg" alt=""></a>
+                        </div>
+                        <p class="bookName">The Alchemist</p>
+                    </div>
+                    <div class="homepageBook">
+                        <div class="coverImgHolder">
+                            <a href="#"><img src="images/book6.jpg" alt=""></a>
+                        </div>
+                        <p class="bookName">Think and Grow Rich</p>
+                    </div>
+                    <div class="homepageBook">
+                        <div class="coverImgHolder">
+                            <a href="#"><img src="images/book7.jpg" alt=""></a>
+                        </div>
+                        <p class="bookName">Atomic Habits</p>
+                    </div>
+                    <div class="homepageBook">
+                        <div class="coverImgHolder">
+                            <a href="#"><img src="images/book8.jpg" alt=""></a>
+                        </div>
+                        <p class="bookName">How to win freinds and influence people</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/rellax.js"></script>
+    <script>
+        var rellax = new Rellax('.rellax');
+        var authorInfoContainer = document.getElementsByClassName('authorInfoContainer')[0];
+        window.onscroll = ()=>{
+
+            if (window.scrollY > 0 && window.scrollY < 20){
+                authorInfoContainer.style.opacity = 0.9;
+            }
+            else if (window.scrollY >= 20 && window.scrollY < 40){
+                authorInfoContainer.style.opacity = 0.8;
+            }
+            else if (window.scrollY >= 40 && window.scrollY < 60){
+                authorInfoContainer.style.opacity = 0.7;
+            }
+            else if (window.scrollY >= 60 && window.scrollY < 80){
+                authorInfoContainer.style.opacity = 0.6;
+            }
+            else if (window.scrollY >= 80 && window.scrollY < 100){
+                authorInfoContainer.style.opacity = 0.5;
+            }
+            else if (window.scrollY >= 100 && window.scrollY < 120){
+                authorInfoContainer.style.opacity = 0.4;
+            }
+            else if (window.scrollY >= 120 && window.scrollY < 140){
+                authorInfoContainer.style.opacity = 0.2;
+            }
+            else {
+                authorInfoContainer.style.opacity = 1;
+            }
+        }
+       
+
+    </script>
+</body>
+</html>
