@@ -109,7 +109,6 @@ a:focus {
     height: 52px;
     object-position: top;
     object-fit: cover;
-    border-radius: 50%;
 }
 
 .contentWrapper {

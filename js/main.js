@@ -26,11 +26,21 @@ for (i = 0; i < bookNames.length; i++) {
             var ele = e.target;
             var child = ele.getElementsByTagName('i')[0];
             if (child.classList.contains(checkClass)){
-            ele.innerHTML  = `<i class ="fa ${toBeReplacedClass}" style="color:white;"></i>` + ` ${buttonInitialText}`;
+               ele.innerHTML  = `<i class ="fa ${toBeReplacedClass}" style="color:white;"></i>` + ` ${buttonInitialText}`;
             }
             else {
                ele.innerHTML  = `<i class ="fa ${checkClass}" style="color:white;"></i>` + ` ${buttonFinalText}`;   
             }
+            // api call here
+            if (window.location.href.indexOf('bookmarked') > -1 && mainElementClass == 'bookmark'){
+               let bookItem = ele.closest('.bookItem');
+               bookItem.remove();
+               //api call here
+                if (document.getElementsByClassName('bookList')[0].innerText.length == 0){
+                    document.getElementById('NoBookmarkedMsg').style.display = 'block';
+                }
+            }
+            
         })
     }
  }
