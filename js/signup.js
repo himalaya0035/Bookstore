@@ -4,21 +4,22 @@ var email = document.getElementById('email')
 var firstSection = document.getElementsByClassName('sectionFirst');
 var saveBtn = document.getElementById('saveBtn');
 var condition 
+var arr = Array.from(firstSection);
 function validateFirstSection(btn) {
-    for (i = 0; i < firstSection.length; i++) {
+
         if (window.location.href.indexOf('profile') > -1){
-            condition = firstSection[i].value != '' && address.value.length >= 30 && contact.value.length > 9 && contact.value.length < 13 && isEmailOK();
+            condition = !isFieldsEmpty(arr) && isContactOk() && isEmailOK() && isAddressOk();
         }
         else {
-            condition = firstSection[i].value != '' && address.value.length >= 30 && contact.value.length > 9 && contact.value.length < 13;
+            condition = !isFieldsEmpty(arr) && isContactOk() && isAddressOk() ;
         }
-        
+
         if (condition) {
             enableBtn(btn);
         } else {
             disableBtn(btn);
         }
-    }
+        
 }
 
 function isEmailOK() {
@@ -27,6 +28,32 @@ function isEmailOK() {
         return true
     } else {
         displayErrorMsg('Email is not Valid');
+        return false;
+    }
+}
+
+function isFieldsEmpty(array) {
+    return (array.some(arrayElement => arrayElement.value ==  ''))
+}
+
+function isAddressOk() {
+    if (address.value.length > 30){
+        removeErrorMsg();
+        return true;
+    }
+    else{
+        displayErrorMsg('Delivery address needs to be atleast 30 characters long');
+        return false;
+    }
+}
+
+function  isContactOk() {
+    if(contact.value.length > 9 && contact.value.length < 11 ){
+        removeErrorMsg();
+        return true;
+    }
+    else {
+        displayErrorMsg('Contact Number needs to be 10 characters long')
         return false;
     }
 }
@@ -244,5 +271,9 @@ if (window.location.href.indexOf("profile") > -1) {
         firstSection[i].addEventListener('input', () => {
             validateFirstSection(saveBtn);
         })
+    }
+    saveBtn.onclick = () => {
+        // make awaiting api call here;
+        window.location.reload();
     }
 }
