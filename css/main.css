@@ -28,6 +28,17 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
+#loader{
+    display: none;
+    visibility: 0;
+    opacity: 0;
+    transition: 0.5s;
+}
+#rootElement {
+    visibility: 1;
+    opacity: 1;
+    transition: 0.5s
+}
 
 div.mobileSidebar {
     position: fixed;
