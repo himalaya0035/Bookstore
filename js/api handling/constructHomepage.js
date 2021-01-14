@@ -17,7 +17,7 @@ function constructBooksSlider(data,sectionName) {
       sliderBooks += `
         <div class="homepageBook">
             <div class="coverImgHolder">
-                <a href="book.html"><img src="images/book1.jpeg" alt="" /></a>
+                <a href="book.html" aria-label="view Book"><img src="images/book1.jpeg" alt="" /></a>
             </div>
             <p class="bookName">Rich Dad Poor Dad</p>
             <div class="ratingAndPrice">
@@ -31,7 +31,7 @@ function constructBooksSlider(data,sectionName) {
           <div class ="booksSection">
               <div class="headerRow">
                   <h4>${sectionName}</h4>
-                  <a href="sections.html">More</a>
+                  <a href="sections.html" aria-label="view ${sectionName} section">More</a>
               </div>
              <div class="booksHolder">${sliderBooks}</div>
           </div>
@@ -48,10 +48,10 @@ function constructAuthorsSlider(data){
       sliderAuthors += `
       <div class="authorBox">
         <div class="authorImgHolder">
-            <a href="author.html"><img src="images/author1.jpg" height="135" width="90" alt="" /></a>
+            <a href="author.html" aria-label="view Author"><img src="images/author1.jpg" height="135" width="90" alt="" /></a>
         </div>
         <p class="homepageAuthorName">Paulo coelho</p>
-        <a href="author.html" class="viewAuthor">View</a>
+        <a href="author.html" aria-label="view Author" class="viewAuthor">View</a>
     </div>
       `;
     }

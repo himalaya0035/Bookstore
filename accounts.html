@@ -3,10 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
+    <title>Accounts</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/orderProcessing.css">
+    <style>
+       .accountOptions {
+           display: flex;
+           flex-direction: column;
+           justify-content: space-between;
+           align-items: center;
+           padding: 10px;
+           padding-top: 20px;
+       }
+       .accountOptions > div {
+           width: 100%;
+           /* border: 1px solid red; */
+       }
+       .accountOptions div a {
+           padding: 10px;
+           margin-bottom: 15px;
+           width: 100%;
+           display: block;
+           text-align: center;
+           border: 1px solid white;
+           box-shadow: 0px 0px 3px rgb(63, 63, 63);
+           text-decoration: none;
+       }
+       .accountOptions div button:focus {
+           outline: none;
+       }
+       .deleteAccount {
+           background-color:  #F32013;
+           color: white;
+       }
+       .updateEmail {
+           background-color: #673AB7;
+           color: white;
+       }
+       .changePassword{
+           background-color: teal;
+           color: white;
+       }
+       .accountNote {
+           padding: 10px;
+           background-color: teal;
+           color: white;
+           margin: 10px;
+           border-radius: 10px;
+           border: 1px solid white;
+           box-shadow: 0px 0px 3px rgb(63, 63, 63);
+       }
+       .accountNote h5 {
+           font-size: 20px;
+           margin-bottom: 5px;
+       }
+       .accountNote ul {
+           margin-top: 10px;
+           margin-left: 30px;
+       }
+       .accountNote p,.accountNote ul li {
+           font-family: 'Poppins';
+       }
+    </style>
 </head>
 <body>
     <div class="mobileSidebar">
@@ -46,15 +105,31 @@
                 <a href="#" class="sidebarToggler"><i class="fa fa-bars"
                         style="font-size: 20px; font-weight: 100;"></i></a>
                         <div class="searchBar">
-                            <h3>Checkout</h3>
+                            <h3>Accounts</h3>
                         </div>
-                <a href="cart.html" class="backBtn"><i class="fa fa-angle-left"
+                <a href="index.html" class="backBtn"><i class="fa fa-angle-left"
                         style="font-size: 20px; font-weight: 100;"></i></a>
-                <a href="payment.html" class="backBtn"><i class="fa fa-angle-right"
-                         style="font-size: 20px; font-weight: 100;"></i></a>
             </div>
         </div>
-        
+        <div class="accountOptions">
+            <div><a  href="#" class="changePassword">Change Password</a></div>
+            <div><a  href="#" class="updateEmail" >Update email</a></div>
+            <div><a  href="#" class="deleteAccount">Delete Account</a></div>
+        </div>
+        <div class="accountNote">
+            <h5><i class="fa fa-paperclip"></i> Note : </h5>
+            <p>
+                For Secuirity Reasons We recommend changing password from time to time.
+                We also strongly recommend using a strong password, by strong password we mean a passowrd which contains : 
+               
+            </p>
+            <ul>
+                <li>At least 8 characters—the more characters, the better</li>
+                <li>A mixture of both uppercase and lowercase letters</li>
+                <li>  A mixture of letters and numbers</li>
+                <li> Inclusion of at least one special character, e.g., ! @ # ? ]</li>
+            </ul>
+        </div>
     </div>
     <script src="js/main.js"></script>
 </body>
