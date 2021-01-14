@@ -23,98 +23,13 @@
 </head>
 
 <body>
-    <div class="mobileSidebar">
-        <div class="top_section_sidebar">
-            <div class="userInfo">
-                <div class="imgbox4">
-                    <a href="#"><img src="images/professor.jpg" alt=""></a>
-                </div>
-                <h3>Sergio Marquina</h3>
+    <div id="loader" style="position: absolute; top:25%; left:10%">
+        <img src="images/load-gif.gif" alt="">
+    </div>
+    <div id="rootElement">
 
-            </div>
-            <div class="cross">
-                <i class="fa fa-close " style="color: #CECFCD;"></i>
-            </div>
-        </div>
-        <hr>
-        <ul class="sidebarList">
-            <li><a href=""><i class="fa fa-bar-chart"></i> Stats</a></li>
-            <li><a href=""><i class="fa fa-bookmark"></i> Bookmarked</a></li>
-            <li><a href=""><i class="fa fa-file"></i> Drafts</a></li>
-            <li><a href=""><i class="fa fa-plus"></i> Add Topics</a></li>
-        </ul>
-        <hr>
-        <ul class="sidebarList">
-            <li><a href=""><i class="fa fa-user"></i> Accounts</a></li>
-            <li><a href=""><i class="fa fa-lock"></i> Privacy</a></li>
-        </ul>
-        <hr>
-        <ul class="sidebarList">
-            <li><a href=""><i class="fa fa-lightbulb-o"></i> Change mode</a></li>
-            <li><a href=""><i class="fa fa-sign-out"></i> Logout</a></li>
-        </ul>
     </div>
-    <div class="contentWrapper">
-        <div class="fixedPosition">
-            <div class="topBar">
-                <a href="#" class="sidebarToggler"><i class="fa fa-bars"
-                        style="font-size: 20px; font-weight: 100;"></i></a>
-                <div class="searchBar">
-                    <h3>Bookmarked</h3>
-                </div>
-                <a href="index.html" class="backBtn"><i class="fa fa-angle-left"
-                        style="font-size: 20px; font-weight: 100;"></i></a>
-                <a href="cart.html" class="backBtn"><i class="fa fa-shopping-cart"
-                        style="font-size: 20px; font-weight: 100;"></i></a>
-            </div>
-        </div>
-        <div class="bookList">
-            <div class="bookItem">
-                <div class="coverImgHolder">
-                    <a href="book.html"><img src="images/book2.jpg" alt=""></a>
-                </div>
-                <div class="cartBookInfo">
-                    <p class="cartBookName">The Subtle art of not giving a fuck</p>
-                    <p class="authorName">Mark Manson</p>
-                    <div class="priceRating">
-                        <p class="cartBookPrice">Rs 394</p>
-                        <p class="cartBookRating"><i class="fa fa-star"></i> 4.5</p>
-                    </div>
-                    <div class="options bookOptions">
-                        <div class="qty addToCart">
-                            <button class="addToCartBtn"><i class="fa fa-cart-plus"
-                                    style="color: white; font-size: 1.1em;"></i>&nbsp;&nbsp;Add to cart</button>
-                        </div>
-                        <button class="bookmark" style="background-color: #673AB7; color: white; padding: 8px;"><i
-                                class="fa fa-trash" style="color: white;"></i>&nbsp;&nbsp;Remove</button>
-                    </div>
-                </div>
-            </div>
-            <div class="bookItem">
-                <div class="coverImgHolder">
-                    <a href="book.html"><img src="images/book1.jpeg" alt=""></a>
-                </div>
-                <div class="cartBookInfo">
-                    <p class="cartBookName">Rich Dad Poor Dad</p>
-                    <p class="authorName">Robert T kiyosaki</p>
-                    <div class="priceRating">
-                        <p class="cartBookPrice">Rs 499</p>
-                        <p class="cartBookRating"><i class="fa fa-star"></i> 4.9</p>
-                    </div>
-                    <div class="options bookOptions">
-                        <div class="qty addToCart">
-                            <button class="addToCartBtn"><i class="fa fa-cart-plus"
-                                    style="color: white; font-size: 1.1em;"></i>&nbsp;&nbsp;Add to cart</button>
-                        </div>
-                        <button class="bookmark" style="background-color: #673AB7; color: white; padding: 8px;"><i
-                                class="fa fa-trash" style="color: white;"></i>&nbsp;&nbsp;Remove</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <h4 id="NoBookmarkedMsg">No Bookmarked Book</h4>
-    </div>
-    <script src="js/main.js"></script>
+    <script type="module" src="js/api handling/constructBookmarkPage.js"></script>
 </body>
 
 </html>

@@ -51,7 +51,7 @@ function constructCartItems(data){
 let NameOfUser = "Priyansh Singh"; // ye data kaise nikalna hai api se wo dekhlena
 let userId = 1;
 
-async function ConstructCartPage(urlOne, isAuthenticated){
+async function constructCartPage(urlOne, isAuthenticated){
     utility.enableLoader(rootElement);
     let cartItemsHtml = await constructSection(urlOne,constructCartItems);
     let topbarHtml = constructTopBar('Cart','index.html','checkout.html');
@@ -82,6 +82,6 @@ async function ConstructCartPage(urlOne, isAuthenticated){
     utility.loadUtilityJs();    
 }   
 
-ConstructCartPage("https://jsonplaceholder.typicode.com/todos/1",true)
+constructCartPage("https://jsonplaceholder.typicode.com/todos/1",true)
   .then(() => console.log("prmoise resolved"))
   .catch((err) => console.log(err.message));
