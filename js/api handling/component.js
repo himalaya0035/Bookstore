@@ -136,3 +136,34 @@ export function constructTopBar(pageName,previousLink,NextLink) {
        )
    }
 }
+
+export function constructHomepageTopBar(){
+    return (
+        `
+        <div class="fixedPosition">
+        <div class="topBar">
+            <a href="#" class="sidebarToggler"><i class="fa fa-bars"
+                    style="font-size: 25px; font-weight: 100"></i></a>
+            <div class="searchBar">
+                <input type="text" spellcheck="false" name="" id="searchBox"
+                    placeholder="Search Books, Authors..." />
+                <a href="" class="searchBtn"><i class="fa fa-search" style="font-size: 15px"></i></a>
+            </div>
+            <a href="cart.html" class="cartToggler"><i class="fa fa-shopping-cart"
+                    style="font-size: 25px; font-weight: 100"></i></a>
+        </div>
+        <div class="categoriesPills">
+            <div class="pillsScroller">
+                <a href="genre.html" class="pill">Action</a>
+                <a href="genre.html" class="pill">Horror</a>
+                <a href="genre.html" class="pill">Fantasy</a>
+                <a href="genre.html" class="pill">Self help</a>
+                <a href="genre.html" class="pill">Science Fiction</a>
+                <a href="genre.html" class="pill">Young Adult</a>
+                <a href="genresList.html" class="more">More..</a>
+            </div>
+        </div>
+    </div>
+        `
+    )
+}
