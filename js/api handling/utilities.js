@@ -1,3 +1,6 @@
+import {postJsonData} from './constructSection.js';
+import {enableBtn,disableBtn} from './validationUtility.js'; 
+
 export function loadUtilityJs() {
     var sidebarToggler = document.getElementsByClassName("sidebarToggler")[0];
     var sidebar = document.getElementsByClassName("mobileSidebar")[0];
@@ -18,22 +21,90 @@ export function loadUtilityJs() {
     }
 }
 
+
+
+
 export function toggleButton(mainElementClass, toBeReplacedClass, checkClass, buttonInitialText, buttonFinalText) {
     var commonElement = document.getElementsByClassName(mainElementClass);
     for (let i = 0; i < commonElement.length; i++) {
-        commonElement[i].addEventListener('click', (e) => {
+        commonElement[i].addEventListener('click', async (e) => {
+           
             var ele = e.target;
+            disableBtn(ele)
+
             var child = ele.getElementsByTagName('i')[0];
-            if (child.classList.contains(checkClass)) {
-                ele.innerHTML = `<i class ="fa ${toBeReplacedClass}" style="color:white;"></i>` + ` ${buttonInitialText}`;
-            } else {
-                ele.innerHTML = `<i class ="fa ${checkClass}" style="color:white;"></i>` + ` ${buttonFinalText}`;
+            let url;
+            let obj;
+            
+            if (mainElementClass === 'addToCartBtn'){
+                // when you want to add item from cart
+                url = 'https://jsonplaceholder.typicode.com/posts';
+                obj = {
+                    title: 'foo',
+                    body: 'bar',
+                    userId: 1,
+                }
+                ele.classList.toggle('removeFromCartBtn')
             }
-            // api call here
-            if (window.location.href.indexOf('bookmarked') > -1 && mainElementClass == 'bookmark') {
+            else if (mainElementClass === 'addToCartBtn' && ele.classList.contains('removeFromCartBtn')){
+                // item already sdded to cart , now you want to remove it using the same button
+                url = 'https://jsonplaceholder.typicode.com/posts';
+                obj = {
+                    title: 'foo',
+                    body: 'bar',
+                    userId: 1,
+                }
+                ele.classList.toggle('removeFromCartBtn')
+            }
+            else if (mainElementClass === 'bookmark'){
+                // when you want to bookmark a book
+                url = 'https://jsonplaceholder.typicode.com/posts';
+                obj = {
+                    title: 'foo',
+                    body: 'bar',
+                    userId: 1,
+                }
+                ele.classList.toggle('removeFromBookmark')
+            }
+            else if (mainElementClass === 'bookmark' && ele.classList.contains('removeFromBookmark')){
+                // the book is already bookmarked and you want to remove it from bookmark using the same button
+                url = 'https://jsonplaceholder.typicode.com/posts';
+                obj = {
+                    title: 'foo',
+                    body: 'bar',
+                    userId: 1,
+                }
+                ele.classList.toggle('removeFromBookmark')
+            }
+            else if (mainElementClass === 'deleteBookmark'){
+                // jo api request isse just phle waale else if section me ki hai , wohi isme lgni hai
+                // yeh bhi bookmark htane ke liye hai pr khi doosri jgeh se
+                url = 'https://jsonplaceholder.typicode.com/posts';
+                obj = {
+                    title: 'foo',
+                    body: 'bar',
+                    userId: 1,
+                }
+            }
+            const isPostRequestOk = await postJsonData(url,obj);
+            enableBtn(ele)
+            if (isPostRequestOk && mainElementClass != 'deleteBookmark'){
+                 if (child.classList.contains(checkClass)) {
+                    ele.innerHTML = `<i class ="fa ${toBeReplacedClass}" style="color:white;"></i>` + ` ${buttonInitialText}`;
+                } else {
+                    ele.innerHTML = `<i class ="fa ${checkClass}" style="color:white;"></i>` + ` ${buttonFinalText}`;
+                }
+                
+            }
+            
+            else if (mainElementClass!= 'deleteBookmark'){
+                alert('Operation Failed, Try again')
+                return false;
+            }
+          
+            if (window.location.href.indexOf('bookmarked') > -1 && mainElementClass == 'deleteBookmark') {
                 let bookItem = ele.closest('.bookItem');
                 bookItem.remove();
-                //api call here
                 if (document.getElementsByClassName('bookList')[0].innerText.length == 0) {
                     document.getElementById('NoBookmarkedMsg').style.display = 'block';
                 }
@@ -42,6 +113,8 @@ export function toggleButton(mainElementClass, toBeReplacedClass, checkClass, bu
         })
     }
 }
+
+
 
 export function addScrollEffect() {
     var rellax = new Rellax('.rellax');
@@ -88,6 +161,7 @@ export function disableLoader(containerElement) {
     loader.style.visibility = 0;
     loader.style.opacity = 0;
 }
+
 
 
 

@@ -373,6 +373,10 @@ a:focus {
     text-overflow: ellipsis;
 }
 
+.addToCartBtn,.bookmark,.deleteBookmark {
+    transition: 0.5s;
+}
+
 .shapesHeading {
     display: inline-block;
     margin-top: 12px;

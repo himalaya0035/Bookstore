@@ -34,13 +34,13 @@ function  isContactOk(contact) {
     }
 }
 
-function disableBtn(ele) {
+export function disableBtn(ele) {
     ele.disabled = true;
     ele.style.background = '#cccccc';
     ele.style.color = '#666666';
 }
 
-function enableBtn(ele) {
+export function enableBtn(ele) {
     ele.disabled = false;
     ele.style.background = '#673AB7';
     ele.style.color = 'white';

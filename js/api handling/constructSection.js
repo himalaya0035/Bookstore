@@ -21,3 +21,23 @@ export async function constructSection(url,callback,sectionName) {
 
 
 
+
+export async function postJsonData(url,objdata){
+    try {
+        const response = await fetch(url,{
+                        method : 'POST',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                        body : JSON.stringify(objdata) 
+        })
+        if (response.status === 201 || response.status === 200){
+            return true;
+        }    
+    }
+    catch(err) {
+        console.log(err.message)
+        return false
+    }
+}

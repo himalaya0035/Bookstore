@@ -30,7 +30,7 @@ function constructBookmarkedList(data){
                             <button class="addToCartBtn"><i class="fa fa-cart-plus"
                                     style="color: white; font-size: 1.1em;"></i>&nbsp;&nbsp;Add to cart</button>
                         </div>
-                        <button class="bookmark" style="background-color: #673AB7; color: white; padding: 8px;"><i
+                        <button class="deleteBookmark" style="background-color: #673AB7; color: white; padding: 8px;"><i
                         class="fa fa-trash" style="color: white;"></i>&nbsp;&nbsp;Remove</button>
                     </div>
                 </div>
@@ -67,7 +67,7 @@ async function constructBookmarkPage(urlOne,isAuthenticated){
     rootElement.innerHTML = sidebarHtml + contentWrapper;
     utility.disableLoader(rootElement);
     utility.loadUtilityJs();
-    utility.toggleButton("bookmark","fa-bookmark","fa-bookmark-o", "Bookmarked","Bookmark");
+    utility.toggleButton("deleteBookmark","fa-bookmark","fa-bookmark-o", "Bookmarked","Bookmark");
     utility.toggleButton("addToCartBtn","fa-check","fa-cart-plus","Added","Add to Cart");
 }
 

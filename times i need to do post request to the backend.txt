@@ -1,0 +1,20 @@
+add to cart, 
+add bookmark
+remove bookmark
+increase cart Quantity
+decrease cart quantity
+delete cart item
+post delivery address during order processing
+search item request
+save button on profile page
+during change password, 4 times
+updating email
+deleting account
+logout
+login
+signup
+while making payment (if needed , i dont know )
+
+
+
+
