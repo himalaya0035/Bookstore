@@ -21,9 +21,6 @@ export function loadUtilityJs() {
     }
 }
 
-
-
-
 export function toggleButton(mainElementClass, toBeReplacedClass, checkClass, buttonInitialText, buttonFinalText) {
     var commonElement = document.getElementsByClassName(mainElementClass);
     for (let i = 0; i < commonElement.length; i++) {
@@ -113,8 +110,6 @@ export function toggleButton(mainElementClass, toBeReplacedClass, checkClass, bu
         })
     }
 }
-
-
 
 export function addScrollEffect() {
     var rellax = new Rellax('.rellax');

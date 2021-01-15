@@ -1,6 +1,6 @@
-add to cart, 
-add bookmark
-remove bookmark
+add to cart, (done)
+add bookmark (done)
+remove bookmark (done)
 increase cart Quantity
 decrease cart quantity
 delete cart item

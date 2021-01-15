@@ -93,6 +93,7 @@
 }
 .qty button i, .options button i,.options button {
     color: #504f4f;
+    transition: 0.5s;
 }
 .options button{
     padding: 2px 3px;

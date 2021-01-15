@@ -1,24 +1,63 @@
-function manageQuantity(e){
+import {postJsonData} from './constructSection.js';
+import {disableBtn, enableBtn} from './validationUtility.js'
+
+
+async function manageQuantity(e){
     let clickedBtn = e.target.parentElement;
     var parent = clickedBtn.parentElement;
     let input = parent.getElementsByClassName('itemQuantity')[0];
+   
     if (input.value == '') {
         input.value = 1;
     }
     let currentQty = parseInt(input.value);
+    let url;
+    let obj;
+    withoutBackgroundDisableBtn(clickedBtn);
     if(clickedBtn.classList.contains('increaseQuantity')){
-        input.value = currentQty + 1;
+        // increase quantity post request here
+        
+        url = 'https://jsonplaceholder.typicode.com/posts';
+        obj = {
+            title: 'foo',
+            body: 'bar',
+            userId: 1,
+        }
+        const isPostRequestOk = await postJsonData(url,obj);
+        if (isPostRequestOk){
+             input.value = currentQty + 1;
+        }
+        else {
+            alert(`couldn't increase quanity, request failed`)
+        }
+        withoutBackgroundEnableBtn(clickedBtn)
         if(input.value > 10){
             input.value = 10;
             alert('Max Quantity is 10')
          }
+
     }
     else if(clickedBtn.classList.contains('decreaseQuantity')){
-        input.value = currentQty -1;
+        // decrease quantity post request here
+        url = 'https://jsonplaceholder.typicode.com/posts';
+        obj = {
+            title: 'foo',
+            body: 'bar',
+            userId: 1,
+        }
+        const isPostRequestOk = await postJsonData(url,obj);
+        if (isPostRequestOk){
+             input.value = currentQty - 1;
+        }
+        else {
+            alert(`couldn't decrease quanity, request failed`)
+        }
+        withoutBackgroundEnableBtn(clickedBtn)
         if(input.value < 1){
             input.value = 1;
         }
     }
+
     var prices = document.getElementsByClassName('cartBookPrice');
     getTotalQuantityAndAmount(prices);
 }
@@ -46,7 +85,12 @@ export function orderProcessingUtility(){
     var inputElements = document.getElementsByClassName('itemQuantity');
     var prices = document.getElementsByClassName('cartBookPrice');
     var deleteBtns = document.getElementsByClassName('deleteCartItem');
-
+    if (deleteBtns.length === 0){
+        document.getElementById('NoBookmarkedMsg').style.display = 'block';
+    }
+    else {
+        document.getElementById('NoBookmarkedMsg').style.display = 'none';
+    }
      for (let i=0;i<increase.length;i++){
         increase[i].addEventListener('click',manageQuantity);
         decrease[i].addEventListener('click',manageQuantity);
@@ -61,11 +105,36 @@ export function orderProcessingUtility(){
     }
     getTotalQuantityAndAmount(prices);
     for (let i=0;i<deleteBtns.length;i++){
-        deleteBtns[i].addEventListener('click',(e)=>{
+        deleteBtns[i].addEventListener('click', async (e)=>{
             var clickedDeleteBtn = e.target;
+            
             var cartItem = clickedDeleteBtn.closest('.item');
             // api call here
+            let url = 'https://jsonplaceholder.typicode.com/posts';
+            let obj = {
+                title: 'foo',
+                body: 'bar',
+                userId: 1,
+            }
+            const isPostRequestOk = await postJsonData(url,obj)
             cartItem.remove();
+         
+            getTotalQuantityAndAmount(prices);
+            if (deleteBtns.length === 0){
+                document.getElementById('NoBookmarkedMsg').style.display = 'block';
+            }
+            else {
+                document.getElementById('NoBookmarkedMsg').style.display = 'none';
+            }
         })
     }
+}
+
+function withoutBackgroundEnableBtn(btn){
+    btn.disabled = false;
+    btn.style.color = '#504f4f';
+}
+function withoutBackgroundDisableBtn(btn){
+    btn.disabled = true;
+    btn.style.color = 'red';
 }

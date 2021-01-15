@@ -60,6 +60,7 @@ async function constructCartPage(urlOne, isAuthenticated){
                 <div class="contentWrapper">
                         ${topbarHtml}
                         ${cartItemsHtml}
+                        <h4 id="NoBookmarkedMsg">Cart is empty</h4>
                         <div class="bottomPart">
                             <div class="totalQty">
                                 <h3>Quantity :&nbsp;</h3>
@@ -73,6 +74,7 @@ async function constructCartPage(urlOne, isAuthenticated){
                         <div class="moveToCheckout" style="display: flex; align-items: center; justify-content: center;">
                              <a href="checkout.html" style="color: white; text-decoration: none; font-weight: bold; font-size: 1.17em; display: block;">Checkout Now <i class="fa fa-angle-right" style="font-weight: normal;"></i></a>
                         </div>
+
                 </div>
                 `
     
