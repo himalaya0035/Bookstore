@@ -6,14 +6,13 @@ async function manageQuantity(e){
     let clickedBtn = e.target.parentElement;
     var parent = clickedBtn.parentElement;
     let input = parent.getElementsByClassName('itemQuantity')[0];
-   
     if (input.value == '') {
         input.value = 1;
     }
     let currentQty = parseInt(input.value);
     let url;
     let obj;
-    withoutBackgroundDisableBtn(clickedBtn);
+    withoutBackgroundDisableBtn(e.target);
     if(clickedBtn.classList.contains('increaseQuantity')){
         // increase quantity post request here
         
@@ -30,7 +29,7 @@ async function manageQuantity(e){
         else {
             alert(`couldn't increase quanity, request failed`)
         }
-        withoutBackgroundEnableBtn(clickedBtn)
+        withoutBackgroundEnableBtn(e.target);
         if(input.value > 10){
             input.value = 10;
             alert('Max Quantity is 10')
@@ -52,7 +51,7 @@ async function manageQuantity(e){
         else {
             alert(`couldn't decrease quanity, request failed`)
         }
-        withoutBackgroundEnableBtn(clickedBtn)
+        withoutBackgroundEnableBtn(e.target);
         if(input.value < 1){
             input.value = 1;
         }
@@ -107,8 +106,9 @@ export function orderProcessingUtility(){
     for (let i=0;i<deleteBtns.length;i++){
         deleteBtns[i].addEventListener('click', async (e)=>{
             var clickedDeleteBtn = e.target;
-            
+            console.log(e.target)
             var cartItem = clickedDeleteBtn.closest('.item');
+            disableDeleteBtn(clickedDeleteBtn);
             // api call here
             let url = 'https://jsonplaceholder.typicode.com/posts';
             let obj = {
@@ -118,7 +118,7 @@ export function orderProcessingUtility(){
             }
             const isPostRequestOk = await postJsonData(url,obj)
             cartItem.remove();
-         
+            enableDeleteBtn(clickedDeleteBtn);
             getTotalQuantityAndAmount(prices);
             if (deleteBtns.length === 0){
                 document.getElementById('NoBookmarkedMsg').style.display = 'block';
@@ -132,9 +132,19 @@ export function orderProcessingUtility(){
 
 function withoutBackgroundEnableBtn(btn){
     btn.disabled = false;
-    btn.style.color = '#504f4f';
+    btn.style.transform = 'rotate(0deg)';
+    btn.classList.remove('fa-spinner')
 }
 function withoutBackgroundDisableBtn(btn){
     btn.disabled = true;
-    btn.style.color = 'red';
+    btn.classList.add('fa-spinner');
+    btn.style.transform = 'rotate(180deg)';
+}
+function disableDeleteBtn(btn){
+    btn.disabled = true;
+    btn.style.color = '#b9b7b7';
+}
+function enableDeleteBtn(btn){
+    btn.disabled = false;
+    btn.style.color = '#504F4F'
 }

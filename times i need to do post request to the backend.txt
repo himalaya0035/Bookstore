@@ -1,9 +1,9 @@
 add to cart, (done)
 add bookmark (done)
 remove bookmark (done)
-increase cart Quantity
-decrease cart quantity
-delete cart item
+increase cart Quantity (done)
+decrease cart quantity (done)
+delete cart item (done)
 post delivery address during order processing
 search item request
 save button on profile page
