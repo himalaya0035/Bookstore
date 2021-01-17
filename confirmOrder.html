@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Order</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/orderProcessing.css">
+    <style>
+        .shippingAddress,.cartDescription,.expectedDelivery,.promoCode {
+            padding: 10px; margin: 10px; 
+            /* border: 1px solid #808080; */
+            box-shadow: 0px 0px 5px #673AB7;
+
+        }
+        .promoCode {
+            display: flex;
+        }
+        .promoCode input {
+            padding: 5px 10px 5px 10px;
+            max-width: 500px;
+            width: 100%;
+            /* border: 1px solid #673AB7; */
+            /* border-radius: 0px; */
+        }
+        .promoCode button {
+            padding: 5px;
+            /* border-radius: 0px; */
+            /* border: 1px solid white; */
+            background-color: #673AB7;
+            color: white;
+        }
+        .descriptionItems{
+            display: flex;
+            justify-content: space-between;
+
+        }
+        .shippingAddress p,.descriptionItems p,.expectedDelivery p {
+            font-family: 'Poppins';
+            font-size: 15px;
+            color: rgb(51, 51, 51);
+        }
+        .total {
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="mobileSidebar">
+        <div class="top_section_sidebar">
+            <div class="userInfo">
+                <div class="imgbox4">
+                    <a href="#"><img src="images/professor.jpg" alt=""></a>
+                </div>
+                <h3>Sergio Marquina</h3>
+        
+            </div>
+            <div class="cross">
+                <i class="fa fa-close "></i>
+            </div>
+        </div>
+        <hr>
+        <ul class="sidebarList">
+            <li><a href=""><i class="fa fa-bar-chart"></i> Stats</a></li>
+            <li><a href=""><i class="fa fa-bookmark"></i> Bookmarked</a></li>
+            <li><a href=""><i class="fa fa-file"></i> Drafts</a></li>
+            <li><a href=""><i class="fa fa-plus"></i> Add Topics</a></li>
+        </ul>
+        <hr>
+        <ul class="sidebarList">
+            <li><a href=""><i class="fa fa-user"></i> Accounts</a></li>
+            <li><a href=""><i class="fa fa-lock"></i> Privacy</a></li>
+        </ul>
+        <hr>
+        <ul class="sidebarList">
+            <li><a href=""><i class="fa fa-lightbulb-o"></i> Change mode</a></li>
+            <li><a href=""><i class="fa fa-sign-out"></i> Logout</a></li>
+        </ul>
+    </div>
+    <div class="contentWrapper">
+        <div class="fixedPosition">
+            <div class="topBar">
+                <a href="#" class="sidebarToggler"><i class="fa fa-bars"
+                        style="font-size: 20px; font-weight: 100;"></i></a>
+                        <div class="searchBar">
+                            <h3>Confirm order</h3>
+                        </div>
+                <a href="checkout.html" class="backBtn"><i class="fa fa-angle-left"
+                        style="font-size: 20px; font-weight: 100;"></i></a>
+            </div>
+        </div>
+        <div class="shippingAddress">
+            <p>Deliver To : </p>
+            <p id="name">Himalaya Gupta</p>
+            <p id="phoneNo">+91 7983154929</p>
+            <p id="email">guptahimalaya@gmail.com</p>
+            <p id="address">House no 46, Mohalla Sahukara Fatehganj west Bareilly, U.P - 243501</p>
+        </div>
+        <div class="promoCode">
+            <input type="text" placeholder="PROMO CODE #BIBLIOPHILE">
+            <button>Apply</button>
+        </div>
+        <div class="cartDescription">
+            <div class="descriptionItems">
+                <p>Quantity</p>
+                <p>x4</p>
+            </div>
+            <div class="descriptionItems">
+                <p>Total Amount</p>
+                <p id="totalAmt">Rs 2999</p>
+            </div>
+            <div class="descriptionItems">
+                <p>CGST/SCGT (0%)</p>
+                <p>Rs 0</p>
+            </div>
+            <div class="descriptionItems">
+                <p>Discount</p>
+                <p id="discount">Rs 0</p>
+            </div>
+            <div class="descriptionItems">
+                <p>Delivery Charge</p>
+                <p id="deliveryCharge">Rs 40</p>
+            </div>
+            <div class="descriptionItems total">
+                <p>Total</p>
+                <p>Rs 3039</p>
+            </div>
+        </div>
+        <div class="expectedDelivery">
+            <p>Get it order delivered by <span style="font-weight: bolder;">Tuesday, 19 Jan 8am -6pm</span></p>
+        </div>
+        <div class="placeOrder" style="display: flex; justify-content: center; margin: 20px 10px 10px 10px;">
+            <a href="#" style="text-decoration: none; background-color: #673AB7; color: white; padding: 10px; border-radius: 1px solid white; width: 100%; text-align: center; box-shadow: 0px 0px 3px #673AB7;">Place Order</a>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

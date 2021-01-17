@@ -72,7 +72,7 @@ async function constructCheckoutPage(urlOne,isAuthenticated){
                 ${topbarHtml}
                 ${deliveryFormHtml}
                 <div class="moveToCheckout proceedToPayment" style="display: flex; align-items: center; justify-content: center;">
-                    <a href="payment.html" style="color: white; text-decoration: none; font-weight: bold; font-size: 1.17em; display: block;">Proceed For Payment <i class="fa fa-angle-right" style="font-weight: normal;"></i></a>
+                    <a href="confirmOrder.html" style="color: white; text-decoration: none; font-weight: bold; font-size: 1.17em; display: block;">Confirm Order <i class="fa fa-angle-right" style="font-weight: normal;"></i></a>
                 </div>
             </div>
     `
