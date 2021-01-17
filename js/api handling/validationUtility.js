@@ -1,4 +1,6 @@
-function isEmailOK(email) {
+import { postJsonData } from "./constructSection.js";
+
+export function isEmailOK(email) {
     if (email.value.includes('@') && (email.value.includes('.com') || email.value.includes('.mail'))) {
         removeErrorMsg();
         return true
@@ -40,17 +42,17 @@ export function disableBtn(ele) {
     ele.style.color = '#666666';
 }
 
-export function enableBtn(ele) {
+export function enableBtn(ele) { 
     ele.disabled = false;
     ele.style.background = '#673AB7';
     ele.style.color = 'white';
 }
 
-function displayErrorMsg(msg) {
+export function displayErrorMsg(msg) {
     document.getElementById('message').innerText = msg;
 }
 
-function removeErrorMsg() {
+export function removeErrorMsg() {
     document.getElementById('message').innerText = '';
 }
 
@@ -268,9 +270,22 @@ export function validationUtility(){
                 validateFirstSection(saveBtn);
             })
         }
-        saveBtn.onclick = () => {
-            // make awaiting api call here;
-            window.location.reload();
+        saveBtn.onclick = async () => {
+            let url = 'https://jsonplaceholder.typicode.com/posts';
+            let obj = {
+                title: 'foo',
+                body: 'bar',
+                userId: 1,
+            }
+            disableBtn(saveBtn);
+            const isPostRequestOk = await postJsonData(url,obj);
+            enableBtn(saveBtn)
+            if(isPostRequestOk){
+                window.location.reload();
+            }
+            else {
+                alert(`couldn't update profile , try again later`);
+            }
         }
     }
 }

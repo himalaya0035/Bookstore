@@ -1,5 +1,17 @@
-import {postJsonData} from './constructSection.js';
-import {enableBtn,disableBtn} from './validationUtility.js'; 
+import {
+    postJsonData
+} from './constructSection.js';
+import {
+    disableDeleteBtn,
+    enableDeleteBtn
+} from './orderProcessingUtilities.js';
+import {
+    enableBtn,
+    disableBtn,
+    isEmailOK,
+    displayErrorMsg,
+    removeErrorMsg
+} from './validationUtility.js';
 
 export function loadUtilityJs() {
     var sidebarToggler = document.getElementsByClassName("sidebarToggler")[0];
@@ -25,15 +37,15 @@ export function toggleButton(mainElementClass, toBeReplacedClass, checkClass, bu
     var commonElement = document.getElementsByClassName(mainElementClass);
     for (let i = 0; i < commonElement.length; i++) {
         commonElement[i].addEventListener('click', async (e) => {
-           
+
             var ele = e.target;
             disableBtn(ele)
 
             var child = ele.getElementsByTagName('i')[0];
             let url;
             let obj;
-            
-            if (mainElementClass === 'addToCartBtn'){
+
+            if (mainElementClass === 'addToCartBtn') {
                 // when you want to add item from cart
                 url = 'https://jsonplaceholder.typicode.com/posts';
                 obj = {
@@ -42,8 +54,7 @@ export function toggleButton(mainElementClass, toBeReplacedClass, checkClass, bu
                     userId: 1,
                 }
                 ele.classList.toggle('removeFromCartBtn')
-            }
-            else if (mainElementClass === 'addToCartBtn' && ele.classList.contains('removeFromCartBtn')){
+            } else if (mainElementClass === 'addToCartBtn' && ele.classList.contains('removeFromCartBtn')) {
                 // item already sdded to cart , now you want to remove it using the same button
                 url = 'https://jsonplaceholder.typicode.com/posts';
                 obj = {
@@ -52,8 +63,7 @@ export function toggleButton(mainElementClass, toBeReplacedClass, checkClass, bu
                     userId: 1,
                 }
                 ele.classList.toggle('removeFromCartBtn')
-            }
-            else if (mainElementClass === 'bookmark'){
+            } else if (mainElementClass === 'bookmark') {
                 // when you want to bookmark a book
                 url = 'https://jsonplaceholder.typicode.com/posts';
                 obj = {
@@ -62,8 +72,7 @@ export function toggleButton(mainElementClass, toBeReplacedClass, checkClass, bu
                     userId: 1,
                 }
                 ele.classList.toggle('removeFromBookmark')
-            }
-            else if (mainElementClass === 'bookmark' && ele.classList.contains('removeFromBookmark')){
+            } else if (mainElementClass === 'bookmark' && ele.classList.contains('removeFromBookmark')) {
                 // the book is already bookmarked and you want to remove it from bookmark using the same button
                 url = 'https://jsonplaceholder.typicode.com/posts';
                 obj = {
@@ -72,8 +81,7 @@ export function toggleButton(mainElementClass, toBeReplacedClass, checkClass, bu
                     userId: 1,
                 }
                 ele.classList.toggle('removeFromBookmark')
-            }
-            else if (mainElementClass === 'deleteBookmark'){
+            } else if (mainElementClass === 'deleteBookmark') {
                 // jo api request isse just phle waale else if section me ki hai , wohi isme lgni hai
                 // yeh bhi bookmark htane ke liye hai pr khi doosri jgeh se
                 url = 'https://jsonplaceholder.typicode.com/posts';
@@ -83,22 +91,20 @@ export function toggleButton(mainElementClass, toBeReplacedClass, checkClass, bu
                     userId: 1,
                 }
             }
-            const isPostRequestOk = await postJsonData(url,obj);
+            const isPostRequestOk = await postJsonData(url, obj);
             enableBtn(ele)
-            if (isPostRequestOk && mainElementClass != 'deleteBookmark'){
-                 if (child.classList.contains(checkClass)) {
+            if (isPostRequestOk && mainElementClass != 'deleteBookmark') {
+                if (child.classList.contains(checkClass)) {
                     ele.innerHTML = `<i class ="fa ${toBeReplacedClass}" style="color:white;"></i>` + ` ${buttonInitialText}`;
                 } else {
                     ele.innerHTML = `<i class ="fa ${checkClass}" style="color:white;"></i>` + ` ${buttonFinalText}`;
                 }
-                
-            }
-            
-            else if (mainElementClass!= 'deleteBookmark'){
+
+            } else if (mainElementClass != 'deleteBookmark') {
                 alert('Operation Failed, Try again')
                 return false;
             }
-          
+
             if (window.location.href.indexOf('bookmarked') > -1 && mainElementClass == 'deleteBookmark') {
                 let bookItem = ele.closest('.bookItem');
                 bookItem.remove();
@@ -157,6 +163,82 @@ export function disableLoader(containerElement) {
     loader.style.opacity = 0;
 }
 
+export function loadAccountModalJs() {
+    var modal = document.getElementsByClassName("modal");
+
+    var btn = document.getElementsByClassName("myBtn");
+
+    var span = document.getElementsByClassName("close");
 
 
+    for (let i = 0; i < btn.length; i++) {
+        btn[i].onclick = function () {
+            modal[i].style.display = "block";
+        }
+        span[i].onclick = function () {
+            modal[i].style.display = "none";
+        }
+    }
 
+    var emailInput = document.getElementById('emailAddress');
+    var confirmPasswordDelete = document.getElementById('confirmPasswordDelete');
+    var updateEmailBtn = document.getElementById('updateEmailBtn')
+    var deleteAccountBtn = document.getElementById('deleteAccountBtn');
+    updateEmailBtn.onclick = async () => {
+        if (!isEmailOK(emailInput)) {
+            displayErrorMsg('Email is not valid');
+         
+            return;
+        } else {
+        
+            removeErrorMsg();
+            let url = 'https://jsonplaceholder.typicode.com/posts';
+            let obj = {
+                title: 'foo',
+                body: 'bar',
+                userId: 1,
+            }
+            disableDeleteBtn(updateEmailBtn)
+            const isPostRequestOk = await postJsonData(url, obj);
+            if (isPostRequestOk) {
+                document.getElementById('message').style.color = '#673AB7';
+                displayErrorMsg('Email Updated succesfully')
+                setTimeout(() => {
+                    span[0].click();
+                }, 2000);
+            } else {
+                displayErrorMsg(`couldn't update email, try again later`);
+            }
+            enableDeleteBtn(updateEmailBtn, '#000000');
+        }
+
+    }
+    deleteAccountBtn.onclick = async () => {
+        if (confirmPasswordDelete.value.length < 8) {
+            document.getElementById('message2').innerText = 'Password is too short';
+            return;
+        } else {
+        
+            document.getElementById('message2').innerText = '';
+            let url = 'https://jsonplaceholder.typicode.com/posts';
+            let obj = {
+                title: 'foo',
+                body: confirmPasswordDelete.value,
+                userId: 1,
+            }
+            disableDeleteBtn(deleteAccountBtn)
+            const isPostRequestOk = await postJsonData(url, obj);
+            if (isPostRequestOk) {
+                document.getElementById('message').style.color = '#673AB7';
+                console.log('chl bhenchod');
+                setTimeout(() => {
+                    window.location.replace('http://127.0.0.1:5501/index.html') // jha bhi redirect krna ho daal diyo,
+                }, 1000);
+            } else {
+                document.getElementById('message2').innerText = 'Password is incorrect, try again';
+            }
+            enableDeleteBtn(deleteAccountBtn, '#000000');
+        }
+
+    }
+}

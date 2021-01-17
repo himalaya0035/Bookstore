@@ -5,11 +5,11 @@ increase cart Quantity (done)
 decrease cart quantity (done)
 delete cart item (done)
 post delivery address during order processing
-search item request
-save button on profile page
-during change password, 4 times
-updating email
-deleting account
+search item request 
+save button on profile page (done)
+during change password, 2 times
+updating email (done)
+deleting account (done)
 logout
 login
 signup

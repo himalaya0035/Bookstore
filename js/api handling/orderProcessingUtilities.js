@@ -118,7 +118,7 @@ export function orderProcessingUtility(){
             }
             const isPostRequestOk = await postJsonData(url,obj)
             cartItem.remove();
-            enableDeleteBtn(clickedDeleteBtn);
+            enableDeleteBtn(clickedDeleteBtn,'#504F4F');
             getTotalQuantityAndAmount(prices);
             if (deleteBtns.length === 0){
                 document.getElementById('NoBookmarkedMsg').style.display = 'block';
@@ -140,11 +140,11 @@ function withoutBackgroundDisableBtn(btn){
     btn.classList.add('fa-spinner');
     btn.style.transform = 'rotate(180deg)';
 }
-function disableDeleteBtn(btn){
+export function disableDeleteBtn(btn){
     btn.disabled = true;
     btn.style.color = '#b9b7b7';
 }
-function enableDeleteBtn(btn){
+export function enableDeleteBtn(btn,color){
     btn.disabled = false;
-    btn.style.color = '#504F4F'
+    btn.style.color = color
 }

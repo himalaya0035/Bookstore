@@ -20,7 +20,7 @@ export function constructSidebar(isAuthenticated,userId,NameOfUser){
                     <a href="index.html" aria-label="visit homepage"><i class="fa fa-home" ></i> Home</a>
                 </li>
                 <li>
-                    <a href="" id="${userId}" aria-label="check your orders"><i class="fa fa-file"></i> Your Orders</a>
+                    <a href="orders.html" id="${userId}" aria-label="check your orders"><i class="fa fa-file"></i> Your Orders</a>
                 </li>
                 <li>
                     <a href="cart.html" aria-label="visit cart "><i class="fa fa-shopping-cart" ></i> View Cart</a>
@@ -156,8 +156,8 @@ export function constructHomepageTopBar(){
             <div class="pillsScroller">
                 <a href="genre.html" aria-label="view Action books" class="pill">Action</a>
                 <a href="genre.html" aria-label="view Adventure books" class="pill">Adventure</a>
-                <a href="genre.html" aria-label="view horror books" class="pill">Horror</a>
-                <a href="genre.html" aria-label="view Fanatasy books" class="pill">Fantasy</a>
+                <a href="genre.html" aria-label="view Fantasy books" class="pill">Fantasy</a>
+                <a href="genre.html" aria-label="view mythology books" class="pill">Mythology</a>
                 <a href="genre.html" aria-label="view Self Help books" class="pill">Self help</a>
                 <a href="genre.html" aria-label="view Science fiction books" class="pill">Science Fiction</a>
                 <a href="genre.html" aria-label="view Young Adult books" class="pill">Young Adult</a>
