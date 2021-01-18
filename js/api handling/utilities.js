@@ -242,3 +242,97 @@ export function loadAccountModalJs() {
 
     }
 }
+
+function calculateTotalAmount(discountPercent){
+    var cartTotalString = document.getElementById('cartTotal');
+    var cartTotalInt = parseInt(cartTotalString.innerText.replace('Rs ',''));
+    var discount  = document.getElementById('discount')
+    var discountValue = discount.innerText.replace('Rs ', '');
+    var discountValueInt;
+    if (discountPercent){
+        discountValueInt = parseInt((cartTotalInt * discountPercent ) / 100);
+        discount.innerText = 'Rs ' + discountValueInt;
+    }
+    else {
+        discountValueInt = parseInt(discountValue);
+    }
+    var totalAmt = cartTotalInt - discountValueInt + 40;
+    document.getElementById('totalAmt').innerText = 'Rs ' + totalAmt;
+}
+
+function setExpectedDeliveryDate(){
+    var d = new Date();
+    d.setDate(d.getDate() + 2);
+    var stringDate = d.toString();
+    var expectedDate = stringDate.slice(0,3) + ', ' +  stringDate.slice(8,10) + ' ' + stringDate.slice(4,7) + ' 8am - 6pm';
+    document.getElementById('fillDeliveryDate').innerText = expectedDate;
+}
+
+export function loadOrderTotalJs(){
+   calculateTotalAmount();
+   setExpectedDeliveryDate();
+   var promocode = document.getElementById('promocodeinput');
+   var applyButton = document.getElementById('applypromocode')
+   var placeorderbtn = document.getElementById('placeOrder');
+   applyButton.onclick = async () => {
+       
+        if (promocode.value.length < 3){
+            alert('Invalid Promocode');
+            return false;
+        }
+        else {
+            let url = 'https://jsonplaceholder.typicode.com/posts';
+            let obj = {
+                title: 'foo',
+                body: 'bar',
+                userId: 1,
+                // object here would be - code : promocode.value
+            }
+            disableBtn(applyButton)
+            const isPostRequestOk = await postJsonData(url,obj);
+            if (isPostRequestOk){
+                var discountPercent =parseInt(promocode.value.replace(/[^0-9\.]/g, ''), 10);
+                calculateTotalAmount(discountPercent)
+                
+            }
+            else {
+                alert('Invalid Promocode');
+                
+            }
+            enableBtn(applyButton)
+        }
+   }
+   placeorderbtn.onclick = async () => {
+    let url = 'https://jsonplaceholder.typicode.com/posts';
+    let obj = {
+        title: 'foo',
+        body: 'bar',
+        userId: 1,
+        // object here would be - code : promocode.value
+    }
+    const isPostRequestOk = postJsonData(url,obj);
+    disableBtn(placeorderbtn);
+    if (isPostRequestOk) {
+        window.location.replace('http://127.0.0.1:5501/index.html');    
+    }
+    else {
+        alert(`couldn't place order`);
+    }
+
+   }
+   // abhi smj me nhi aa rha ki kya kru place order ke baad, payment gateway khulna chaiye yha pr
+   // wo dekhenge kaise kre
+}
+
+export function manageSearchResults(){
+    var searchBox = document.getElementById('searchBox');
+    var searchResults = document.getElementById('searchResults');
+    searchBox.addEventListener('input', () => {
+        if (searchBox.value.length > 0){
+            searchResults.style.display = 'block';
+        }
+        else {
+            searchResults.style.display = 'none';
+        }
+    })
+}

@@ -9,6 +9,7 @@ var contentWrapper;
 
 
 function constructCartItems(data){
+    
     // cart items ki length yha nikalana
     var cartItems = "";
     for (let i=0;i<2;i++){
@@ -84,6 +85,6 @@ async function constructCartPage(urlOne, isAuthenticated){
     utility.loadUtilityJs();    
 }   
 
-constructCartPage("https://jsonplaceholder.typicode.com/todos/1",true)
+constructCartPage("./js/api handling/sample.json",true)
   .then(() => console.log("prmoise resolved"))
   .catch((err) => console.log(err.message));

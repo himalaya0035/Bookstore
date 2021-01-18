@@ -132,14 +132,15 @@ export function orderProcessingUtility(){
 
 function withoutBackgroundEnableBtn(btn){
     btn.disabled = false;
-    btn.style.transform = 'rotate(0deg)';
+    btn.style.animation = 'none';
     btn.classList.remove('fa-spinner')
 }
 function withoutBackgroundDisableBtn(btn){
     btn.disabled = true;
     btn.classList.add('fa-spinner');
-    btn.style.transform = 'rotate(180deg)';
+    btn.style.animation = 'spinInfinitely 0.4s linear 0s infinite';
 }
+// well done himalaya
 export function disableDeleteBtn(btn){
     btn.disabled = true;
     btn.style.color = '#b9b7b7';

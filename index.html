@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <title>BookStore</title>
     <link rel="stylesheet" href="css/main.css" />
+    
     <style>
         .sidebarToggler,
         .cartToggler {
@@ -21,6 +22,55 @@
         ::placeholder {
             color: white;
         }
+    </style>
+    <style>
+        *{
+  margin:0px;
+  padding:0px;
+}
+#searchResults {
+  max-width: 720px;
+  width:100%;
+  padding:10px;
+  position: fixed;
+  top:54px;
+  background-color: white;
+  z-index: 100;
+  left: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  box-shadow: 0px 4px 3px #808080;
+  display: none;
+  /* border:1px solid #808080; */
+}
+
+.result {
+  display: flex;
+  /* align-items: center; */
+  border-bottom:1px solid #808080;
+  padding:10px;
+}
+.result:last-of-type {
+    border-bottom: none;
+}
+.resultImg {
+  margin-right:15px;
+  background: #808080;
+  height: 30px;
+  width: 30px;
+}
+.resultImg img {
+  height: 30px;
+  width: 30px;
+  object-fit: cover;
+  object-position: top;
+  box-shadow: 0px 0px 5px #808080;
+}
+.resultName h4 {
+  font-weight:400;
+  font-family: 'Poppins';
+  color:rgb(14, 13, 13);
+}
     </style>
     <link rel="stylesheet" href="css/authors.css">
 </head>
