@@ -31,27 +31,29 @@
 #searchResults {
   max-width: 720px;
   width:100%;
-  padding:10px;
+  /* padding:10px; */
   position: fixed;
   top:54px;
   background-color: white;
   z-index: 100;
   left: 0px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  box-shadow: 0px 4px 3px #808080;
-  display: none;
-  /* border:1px solid #808080; */
+  /* display: none; */
+
 }
 
 .result {
   display: flex;
   /* align-items: center; */
-  border-bottom:1px solid #808080;
+  /* border:1px solid #808080; */
+  border-bottom:1px solid #673AB7 ;
   padding:10px;
+  background: white;
+  margin-bottom: 1px;
+  border-left: 0px;
+  border-right: 0px;
 }
-.result:last-of-type {
-    border-bottom: none;
+.result:first-of-type {
+    border-top: none;
 }
 .resultImg {
   margin-right:15px;
@@ -67,7 +69,7 @@
   box-shadow: 0px 0px 5px #808080;
 }
 .resultName h4 {
-  font-weight:400;
+  font-weight:bold;
   font-family: 'Poppins';
   color:rgb(14, 13, 13);
 }

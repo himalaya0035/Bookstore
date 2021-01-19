@@ -1,38 +1,28 @@
 {
-    "quiz": {
-        "sport": {
-            "q1": {
-                "question": "Which one is correct team name in NBA?",
-                "options": [
-                    "New York Bulls",
-                    "Los Angeles Kings",
-                    "Golden State Warriros",
-                    "Huston Rocket"
-                ],
-                "answer": "Huston Rocket"
-            }
+    "results" : [
+        {
+            "name" : "Subtle art of not giving a fuck the hfj hfjhj jsdgfh gfhdg hg gfhsd fghdsg",
+            "imgUrl" : "http://127.0.0.1:5501/images/book2.jpg"
         },
-        "maths": {
-            "q1": {
-                "question": "5 + 7 = ?",
-                "options": [
-                    "10",
-                    "11",
-                    "12",
-                    "13"
-                ],
-                "answer": "12"
-            },
-            "q2": {
-                "question": "12 - 8 = ?",
-                "options": [
-                    "1",
-                    "2",
-                    "3",
-                    "4"
-                ],
-                "answer": "4"
-            }
+        {
+            "name" : "Sonnets",
+            "imgUrl" : "http://127.0.0.1:5501/images/book3.jpg"
+        },
+        {
+            "name" : "Spiritbound",
+            "imgUrl" : "http://127.0.0.1:5501/images/book4.jpg"
+        },
+        {
+            "name" : "Slaughterhouse",
+            "imgUrl" : "http://127.0.0.1:5501/images/book5.jpg"
+        },
+        {
+            "name" : "Shadow Kiss",
+            "imgUrl" : "http://127.0.0.1:5501/images/book6.jpg"
+        },
+        {
+            "name" : "Song to wake to",
+            "imgUrl" : "http://127.0.0.1:5501/images/book7.jpg"
         }
-    }
+    ]
 }

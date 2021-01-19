@@ -12,6 +12,7 @@ import {
     displayErrorMsg,
     removeErrorMsg
 } from './validationUtility.js';
+import {constructSection} from './constructSection.js';
 
 export function loadUtilityJs() {
     var sidebarToggler = document.getElementsByClassName("sidebarToggler")[0];
@@ -324,15 +325,47 @@ export function loadOrderTotalJs(){
    // wo dekhenge kaise kre
 }
 
+var arrayForResults = [];
+
+function filterData(data,searchText){
+    if (data){
+        arrayForResults = data.results;
+    }
+    let matches = arrayForResults.filter(arrElement => {
+        const regex = new RegExp(`^${searchText}`,'gi');
+        return arrElement.name.match(regex)
+    })
+    outputHtml(matches)
+}
+function outputHtml(matches){
+    var searchResults = document.getElementById('searchResults');
+   let html = matches.map(match => `<div class="result">
+        <div class="resultImg">
+            <a href="book.html"><img src="${match.imgUrl}" alt=""></a>
+        </div>
+        <div class="resultName">
+            <h4><a href="book.html" style="text-decoration:none; color:rgb(41,41,41);">${match.name}</a></h4>
+        </div>
+     </div>`
+   ).join('');
+   searchResults.innerHTML = html;
+}
+
 export function manageSearchResults(){
     var searchBox = document.getElementById('searchBox');
     var searchResults = document.getElementById('searchResults');
-    searchBox.addEventListener('input', () => {
+    searchBox.addEventListener('input', async () => {
         if (searchBox.value.length > 0){
-            searchResults.style.display = 'block';
+            if (searchBox.value.length == 1){
+                arrayForResults = [];
+                let searchResults = await constructSection('./js/api handling/sample.json',filterData,searchBox.value);
+            }
+            else {
+                filterData(undefined,searchBox.value)
+            }
         }
         else {
-            searchResults.style.display = 'none';
+            searchResults.innerHTML = '';
         }
     })
 }

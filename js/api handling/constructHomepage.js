@@ -97,23 +97,8 @@ async function constructHomepage(urlOne,urlTwo,urlThree,urlFour,urlFive,isAuthen
     `
     const searchResults = `
     <div id="searchResults">
-    <div class="result">
-      <div class="resultImg">
-        <a href="book.html"><img src="../images/book2.jpg" alt=""></a>
-      </div>
-      <div class="resultName">
-        <h4><a href="book.html" style="text-decoration:none; color:rgb(41,41,41);">The subtle art of not giving a fuck</a></h4>
-      </div>
+    
     </div>
-    <div class="result">
-      <div class="resultImg">
-        <a href="book.html"><img src="../images/book2.jpg" alt=""></a>
-      </div>
-      <div class="resultName">
-        <h4><a href="book.html" style="text-decoration:none; color:rgb(41,41,41);">The subtle art of not giving a fuck</a></h4>
-      </div>
-    </div>
-  </div>
     `
     rootElement.innerHTML = searchResults + mobilesidebarHtml + contentWrapper;
     utility.disableLoader(rootElement)
