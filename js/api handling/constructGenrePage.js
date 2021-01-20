@@ -19,7 +19,7 @@ function constructBookList(data){
         `
             <div class="bookItem">
                 <div class="coverImgHolder">
-                    <a href="book.html"><img src="images/book2.jpg" alt=""></a>
+                    <a href="book.html"><img loading="lazy" src="images/book2.jpg" alt=""></a>
                 </div>
                 <div class="cartBookInfo">
                     <p class="cartBookName">The Subtle art of not giving a fuck</p>

@@ -106,7 +106,7 @@ export function constructTopBar(pageName,previousLink,NextLink) {
     return (
         ` <div class="fixedPosition">
         <div class="topBar">
-            <a href="#" aria-label="toggle sidebar" class="sidebarToggler"><i class="fa fa-bars"
+            <a href="javascript:0" aria-label="toggle sidebar" class="sidebarToggler"><i class="fa fa-bars"
                     style="font-size: 20px; font-weight: 100;"></i></a>
             <div class="searchBar">
                 <h3>${pageName}</h3>
@@ -123,7 +123,7 @@ export function constructTopBar(pageName,previousLink,NextLink) {
        return (
             ` <div class="fixedPosition">
             <div class="topBar">
-                <a href="#" class="sidebarToggler"><i class="fa fa-bars"
+                <a href="javascript:0" class="sidebarToggler"><i class="fa fa-bars"
                         style="font-size: 20px; font-weight: 100;"></i></a>
                 <div class="searchBar">
                     <h3>${pageName}</h3>
@@ -142,12 +142,12 @@ export function constructHomepageTopBar(){
         `
         <div class="fixedPosition">
         <div class="topBar">
-            <a href="#" aria-label="toggle sidebar" class="sidebarToggler"><i class="fa fa-bars"
+            <a href="javascript:0" aria-label="toggle sidebar" class="sidebarToggler"><i class="fa fa-bars"
                     style="font-size: 25px; font-weight: 100"></i></a>
             <div class="searchBar">
                 <input type="text" spellcheck="false" name="" id="searchBox"
                     placeholder="Search Books, Authors..." />
-                <a href="" aria-label="search Author, books, genre, etc.." class="searchBtn"><i class="fa fa-search" style="font-size: 15px"></i></a>
+                <a href="javascript:0" aria-label="search Author, books, genre, etc.." class="searchBtn"><i class="fa fa-search" id="searchIcon" style="font-size: 15px"></i></a>
             </div>
             <a href="cart.html" aria-label="view cart" class="cartToggler"><i class="fa fa-shopping-cart"
                     style="font-size: 25px; font-weight: 100"></i></a>

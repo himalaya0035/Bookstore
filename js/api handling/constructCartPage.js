@@ -19,7 +19,7 @@ function constructCartItems(data){
         cartItems += `
         <div class="item">
         <div class="coverImgHolder">
-            <img src="images/book2.jpg" alt="">
+            <img loading="lazy" src="images/book2.jpg" alt="">
         </div>
         <div class="cartBookInfo">
             <p class="cartBookName">The Subtle art of not giving a fuck</p>

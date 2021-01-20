@@ -366,14 +366,21 @@ export function manageSearchResults(){
     var searchBox = document.getElementById('searchBox');
     var searchResults = document.getElementById('searchResults');
     var loader2 = document.getElementById('loader2');
-    console.log(loader2)
+    var searchIcon = document.getElementById('searchIcon');
+    searchIcon.onclick = () => {
+        if (searchIcon.classList.contains('fa-close'))
+        searchBox.value = '';
+        searchResults.style.display = 'none';
+        searchIcon.classList.remove('fa-close');
+    }
     searchBox.addEventListener('input', async () => {
         if (searchBox.value.length > 0){
             searchResults.style.display = 'block';
+            searchIcon.classList.add('fa-close');
             if (searchBox.value.length == 1){
                 arrayForResults = [];
                 enableSearchLoader(loader2) 
-                let searchResulss = await constructSection('./js/api handling/sample.json',filterData,searchBox.value);
+                let aisehi = await constructSection('./js/api handling/sample.json',filterData,searchBox.value);
                 disableSearchLoader(loader2)
             }
             else {
@@ -382,6 +389,7 @@ export function manageSearchResults(){
         }
         else {
             searchResults.style.display = 'none';
+            searchIcon.classList.remove('fa-close');
             searchResults.innerHTML = '';
         }
     })
