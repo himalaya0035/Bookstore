@@ -2,27 +2,27 @@
     "results" : [
         {
             "name" : "Subtle art of not giving a fuck",
-            "imgUrl" : "http://127.0.0.1:5501/images/book2.jpg"
+            "imgUrl" : "./images/book2.jpg"
         },
         {
             "name" : "Sonnets",
-            "imgUrl" : "http://127.0.0.1:5501/images/book3.jpg"
+            "imgUrl" : "./images/book3.jpg"
         },
         {
             "name" : "Spiritbound",
-            "imgUrl" : "http://127.0.0.1:5501/images/book4.jpg"
+            "imgUrl" : "./images/book4.jpg"
         },
         {
             "name" : "Slaughterhouse",
-            "imgUrl" : "http://127.0.0.1:5501/images/book5.jpg"
+            "imgUrl" : "./images/book5.jpg"
         },
         {
             "name" : "Shadow Kiss",
-            "imgUrl" : "http://127.0.0.1:5501/images/book6.jpg"
+            "imgUrl" : "./images/book6.jpg"
         },
         {
             "name" : "Song to wake to",
-            "imgUrl" : "http://127.0.0.1:5501/images/book7.jpg"
+            "imgUrl" : "./images/book7.jpg"
         }
     ]
 }
