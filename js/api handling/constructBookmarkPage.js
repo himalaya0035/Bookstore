@@ -51,7 +51,7 @@ let NameOfUser = "Priyansh Singh"; // ye data kaise nikalna hai api se wo dekhle
 let userId = 1;
 
 async function constructBookmarkPage(urlOne,isAuthenticated){
-    utility.enableLoader(rootElement);
+    utility.enableLoader(rootElement,loader);
 
     let bookmarkedListHtml = await constructSection(urlOne,constructBookmarkedList);
     let topBarHtml = constructTopBar('Bookmarked','index.html','cart.html');
@@ -65,7 +65,7 @@ async function constructBookmarkPage(urlOne,isAuthenticated){
             </div>
     `
     rootElement.innerHTML = sidebarHtml + contentWrapper;
-    utility.disableLoader(rootElement);
+    utility.disableLoader(rootElement,loader);
     utility.loadUtilityJs();
     utility.toggleButton("deleteBookmark","fa-bookmark","fa-bookmark-o", "Bookmarked","Bookmark");
     utility.toggleButton("addToCartBtn","fa-check","fa-cart-plus","Added","Add to Cart");

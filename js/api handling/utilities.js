@@ -148,20 +148,20 @@ export function addScrollEffect() {
     }
 }
 
-export function enableLoader(containerElement) {
+export function enableLoader(containerElement,loaderGif) {
     containerElement.style.visibility = 0;
     containerElement.style.opacity = 0;
-    loader.style.display = 'block';
-    loader.style.visibility = 1;
-    loader.style.opacity = 1;
+    loaderGif.style.display = 'block';
+    loaderGif.style.visibility = 1;
+    loaderGif.style.opacity = 1;
 }
 
-export function disableLoader(containerElement) {
+export function disableLoader(containerElement,loaderGif) {
     containerElement.style.visibility = 1;
     containerElement.style.opacity = 1;
-    loader.style.display = 'none';
-    loader.style.visibility = 0;
-    loader.style.opacity = 0;
+    loaderGif.style.display = 'none';
+    loaderGif.style.visibility = 0;
+    loaderGif.style.opacity = 0;
 }
 
 export function loadAccountModalJs() {
@@ -351,21 +351,40 @@ function outputHtml(matches){
    searchResults.innerHTML = html;
 }
 
+function enableSearchLoader(loader){
+    loader.style.display = 'block';
+    loader.style.visibility = 1;
+    loader.style.opacity = 1;
+}
+function disableSearchLoader(loader){
+    loader.style.display = 'none';
+    loader.style.visibility = 0;
+    loader.style.opacity = 0;
+}
+
 export function manageSearchResults(){
     var searchBox = document.getElementById('searchBox');
     var searchResults = document.getElementById('searchResults');
+    var loader2 = document.getElementById('loader2');
+    console.log(loader2)
     searchBox.addEventListener('input', async () => {
         if (searchBox.value.length > 0){
+            searchResults.style.display = 'block';
             if (searchBox.value.length == 1){
                 arrayForResults = [];
-                let searchResults = await constructSection('./js/api handling/sample.json',filterData,searchBox.value);
+                enableSearchLoader(loader2) 
+                let searchResulss = await constructSection('./js/api handling/sample.json',filterData,searchBox.value);
+                disableSearchLoader(loader2)
             }
             else {
                 filterData(undefined,searchBox.value)
             }
         }
         else {
+            searchResults.style.display = 'none';
             searchResults.innerHTML = '';
         }
     })
 }
+
+

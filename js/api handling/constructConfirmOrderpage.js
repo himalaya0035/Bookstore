@@ -58,7 +58,7 @@ let NameOfUser = "Priyansh Singh"; // ye data kaise nikalna hai api se wo dekhle
 let userId = 1;
 
 async function constructConfirmOrderPage(urlOne,urlTwo,isAuthenticated){
-    utility.enableLoader(rootElement)
+    utility.enableLoader(rootElement,loader)
 
     let shippingAddressHtml = await constructSection(urlOne,constructShippingAddress);
     let orderTotalHtml = await constructSection(urlTwo,constructOrderTotal);
@@ -83,7 +83,7 @@ async function constructConfirmOrderPage(urlOne,urlTwo,isAuthenticated){
                 </div>
     `
     rootElement.innerHTML = sidebarHtml + contentWrapper;
-    utility.disableLoader(rootElement);
+    utility.disableLoader(rootElement,loader);
     utility.loadOrderTotalJs();
     utility.loadUtilityJs();
 

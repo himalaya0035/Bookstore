@@ -11,7 +11,7 @@ let NameOfUser = "Priyansh Singh"; // ye data kaise nikalna hai api se wo dekhle
 let userId = 1;
 
 function constructAccountsPage(isAuthenticated){
-    utility.enableLoader(rootElement);
+    utility.enableLoader(rootElement,loader);
     let topBarHtml = constructTopBar('Accounts','index.html');
     let sidebarHtml = constructSidebar(isAuthenticated,userId, NameOfUser);
     contentWrapper = `
@@ -92,7 +92,7 @@ function constructAccountsPage(isAuthenticated){
           <!-- modal ends here -->
     `
     rootElement.innerHTML = sidebarHtml + contentWrapper;
-    utility.disableLoader(rootElement);
+    utility.disableLoader(rootElement,loader);
     utility.loadUtilityJs();
     utility.loadAccountModalJs();
 }

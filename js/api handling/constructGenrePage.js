@@ -55,7 +55,7 @@ let userId = 1;
 
 
 async function constructGenrePage(urlOne,isAuthenticated){
-    utility.enableLoader(rootElement);
+    utility.enableLoader(rootElement,loader);
 
     let bookListHtml = await constructSection(urlOne,constructBookList);
     let mobilesidebarHtml = constructSidebar(isAuthenticated, userId, NameOfUser); // is function ko phle component.js me check krle, tab arguements jo diye wo smj jayega
@@ -68,7 +68,7 @@ async function constructGenrePage(urlOne,isAuthenticated){
     `
     rootElement.innerHTML = mobilesidebarHtml + contentWrapper;
 
-    utility.disableLoader(rootElement);
+    utility.disableLoader(rootElement,loader);
     utility.loadUtilityJs();    
     utility.toggleButton("bookmark","fa-bookmark","fa-bookmark-o", "Bookmarked","Bookmark");
     utility.toggleButton("addToCartBtn","fa-check","fa-cart-plus","Added","Add to Cart");

@@ -87,7 +87,7 @@ let NameOfUser = "Priyansh Singh"; // ye data kaise nikalna hai api se wo dekhle
 let userId = 1;
 
 async function contsructBookPage(bookDataUrl, similarBooksUrl, isAuthenticated) {
-  utility.enableLoader(rootElement);
+  utility.enableLoader(rootElement,loader);
 
   let booksInfoAndDescHtml = await constructSection( bookDataUrl,constructItemAndDescSection);
   let similarBooksSectionHtml = await constructSection(similarBooksUrl,constructSimilarBooksSection);
@@ -97,7 +97,7 @@ async function contsructBookPage(bookDataUrl, similarBooksUrl, isAuthenticated) 
   contentWrapper = `<div class="contentWrapper"> ${topBarHtml} ${booksInfoAndDescHtml} ${similarBooksSectionHtml}</div>`;
   rootElement.innerHTML = mobilesidebarHtml + contentWrapper;
 
-  utility.disableLoader(rootElement);
+  utility.disableLoader(rootElement,loader);
   
   utility.loadUtilityJs();
   utility.toggleButton("bookmark","fa-bookmark","fa-bookmark-o", "Bookmarked","Bookmark");

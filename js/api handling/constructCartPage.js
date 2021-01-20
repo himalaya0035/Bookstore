@@ -53,7 +53,7 @@ let NameOfUser = "Priyansh Singh"; // ye data kaise nikalna hai api se wo dekhle
 let userId = 1;
 
 async function constructCartPage(urlOne, isAuthenticated){
-    utility.enableLoader(rootElement);
+    utility.enableLoader(rootElement,loader);
     let cartItemsHtml = await constructSection(urlOne,constructCartItems);
     let topbarHtml = constructTopBar('Cart','index.html','checkout.html');
     let sidebarHtml = constructSidebar(isAuthenticated,userId,NameOfUser);
@@ -80,7 +80,7 @@ async function constructCartPage(urlOne, isAuthenticated){
                 `
     
     rootElement.innerHTML = sidebarHtml + contentWrapper
-    utility.disableLoader(rootElement);
+    utility.disableLoader(rootElement,loader);
     orderProcessingUtility();
     utility.loadUtilityJs();    
 }   

@@ -72,7 +72,7 @@ let NameOfUser = "Priyansh Singh"; // ye data kaise nikalna hai api se wo dekhle
 let userId = 1; 
 
 async function constructProfilePage(urlone,isAuthenticated){
-    utility.enableLoader(rootElement);
+    utility.enableLoader(rootElement,loader);
 
     let profileFormHtml = await constructSection(urlone,constructProfileForm);
     let mobilesidebarHtml = constructSidebar(isAuthenticated, userId, NameOfUser); // is function ko phle component.js me check krle, tab arguements jo diye wo smj jayega
@@ -86,7 +86,7 @@ async function constructProfilePage(urlone,isAuthenticated){
     </div>`
     
     rootElement.innerHTML = mobilesidebarHtml + contentWrapper;
-    utility.disableLoader(rootElement);
+    utility.disableLoader(rootElement,loader);
     validationUtility();
     utility.loadUtilityJs();
     utility.addScrollEffect();

@@ -67,7 +67,7 @@ let NameOfUser = "Priyansh Singh"; // ye data kaise nikalna hai api se wo dekhle
 let userId = 1;
 
 async function constructAuthorPage(urlone, urlTwo,isAuthenticated){
-    utility.enableLoader(rootElement);
+    utility.enableLoader(rootElement,loader);
     let getAuthorDescHtml = await constructSection(urlone,constructAuthorDesc);
     let getAuthorBooksHtml = await constructSection(urlTwo,constructAuthorBooksSection);
     let mobilesidebarHtml = constructSidebar(isAuthenticated, userId, NameOfUser); // is function ko phle component.js me check krle, tab arguements jo diye wo smj jayega
@@ -85,7 +85,7 @@ async function constructAuthorPage(urlone, urlTwo,isAuthenticated){
                             ${sectionBottom}
                      </div>`
     rootElement.innerHTML = mobilesidebarHtml + contentWrapper;
-    utility.disableLoader(rootElement);
+    utility.disableLoader(rootElement,loader);
     utility.addScrollEffect();
     utility.loadUtilityJs();
 }

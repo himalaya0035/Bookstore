@@ -63,9 +63,9 @@ let NameOfUser = "Priyansh Singh"; // ye data kaise nikalna hai api se wo dekhle
 let userId = 1;
 
 async function constructCheckoutPage(urlOne,isAuthenticated){
-    utility.enableLoader(rootElement);
+    utility.enableLoader(rootElement,loader);
     let deliveryFormHtml = await constructSection(urlOne,constructDeliveryForm);
-    let topbarHtml = constructTopBar('Checkout','cart.html','payment.html');
+    let topbarHtml = constructTopBar('Checkout','cart.html','confirmOrder.html');
     let sidebarHtml = constructSidebar(isAuthenticated,userId,NameOfUser)
     contentWrapper = `
             <div class ="contentWrapper">
@@ -77,7 +77,7 @@ async function constructCheckoutPage(urlOne,isAuthenticated){
             </div>
     `
     rootElement.innerHTML = sidebarHtml + contentWrapper;
-    utility.disableLoader(rootElement)
+    utility.disableLoader(rootElement,loader)
     utility.loadUtilityJs();
 
 }

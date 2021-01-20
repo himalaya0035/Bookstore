@@ -76,7 +76,7 @@ let userId = 1;
 
 
 async function constructHomepage(urlOne,urlTwo,urlThree,urlFour,urlFive,isAuthenticated){
-    utility.enableLoader(rootElement)
+    utility.enableLoader(rootElement,loader)
 
     let bestSellersHtml = await constructSection(urlOne,constructBooksSlider,'Best Sellers');
     let recommendedHtml = await constructSection(urlTwo,constructBooksSlider,'Recommended For You');
@@ -101,7 +101,7 @@ async function constructHomepage(urlOne,urlTwo,urlThree,urlFour,urlFive,isAuthen
     </div>
     `
     rootElement.innerHTML = searchResults + mobilesidebarHtml + contentWrapper;
-    utility.disableLoader(rootElement)
+    utility.disableLoader(rootElement,loader)
     utility.loadUtilityJs();
     utility.manageSearchResults();
 }
