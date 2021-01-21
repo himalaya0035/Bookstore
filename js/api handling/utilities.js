@@ -373,6 +373,7 @@ export function manageSearchResults(){
         searchResults.style.display = 'none';
         searchIcon.classList.remove('fa-close');
     }
+    
     searchBox.addEventListener('input', async () => {
         if (searchBox.value.length > 0){
             searchResults.style.display = 'block';

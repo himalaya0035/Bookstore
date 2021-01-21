@@ -32,8 +32,12 @@ export function constructSidebar(isAuthenticated,userId,NameOfUser){
             <hr />
             <ul class="sidebarList">
                 <li>
+                    <a href="beAsellerForm.html" aria-label="be a seller"><img src="../images/seller.svg" width="20" style="margin-right:0px;"> Be a Seller</a>
+                </li>
+                <li>
                     <a href="accounts.html" aria-label="manage accounts"><i class="fa fa-user"></i> Accounts</a>
                 </li>
+            
                 <li>
                     <a href="" aria-label="sign out"><i class="fa fa-sign-out"></i> Logout</a>
                 </li>
@@ -43,6 +47,7 @@ export function constructSidebar(isAuthenticated,userId,NameOfUser){
                 <li>
                     <a href="" aria-label="change appearance"><i class="fa fa-lightbulb-o"></i> Change mode</a>
                 </li>
+
             </ul>
         </div>
             `

@@ -85,6 +85,6 @@ async function constructCartPage(urlOne, isAuthenticated){
     utility.loadUtilityJs();    
 }   
 
-constructCartPage("./js/api handling/sample.json",true)
+constructCartPage("https://jsonplaceholder.typicode.com/todos/1",true)
   .then(() => console.log("prmoise resolved"))
   .catch((err) => console.log(err.message));

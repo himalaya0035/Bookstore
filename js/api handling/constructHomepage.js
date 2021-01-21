@@ -10,9 +10,7 @@ function constructBooksSlider(data,sectionName) {
     var sliderBooks = "";
     for (let i = 0; i < 9; i++) { // ye 9 bs sample ke liye liya hai maine, array length ayega yha
       let obj = {
-        // pichle section ki treh yha bhi data break krna, data[i].jsonKey
-        // uske baad niche html me ${obj.variableName} aise put krdena
-        // imageUrl = data[i].authorImg      example
+        // name : data[i].name
       };
       sliderBooks += `
         <div class="homepageBook">

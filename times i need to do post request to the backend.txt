@@ -5,7 +5,7 @@ increase cart Quantity (done)
 decrease cart quantity (done)
 delete cart item (done)
 post delivery address during order processing
-search item request 
+search item request  (done)
 save button on profile page (done)
 during change password, 2 times
 updating email (done)
@@ -26,4 +26,7 @@ while making payment (if needed , i dont know )
     </div>
 
 
-
+BAnk account no : 9-18 
+pan no length - 10 
+gstin - 15
+ifsc code - 11
