@@ -40,28 +40,30 @@ function constructProfileForm(data){
                                         </div>
                                     </div>
                                     <label class="fieldlabels">Firm / Individual Name :</label>
-                                    <input type="text" pattern=".{3,200}"   required title="3 characters minimum" name="firmName" placeholder="First Name" id="firmname"
+                                    <input type="text" pattern=".{3,200}"   required title="3 characters minimum" name="firmName" placeholder="Firm Name / Individual Name" id="firmname"
                                         class=" sectionFirst" />
+                                      
                                     <label class="fieldlabels">GSTIN No : </label>
-                                    <input type="text" pattern=".{15,15}" required title="Should be 15 charcters long" class="sectionFirst" name="gstin" id="gstino" placeholder="Gstin No" />
+                                    <input type="text" pattern=".{15,15}" required title="Should be 15 charcters long" style="text-transform:uppercase;" class="sectionFirst" name="gstin" id="gstino" placeholder="Gstin No" />
                                     <label class="fieldlabels">Professional Email : </label>
                                     <input type="email" required name="email" placeholder="Email Id" id="email"
                                         class="sectionFirst" />
                                     <label class="fieldlabels">PAN No :</label>
-                                    <input type="text" pattern=".{10,10}" required title="Should be 10 charcters long" name="pan" placeholder="Pan" id="pan"
+                                    <input type="text" pattern=".{10,10}" required title="Should be 10 charcters long" style="text-transform:uppercase;" name="pan" placeholder="Pan" id="pan"
                                         class="loginField sectionFirst" />
                                     <label class="fieldlabels">Bank Account No : </label>
-                                    <input type="text" pattern=".{9,18}" required title="Should be 9-18 charcters long"  name="account" placeholder="Bank Account No"
+                                    <input type="text" pattern=".{9,18}" required title="Should be 9-18 charcters long" style="text-transform:uppercase;" name="account" placeholder="Bank Account No"
                                         id="accountNo" class="loginField sectionFirst" />
                                         <label class="fieldlabels">IFSC Code : </label>
-                                        <input type="text" pattern=".{11,11}" required title="Should be 11 charcters long" name="ifsc" placeholder="IFSC Code "
+                                        <input type="text" pattern=".{11,11}" style="text-transform:uppercase;" required title="Should be 11 charcters long" name="ifsc" placeholder="IFSC Code "
                                         id="ifsc" class="loginField sectionFirst" />
                                         <div style="display:flex; justify-content:center; align-items:flex-start;"><input type="checkbox" required id="agree" style="dislay:block; margin-top:6px; width:10%;"><p style="width=90%;">I Agree and have read the <a href="#">Terms and conditions </a></p></div>
                                  
                                 </div>
-                                
+                                <a href="index.html">
                                 <input type="submit" name="save" class="next action-button" id="submitBtn" value="Submit" />
-                            </fieldset>
+                                </a>
+                                </fieldset>
                         </form>
                     </div>
                 </div>

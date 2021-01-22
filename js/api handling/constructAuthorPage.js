@@ -22,8 +22,8 @@ function constructAuthorDesc(data){
                 <div class="shapesHeading" style="transform: translateX(-15px); width: 50%; margin-bottom: 10px;">
                     <h5>About</h5>
                 </div>
-                <p>Paulo Coelho de Souza is a Brazilian lyricist and novelist, best known for his novel The Alchemist. In 2014, he uploaded his personal papers online to create a virtual Paulo Coelho Foundation.
-                    Paulo Coelho was born in Rio de Janeiro, Brazil, and attended a Jesuit school. At 17, Coelho's parents committed him to a mental institution from which he escaped three times before being released at the age of 20. Coelho was born into a Catholic family, and his parents were strict about the religion and faith...
+                <p id="about">Paulo Coelho de Souza is a Brazilian lyricist and novelist, best known for his novel The Alchemist. In 2014, he uploaded his personal papers online to create a virtual Paulo Coelho Foundation.
+                    Paulo Coelho was born in Rio de Janeiro, Brazil, and attended a Jesuit school. At 17, Coelho's parents committed him to a mental institution from which he escaped three times before being released at the age of 20. Coelho was born into a Catholic family, and his parents were strict about the religion and faith
                 </p>
             </div>
     
@@ -86,8 +86,11 @@ async function constructAuthorPage(urlone, urlTwo,isAuthenticated){
                      </div>`
     rootElement.innerHTML = mobilesidebarHtml + contentWrapper;
     utility.disableLoader(rootElement,loader);
+    utility.manageBookNameLength()
+    utility.manageAboutSection();
     utility.addScrollEffect();
     utility.loadUtilityJs();
+
 }
 
 constructAuthorPage("https://jsonplaceholder.typicode.com/todos/1","https://jsonplaceholder.typicode.com/todos/1",true)

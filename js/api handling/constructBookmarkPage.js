@@ -14,12 +14,12 @@ function constructBookmarkedList(data){
         }
         bookmarkedBooks += 
         `
-            <div class="bookItem">
+            <div class="bookItem" >
                 <div class="coverImgHolder">
                     <a href="book.html"><img loading="lazy" src="images/book2.jpg" alt=""></a>
                 </div>
                 <div class="cartBookInfo">
-                    <p class="cartBookName">The Subtle art of not giving a fuck</p>
+                    <p class="cartBookName" data-id="1">The Subtle art of not giving a fuck The Subtle art of not giving a fuck</p>
                     <p class="authorName">Mark Manson</p>
                     <div class="priceRating">
                         <p class="cartBookPrice">Rs 394</p>
@@ -66,6 +66,7 @@ async function constructBookmarkPage(urlOne,isAuthenticated){
     `
     rootElement.innerHTML = sidebarHtml + contentWrapper;
     utility.disableLoader(rootElement,loader);
+    utility.manageBookNameLength();
     utility.loadUtilityJs();
     utility.toggleButton("deleteBookmark","fa-bookmark","fa-bookmark-o", "Bookmarked","Bookmark");
     utility.toggleButton("addToCartBtn","fa-check","fa-cart-plus","Added","Add to Cart");

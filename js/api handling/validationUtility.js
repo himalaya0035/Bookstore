@@ -61,7 +61,6 @@ export function removeErrorMsg() {
 export function validationUtility(){
     var contact = document.getElementById('contact');
     var address = document.getElementById('address');
-    var email = document.getElementById('email')
     var firstSection = document.getElementsByClassName('sectionFirst');
     var saveBtn = document.getElementById('saveBtn');
     var condition 
@@ -69,7 +68,7 @@ export function validationUtility(){
    function validateFirstSection(btn) {
 
         if (window.location.href.indexOf('profile') > -1){
-            condition = !isFieldsEmpty(arr) && isContactOk(contact) && isEmailOK(email) && isAddressOk(address);
+            condition = !isFieldsEmpty(arr) && isContactOk(contact) && isAddressOk(address);
         }
         else {
             condition = !isFieldsEmpty(arr) && isContactOk(contact) && isAddressOk(address) ;

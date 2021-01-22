@@ -69,6 +69,7 @@ async function constructGenrePage(urlOne,isAuthenticated){
     rootElement.innerHTML = mobilesidebarHtml + contentWrapper;
 
     utility.disableLoader(rootElement,loader);
+    utility.manageBookNameLength();
     utility.loadUtilityJs();    
     utility.toggleButton("bookmark","fa-bookmark","fa-bookmark-o", "Bookmarked","Bookmark");
     utility.toggleButton("addToCartBtn","fa-check","fa-cart-plus","Added","Add to Cart");

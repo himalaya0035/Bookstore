@@ -22,7 +22,7 @@ function constructCartItems(data){
             <img loading="lazy" src="images/book2.jpg" alt="">
         </div>
         <div class="cartBookInfo">
-            <p class="cartBookName">The Subtle art of not giving a fuck</p>
+            <p class="cartBookName">The Subtle art of not giving a fuck The Subtle art of not giving a fuck</p>
             <p class="authorName">Mark Manson</p>
             <div class="priceRating">
                 <p class="cartBookPrice">Rs 394</p>
@@ -82,6 +82,7 @@ async function constructCartPage(urlOne, isAuthenticated){
     rootElement.innerHTML = sidebarHtml + contentWrapper
     utility.disableLoader(rootElement,loader);
     orderProcessingUtility();
+    utility.manageBookNameLength();
     utility.loadUtilityJs();    
 }   
 

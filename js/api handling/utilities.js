@@ -34,6 +34,31 @@ export function loadUtilityJs() {
     }
 }
 
+export function manageBookNameLength(){
+    let booknames = document.getElementsByClassName('cartBookName');
+    for (let i=0;i<booknames.length;i++){
+        if (booknames[i].innerText.length > 50){
+            booknames[i].innerText = booknames[i].innerText.substring(0,50) + '...';
+        }
+    }
+}
+
+
+export function manageAboutSection(){
+    let characterlength;
+    if (window.location.href.indexOf('book') > -1){
+        characterlength = 383;
+    }
+    else if (window.location.href.indexOf('author') > -1){
+        characterlength = 503;
+    }
+    let aboutSection = document.getElementById('about');
+    if(aboutSection.innerText.length > characterlength ){
+        aboutSection.innerText = aboutSection.innerText.substring(0,characterlength) + ' ...';
+    }
+}
+
+
 export function toggleButton(mainElementClass, toBeReplacedClass, checkClass, buttonInitialText, buttonFinalText) {
     var commonElement = document.getElementsByClassName(mainElementClass);
     for (let i = 0; i < commonElement.length; i++) {
@@ -41,6 +66,7 @@ export function toggleButton(mainElementClass, toBeReplacedClass, checkClass, bu
 
             var ele = e.target;
             disableBtn(ele)
+        
 
             var child = ele.getElementsByTagName('i')[0];
             let url;
@@ -83,6 +109,7 @@ export function toggleButton(mainElementClass, toBeReplacedClass, checkClass, bu
                 }
                 ele.classList.toggle('removeFromBookmark')
             } else if (mainElementClass === 'deleteBookmark') {
+            
                 // jo api request isse just phle waale else if section me ki hai , wohi isme lgni hai
                 // yeh bhi bookmark htane ke liye hai pr khi doosri jgeh se
                 url = 'https://jsonplaceholder.typicode.com/posts';
@@ -106,7 +133,7 @@ export function toggleButton(mainElementClass, toBeReplacedClass, checkClass, bu
                 return false;
             }
 
-            if (window.location.href.indexOf('bookmarked') > -1 && mainElementClass == 'deleteBookmark') {
+            if (window.location.href.indexOf('bookmark') > -1 && mainElementClass == 'deleteBookmark') {
                 let bookItem = ele.closest('.bookItem');
                 bookItem.remove();
                 if (document.getElementsByClassName('bookList')[0].innerText.length == 0) {
@@ -181,10 +208,13 @@ export function loadAccountModalJs() {
         }
     }
 
+
+    if (window.location.href.indexOf('account') > -1){
     var emailInput = document.getElementById('emailAddress');
     var confirmPasswordDelete = document.getElementById('confirmPasswordDelete');
     var updateEmailBtn = document.getElementById('updateEmailBtn')
     var deleteAccountBtn = document.getElementById('deleteAccountBtn');
+
     updateEmailBtn.onclick = async () => {
         if (!isEmailOK(emailInput)) {
             displayErrorMsg('Email is not valid');
@@ -242,6 +272,7 @@ export function loadAccountModalJs() {
         }
 
     }
+}
 }
 
 function calculateTotalAmount(discountPercent){

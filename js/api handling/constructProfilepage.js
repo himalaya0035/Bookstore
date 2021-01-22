@@ -8,6 +8,10 @@ var loader = document.getElementById("loader");
 var contentWrapper;
 var profileBannerImgUrl;
 
+
+
+
+
 function constructProfileForm(data){
     // requires fields FirstName, lastname, address, contact and email
     // sb fields nikalke input tags ki value me daal diyo
@@ -45,9 +49,6 @@ function constructProfileForm(data){
                                         class="loginField sectionFirst" />
                                     <label class="fieldlabels">Last Name : </label>
                                     <input type="text" class="sectionFirst" name="lname" placeholder="Last Name" />
-                                    <label class="fieldlabels">Email: </label>
-                                    <input type="email" name="email" placeholder="Email Id" id="email"
-                                        class="sectionFirst" />
                                     <label class="fieldlabels">Contact No :</label>
                                     <input type="number" name="pwd" placeholder="Contact No" id="contact"
                                         class="loginField sectionFirst" />
