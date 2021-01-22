@@ -60,7 +60,7 @@
     height: 30vh;
     width:100%;
     background:url('../images/author1.jpg');
-    background-position: 0px -90px;
+    background-position:top;
     background-size: cover;
     position: sticky;
     top:53px;

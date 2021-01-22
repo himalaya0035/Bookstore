@@ -72,7 +72,7 @@ async function constructAuthorPage(urlone, urlTwo,isAuthenticated){
     let getAuthorBooksHtml = await constructSection(urlTwo,constructAuthorBooksSection);
     let mobilesidebarHtml = constructSidebar(isAuthenticated, userId, NameOfUser); // is function ko phle component.js me check krle, tab arguements jo diye wo smj jayega
     let topBarHtml = constructTopBar(authorName, "index.html",undefined); // jo bhi django ke according link ho wo daal diyo
-    let authorInfoContainer = ` <div class="authorInfoContainer" style="${authorImgUrl}"></div>`
+    let authorInfoContainer = ` <div class="authorInfoContainer" style="background:url('../images/author6.jpg');background-repeat:no-repeat; background-position:center top;"></div>`
     sectionBottom = `
             <div class="sectionBottom rellax" data-rellax-speed="0">
                 ${getAuthorDescHtml}

@@ -32,7 +32,7 @@ export function constructSidebar(isAuthenticated,userId,NameOfUser){
             <hr />
             <ul class="sidebarList">
                 <li>
-                    <a href="beAsellerForm.html" aria-label="be a seller"><img src="../images/seller.svg" width="20" style="margin-right:0px;"> Be a Seller</a>
+                    <a href="beAsellerForm.html" aria-label="be a seller"><img src="./images/seller.svg" width="20" style="margin-right:0px;"> Be a Seller</a>
                 </li>
                 <li>
                     <a href="accounts.html" aria-label="manage accounts"><i class="fa fa-user"></i> Accounts</a>
