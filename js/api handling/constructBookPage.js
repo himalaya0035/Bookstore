@@ -88,30 +88,26 @@ function constructSimilarBooksSection(data) {
 function constructAllOffers(data){
     var sectionBooks = '';
     for (let i=0;i<5;i++){
-        let obj = {
-            // sb deta yha nikallene, uske baad obj.variableName Niche Html me kr dena
-        }
         sectionBooks += 
         `
-            <div class="bookItem">
-                <div class="coverImgHolder">
-                    <a href="book.html"><img loading="lazy" src="images/book2.jpg" alt=""></a>
-                </div>
-                <div class="cartBookInfo">
-                    <p class="cartBookName">The Subtle art of not giving a fuck</p>
-                    <p class="authorName">Mark Manson</p>
-                    <div class="priceRating">
-                        <p class="cartBookPrice">Rs 394</p>
-                        <p class="cartBookRating"><i class="fa fa-star"></i> 4.5</p>
-                    </div>
-                   
-                </div>
+        <div class="offer" style="margin-bottom:12px; border-bottom:1px dashed #808080; padding-bottom:5px;">
+            <p style="font-size:14px; color:#808080;">Offer From : </p>
+           
+                <p style="font-family:'Poppins'; line-height:15px; margin-top:5px;">Cloudatail India Pvt Ltd.</p>
+                <p style="font-family:'Poppins'; margin-bottom:8px;">Seller Rating : <i class="fa fa-star" style="color:#673AB7;"></i> 4.1 </p>
+           
+            <div style="display:flex;justify-content:space-between;align-items:flex-end; margin-top:0px; margin-bottom:5px;">
+                <p><span style="font-family:'Poppins'"> Rs 394 </span></p>
+                <button class="addToCartBtn" style="background:#673AB7; border:none; color:white; padding:4px;"><i class="fa fa-cart-plus" style="color: white; font-size: 1.1em;"></i>&nbsp;&nbsp;Add to cart</button>
             </div>
+        </div>
         `
     }
     return (
      `
         <div class="bookList">
+           
+            </div>
             ${sectionBooks}
         </div>
     `
@@ -139,15 +135,13 @@ async function contsructBookPage(bookDataUrl, similarBooksUrl,allOffersUrl, isAu
                 <div class="modal-content">
                     <div class="modal-header" >
 
-                    <h5>Update Email Address</h5>
+                    <h5 style="letter-spacing:1px;">All offers</h5>
                     <span class="close">&times;</span>
                     </div>
                     <div class="modal-body">
                      ${allOffersHtml}
                     </div>
-                    <div class="modal-footer">
-                    <button id="updateEmailBtn" type="submit" >Update Email</button>
-                    </div>
+                    
                 </div>
 
                 </div>

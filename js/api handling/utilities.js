@@ -210,68 +210,75 @@ export function loadAccountModalJs() {
 
 
     if (window.location.href.indexOf('account') > -1){
-    var emailInput = document.getElementById('emailAddress');
-    var confirmPasswordDelete = document.getElementById('confirmPasswordDelete');
-    var updateEmailBtn = document.getElementById('updateEmailBtn')
-    var deleteAccountBtn = document.getElementById('deleteAccountBtn');
+        var emailInput = document.getElementById('emailAddress');
+        var confirmPasswordDelete = document.getElementById('confirmPasswordDelete');
+        var confirmPasswordDelete2 = document.getElementById('confirmPasswordDelete2')
+        var updateEmailBtn = document.getElementById('updateEmailBtn')
+        var deleteAccountBtn = document.getElementById('deleteAccountBtn');
 
-    updateEmailBtn.onclick = async () => {
-        if (!isEmailOK(emailInput)) {
-            displayErrorMsg('Email is not valid');
-         
-            return;
-        } else {
-        
-            removeErrorMsg();
-            let url = 'https://jsonplaceholder.typicode.com/posts';
-            let obj = {
-                title: 'foo',
-                body: 'bar',
-                userId: 1,
+        updateEmailBtn.onclick = async () => {
+            if (!isEmailOK(emailInput)) {
+                displayErrorMsg('Email is not valid');
+            
+                return;
+            } 
+            else if (confirmPasswordDelete2.value.length < 8){
+                displayErrorMsg('Password is too short')
+
+                return;
             }
-            disableDeleteBtn(updateEmailBtn)
-            const isPostRequestOk = await postJsonData(url, obj);
-            if (isPostRequestOk) {
-                document.getElementById('message').style.color = '#673AB7';
-                displayErrorMsg('Email Updated succesfully')
-                setTimeout(() => {
-                    span[0].click();
-                }, 2000);
-            } else {
-                displayErrorMsg(`couldn't update email, try again later`);
+            else {
+            
+                removeErrorMsg();
+                let url = 'https://jsonplaceholder.typicode.com/posts';
+                let obj = {
+                    title: 'foo',
+                    body: 'bar',
+                    userId: 1,
+                }
+                disableDeleteBtn(updateEmailBtn)
+                const isPostRequestOk = await postJsonData(url, obj);
+                if (isPostRequestOk) {
+                    document.getElementById('message').style.color = '#673AB7';
+                    displayErrorMsg('Email Updated succesfully')
+                    setTimeout(() => {
+                        span[0].click();
+                    }, 2000);
+                } else {
+                    displayErrorMsg(`couldn't update email, try again later`);
+                }
+                enableDeleteBtn(updateEmailBtn, '#000000');
             }
-            enableDeleteBtn(updateEmailBtn, '#000000');
+
         }
-
-    }
-    deleteAccountBtn.onclick = async () => {
-        if (confirmPasswordDelete.value.length < 8) {
-            document.getElementById('message2').innerText = 'Password is too short';
-            return;
-        } else {
-        
-            document.getElementById('message2').innerText = '';
-            let url = 'https://jsonplaceholder.typicode.com/posts';
-            let obj = {
-                title: 'foo',
-                body: confirmPasswordDelete.value,
-                userId: 1,
-            }
-            disableDeleteBtn(deleteAccountBtn)
-            const isPostRequestOk = await postJsonData(url, obj);
-            if (isPostRequestOk) {
-                document.getElementById('message').style.color = '#673AB7';
-                console.log('chl bhenchod');
-                setTimeout(() => {
-                    window.location.replace('http://127.0.0.1:5501/index.html') // jha bhi redirect krna ho daal diyo,
-                }, 1000);
+        deleteAccountBtn.onclick = async () => {
+            if (confirmPasswordDelete.value.length < 8) {
+                document.getElementById('message2').innerText = 'Password is too short';
+                return;
             } else {
-                document.getElementById('message2').innerText = 'Password is incorrect, try again';
+            
+                document.getElementById('message2').innerText = '';
+                let url = 'https://jsonplaceholder.typicode.com/posts';
+                let obj = {
+                    title: 'foo',
+                    body: confirmPasswordDelete.value,
+                    userId: 1,
+                }
+                disableDeleteBtn(deleteAccountBtn)
+                const isPostRequestOk = await postJsonData(url, obj);
+                if (isPostRequestOk) {
+                    document.getElementById('message').style.color = '#673AB7';
+                    console.log('chl bhenchod');
+                    setTimeout(() => {
+                        window.location.replace('http://127.0.0.1:5501/index.html') // jha bhi redirect krna ho daal diyo,
+                    }, 1000);
+                } else {
+                    document.getElementById('message2').innerText = 'Password is incorrect, try again';
+                }
+                enableDeleteBtn(deleteAccountBtn, '#000000');
             }
-            enableDeleteBtn(deleteAccountBtn, '#000000');
-        }
 
-    }
+        }
 }
 }
 

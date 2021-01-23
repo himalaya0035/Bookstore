@@ -55,8 +55,9 @@ function constructAccountsPage(isAuthenticated){
             </div>
             <div class="modal-body">
               <h6 style="color:red;" id="message"></h6>
-              
-              <label for="emailAddress">Email Address : </label>
+              <label for="confirmPasswordDelete">Confirm Password For Updation</label>
+              <input type="password" id="confirmPasswordDelete2" placeholder = "Enter Password" autocomplete="on" style="margin-bottom:12px;">
+              <label for="emailAddress">New Email Address : </label>
               <input type="email" id="emailAddress" placeholder = "New Email Address">
          
             </div>
@@ -79,7 +80,7 @@ function constructAccountsPage(isAuthenticated){
         <div class="modal-body">
           <form>
           <h6 id="message2" style="color:red;"></h6>
-          <label for="confirmPasswordDelete">Confirm Passoword For Deletion</label>
+          <label for="confirmPasswordDelete">Confirm Password For Deletion</label>
           <input type="password" id="confirmPasswordDelete" placeholder = "Enter Password" autocomplete="on">
           </form>
         </div>
