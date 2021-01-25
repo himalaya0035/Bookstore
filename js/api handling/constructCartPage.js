@@ -73,7 +73,7 @@ async function constructCartPage(urlOne, isAuthenticated){
                             </div>
                         </div>
                         <div class="moveToCheckout" style="display: flex; align-items: center; justify-content: center;">
-                             <a href="checkout.html" style="color: white; text-decoration: none; font-weight: bold; font-size: 1.17em; display: block;">Checkout Now <i class="fa fa-angle-right" style="font-weight: normal;"></i></a>
+                             <a href="checkout.html" id="checkoutBtn" style="color: white; text-decoration: none; font-weight: bold; font-size: 1.17em; display: block;">Checkout Now <i class="fa fa-angle-right" style="font-weight: normal;"></i></a>
                         </div>
 
                 </div>

@@ -56,19 +56,21 @@ export function removeErrorMsg() {
     document.getElementById('message').innerText = '';
 }
 
-
-
 export function validationUtility(){
     var contact = document.getElementById('contact');
     var address = document.getElementById('address');
     var firstSection = document.getElementsByClassName('sectionFirst');
     var saveBtn = document.getElementById('saveBtn');
+    var email = document.getElementById('emailId');
     var condition 
     var arr = Array.from(firstSection);
    function validateFirstSection(btn) {
 
         if (window.location.href.indexOf('profile') > -1){
             condition = !isFieldsEmpty(arr) && isContactOk(contact) && isAddressOk(address);
+        }
+        else if (window.location.href.indexOf('checkout') > -1){
+            condition = !isFieldsEmpty(arr) && isContactOk(contact) && isEmailOK(email) && isAddressOk(address);
         }
         else {
             condition = !isFieldsEmpty(arr) && isContactOk(contact) && isAddressOk(address) ;

@@ -3,7 +3,7 @@ export function constructSidebar(isAuthenticated,userId,NameOfUser){
         return (
             `
             <div class="mobileSidebar">
-            <div class="top_section_sidebar">
+            <div class="top_section_sidebar" >
                 <div class="userInfo">
                     <div class="imgbox4">
                         <a href="index.html" aria-label="visit homepage"><img src="images/open-book.svg" alt="" /></a>
@@ -109,7 +109,7 @@ export function constructSidebar(isAuthenticated,userId,NameOfUser){
 export function constructTopBar(pageName,previousLink,NextLink) {
    if(NextLink){
     return (
-        ` <div class="fixedPosition">
+        ` <div class="fixedPosition" style="z-index:8">
         <div class="topBar">
             <a href="javascript:0" aria-label="toggle sidebar" class="sidebarToggler"><i class="fa fa-bars"
                     style="font-size: 20px; font-weight: 100;"></i></a>
@@ -118,7 +118,7 @@ export function constructTopBar(pageName,previousLink,NextLink) {
             </div>
             <a href="${previousLink}" aria-label="visit previous page" class="backBtn"><i class="fa fa-angle-left"
                     style="font-size: 20px; font-weight: 100;"></i></a>
-            <a href="${NextLink}" aria-label="visit next page" class="backBtn"><i class="fa fa-angle-right"
+            <a href="${NextLink}" id="nextLink" aria-label="visit next page" class="backBtn"><i class="fa fa-angle-right"
                     style="font-size: 20px; font-weight: 100;"></i></a>
         </div>
     </div>`
@@ -126,7 +126,7 @@ export function constructTopBar(pageName,previousLink,NextLink) {
    }
    else {
        return (
-            ` <div class="fixedPosition">
+            ` <div class="fixedPosition" style="z-index:8">
             <div class="topBar">
                 <a href="javascript:0" class="sidebarToggler"><i class="fa fa-bars"
                         style="font-size: 20px; font-weight: 100;"></i></a>
@@ -145,7 +145,7 @@ export function constructTopBar(pageName,previousLink,NextLink) {
 export function constructHomepageTopBar(){
     return (
         `
-        <div class="fixedPosition">
+        <div class="fixedPosition" style="z-index:8">
         <div class="topBar">
             <a href="javascript:0" aria-label="toggle sidebar" class="sidebarToggler"><i class="fa fa-bars"
                     style="font-size: 25px; font-weight: 100"></i></a>

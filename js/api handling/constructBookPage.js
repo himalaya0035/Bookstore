@@ -98,7 +98,7 @@ function constructAllOffers(data){
            
             <div style="display:flex;justify-content:space-between;align-items:flex-end; margin-top:0px; margin-bottom:5px;">
                 <p><span style="font-family:'Poppins'"> Rs 394 </span></p>
-                <button class="addToCartBtn" style="background:#673AB7; border:none; color:white; padding:4px;"><i class="fa fa-cart-plus" style="color: white; font-size: 1.1em;"></i>&nbsp;&nbsp;Add to cart</button>
+                <button class="addToCartBtn2" id="${i}" style="background:#673AB7; border:none; color:white; padding:4px;"><i class="fa fa-cart-plus" style="color: white; font-size: 1.1em;"></i>&nbsp;&nbsp;Add to cart</button>
             </div>
         </div>
         `
@@ -154,7 +154,7 @@ async function contsructBookPage(bookDataUrl, similarBooksUrl,allOffersUrl, isAu
   utility.loadUtilityJs();
   utility.manageBookNameLength()
   utility.manageAboutSection();
- 
+  utility.addDealToCart();
   utility.toggleButton("bookmark","fa-bookmark","fa-bookmark-o", "Bookmarked","Bookmark");
   utility.toggleButton("addToCartBtn","fa-check","fa-cart-plus","Added","Add to Cart");
   utility.loadAccountModalJs();

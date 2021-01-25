@@ -71,9 +71,10 @@ export function toggleButton(mainElementClass, toBeReplacedClass, checkClass, bu
             var child = ele.getElementsByTagName('i')[0];
             let url;
             let obj;
-
-            if (mainElementClass === 'addToCartBtn') {
-                // when you want to add item from cart
+            
+            if (mainElementClass === 'addToCartBtn' && ele.classList.contains('removeFromCartBtn')) {
+                // when you want to remove item from cart
+                console.log('removed from cart');
                 url = 'https://jsonplaceholder.typicode.com/posts';
                 obj = {
                     title: 'foo',
@@ -81,8 +82,9 @@ export function toggleButton(mainElementClass, toBeReplacedClass, checkClass, bu
                     userId: 1,
                 }
                 ele.classList.toggle('removeFromCartBtn')
-            } else if (mainElementClass === 'addToCartBtn' && ele.classList.contains('removeFromCartBtn')) {
-                // item already sdded to cart , now you want to remove it using the same button
+            } else if (mainElementClass === 'addToCartBtn') {
+                // when you want to add
+                console.log('added to cart')
                 url = 'https://jsonplaceholder.typicode.com/posts';
                 obj = {
                     title: 'foo',
@@ -434,4 +436,48 @@ export function manageSearchResults(){
     })
 }
 
+export function addDealToCart() {
+    const btn = document.getElementsByClassName('addToCartBtn2');
 
+    for (let i = 0; i < btn.length; i++) {
+    
+        btn[i].onclick = async (e) => {
+            let iconClass;
+            let btnText;
+            const deal_id = e.target.id;
+            let url;
+            const obj = {
+                title: 'foo',
+                    body: 'bar',
+                    userId: 1,
+            }
+            if (btn[i].classList.contains('addToCartBtn2') && btn[i].classList.contains('removeFromCartBtn2')) { // jb remove krna ho
+                 url = 'https://jsonplaceholder.typicode.com/posts'
+                 iconClass = 'fa-cart-plus';
+                 btnText = 'Add to cart';
+                 btn[i].classList.toggle('removeFromCartBtn2');
+                 console.log('removed from cart')
+            }
+            else if (btn[i].classList.contains('addToCartBtn2')){ // jb add krna ho
+                url = 'https://jsonplaceholder.typicode.com/posts';
+                iconClass = 'fa-check';
+                btnText = 'Added';
+                btn[i].classList.toggle('removeFromCartBtn2');
+                console.log('added to cart')
+            }
+
+            disableBtn(e.target);
+            const res = await postJsonData(url, obj);
+                if (res) {
+                    btn[i].innerHTML = `<i class ="fa ${iconClass}" style="color:white;"></i>` + `  ${btnText}`;
+                } else {
+                    alert('Operation Failed')
+                }
+            enableBtn(e.target);
+           
+        }
+
+    }
+
+
+}

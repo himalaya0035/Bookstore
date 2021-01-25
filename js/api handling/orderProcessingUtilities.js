@@ -84,11 +84,21 @@ export function orderProcessingUtility(){
     var inputElements = document.getElementsByClassName('itemQuantity');
     var prices = document.getElementsByClassName('cartBookPrice');
     var deleteBtns = document.getElementsByClassName('deleteCartItem');
+    var checkoutBtn = document.getElementById('checkoutBtn');
+    var nextLink = document.getElementById('nextLink');
     if (deleteBtns.length === 0){
         document.getElementById('NoBookmarkedMsg').style.display = 'block';
+        checkoutBtn.href="#";
+        checkoutBtn.style.color = "#808080";
+        nextLink.href = "#";
+        nextLink.style.color = '#808080'
     }
     else {
         document.getElementById('NoBookmarkedMsg').style.display = 'none';
+        checkoutBtn.href="checkout.html";
+        checkoutBtn.style.color = "white";
+        nextLink.href = "checkout.html";
+        nextLink.style.color = 'white';
     }
      for (let i=0;i<increase.length;i++){
         increase[i].addEventListener('click',manageQuantity);
@@ -122,9 +132,17 @@ export function orderProcessingUtility(){
             getTotalQuantityAndAmount(prices);
             if (deleteBtns.length === 0){
                 document.getElementById('NoBookmarkedMsg').style.display = 'block';
+                checkoutBtn.href="#";
+                checkoutBtn.style.color = "#808080";
+                nextLink.href = "#";
+                nextLink.style.color = '#808080'
             }
             else {
                 document.getElementById('NoBookmarkedMsg').style.display = 'none';
+                checkoutBtn.href="checkout.html";
+                checkoutBtn.style.color = "white";
+                nextLink.href = "checkout.html";
+                nextLink.style.color = 'white';
             }
         })
     }

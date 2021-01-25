@@ -1,6 +1,7 @@
 import { constructSection } from "./constructSection.js";
 import { constructSidebar, constructTopBar } from "./component.js";
 import * as utility from "./utilities.js";
+import { validationUtility } from "./validationUtility.js";
 
 const rootElement = document.getElementById("rootElement");
 var loader = document.getElementById("loader");
@@ -39,13 +40,13 @@ function constructDeliveryForm(data){
                                     </div>
                                 </div>
                                  <label class="fieldlabels">FirstName :</label> <input
-                                type="text" name="firstName" placeholder="First Name" id="fname" class="loginField" /> <label
+                                type="text" name="firstName" placeholder="First Name" id="fname" class="loginField sectionFirst" /> <label
                                 class="fieldlabels">Contact No :</label> <input type="number" name="pwd"
-                                placeholder="Contact No" id="contactNo" class="loginField"/> 
+                                placeholder="Contact No" id="contactNo" class="loginField sectionFirst"> 
                                 <label class="fieldlabels">Email :</label> <input
-                                type="email" name="email" placeholder="Email" id="emailId" class="loginField" /> 
+                                type="email" name="email" placeholder="Email" id="emailId" class="loginField sectionFirst" > 
                                 <label class="fieldlabels">Delivery Address : (Min 30 characters)</label> <input
-                                type="text" name="DeliveryAddress" placeholder="Delivery Address" id="deliveryAddress" class="loginField" /> 
+                                type="text" name="DeliveryAddress" placeholder="Delivery Address" id="deliveryAddress" class="loginField sectionFirst" /> 
                         </div> 
                         </fieldset>
                     
@@ -78,6 +79,7 @@ async function constructCheckoutPage(urlOne,isAuthenticated){
     `
     rootElement.innerHTML = sidebarHtml + contentWrapper;
     utility.disableLoader(rootElement,loader)
+    validationUtility();
     utility.loadUtilityJs();
 
 }
