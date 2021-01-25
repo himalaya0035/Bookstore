@@ -42,11 +42,11 @@ function constructDeliveryForm(data){
                                  <label class="fieldlabels">FirstName :</label> <input
                                 type="text" name="firstName" placeholder="First Name" id="fname" class="loginField sectionFirst" /> <label
                                 class="fieldlabels">Contact No :</label> <input type="number" name="pwd"
-                                placeholder="Contact No" id="contactNo" class="loginField sectionFirst"> 
+                                placeholder="Contact No" id="contact" class="loginField sectionFirst"> 
                                 <label class="fieldlabels">Email :</label> <input
                                 type="email" name="email" placeholder="Email" id="emailId" class="loginField sectionFirst" > 
                                 <label class="fieldlabels">Delivery Address : (Min 30 characters)</label> <input
-                                type="text" name="DeliveryAddress" placeholder="Delivery Address" id="deliveryAddress" class="loginField sectionFirst" /> 
+                                type="text" name="DeliveryAddress" placeholder="Delivery Address" id="address" class="loginField sectionFirst" /> 
                         </div> 
                         </fieldset>
                     
@@ -73,7 +73,7 @@ async function constructCheckoutPage(urlOne,isAuthenticated){
                 ${topbarHtml}
                 ${deliveryFormHtml}
                 <div class="moveToCheckout proceedToPayment" style="display: flex; align-items: center; justify-content: center;">
-                    <a href="confirmOrder.html" style="color: white; text-decoration: none; font-weight: bold; font-size: 1.17em; display: block;">Confirm Order <i class="fa fa-angle-right" style="font-weight: normal;"></i></a>
+                    <a href="confirmOrder.html" id="paymentBtn" style="color: white; text-decoration: none; font-weight: bold; font-size: 1.17em; display: block;">Confirm Order <i class="fa fa-angle-right" style="font-weight: normal;"></i></a>
                 </div>
             </div>
     `

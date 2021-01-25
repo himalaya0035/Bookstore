@@ -270,7 +270,7 @@ export function loadAccountModalJs() {
                 const isPostRequestOk = await postJsonData(url, obj);
                 if (isPostRequestOk) {
                     document.getElementById('message').style.color = '#673AB7';
-                    console.log('chl bhenchod');
+                   
                     setTimeout(() => {
                         window.location.replace('http://127.0.0.1:5501/index.html') // jha bhi redirect krna ho daal diyo,
                     }, 1000);

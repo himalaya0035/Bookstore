@@ -69,13 +69,11 @@ export function validationUtility(){
         if (window.location.href.indexOf('profile') > -1){
             condition = !isFieldsEmpty(arr) && isContactOk(contact) && isAddressOk(address);
         }
-        else if (window.location.href.indexOf('checkout') > -1){
-            condition = !isFieldsEmpty(arr) && isContactOk(contact) && isEmailOK(email) && isAddressOk(address);
-        }
         else {
             condition = !isFieldsEmpty(arr) && isContactOk(contact) && isAddressOk(address) ;
         }
-
+   
+   
         if (condition) {
             enableBtn(btn);
         } else {
@@ -83,6 +81,35 @@ export function validationUtility(){
         }     
     }
     
+    if (window.location.href.indexOf('checkout') > -1){
+        var paymentBtn = document.getElementById('paymentBtn');
+        var nextLink = document.getElementById('nextLink');
+        if (!(!isFieldsEmpty(arr) && isContactOk(contact) && isEmailOK(email) && isAddressOk(address))){
+            paymentBtn.href="#";
+            paymentBtn.style.color = "#808080";
+            nextLink.href = "#";
+            nextLink.style.color = '#808080'
+        }
+        arr.map(a => {
+            a.addEventListener('input', () => {
+                if (!isFieldsEmpty(arr) && isContactOk(contact) && isEmailOK(email) && isAddressOk(address)){
+                    paymentBtn.href="confirmOrder.html";
+                    paymentBtn.style.color = "white";
+                    nextLink.href = "confirmOrder.html";
+                    nextLink.style.color = 'white';
+                }
+                else {
+                    paymentBtn.href="#";
+                    paymentBtn.style.color = "#808080";
+                    nextLink.href = "#";
+                    nextLink.style.color = '#808080'
+                }
+            })
+        })
+      
+    }
+
+
     if (window.location.href.indexOf("profile") > -1) {
         disableBtn(saveBtn);
         validateFirstSection(saveBtn);
