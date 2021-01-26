@@ -90,9 +90,8 @@ async function constructConfirmOrderPage(urlOne,urlTwo,isAuthenticated){
     `
     rootElement.innerHTML = sidebarHtml + contentWrapper;
     utility.disableLoader(rootElement,loader);
-    utility.loadOrderTotalJs();
     utility.loadUtilityJs();
-
+    utility.loadOrderTotalJs();
 }
 
 constructConfirmOrderPage("https://jsonplaceholder.typicode.com/todos/1","https://jsonplaceholder.typicode.com/todos/1",true)
