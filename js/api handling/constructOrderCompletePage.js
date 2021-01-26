@@ -5,16 +5,18 @@ import * as utility from "./utilities.js";
 const rootElement = document.getElementById("rootElement");
 var loader = document.getElementById("loader");
 var contentWrapper;
+var shippingMail;
 
 function constructShippingAddress(data){
     // jha se bhi nikalna ho deta nikal lena
+    shippingMail = 'guptahimalaya2@gmail.com'
     return (
         `
         <div class="shippingAddress">
-            <p>Deliver To : </p>
+            <p>Delivering To : </p>
             <p id="name">Himalaya Gupta</p>
             <p id="phoneNo">+91 7983154929</p>
-            <p id="email">guptahimalaya@gmail.com</p>
+            <p id="email">${shippingMail}</p>
             <p id="address">House no 46, Mohalla Sahukara Fatehganj west Bareilly, U.P - 243501</p>
         </div>
         `
@@ -62,44 +64,32 @@ async function constructConfirmOrderPage(urlOne,urlTwo,isAuthenticated){
 
     let shippingAddressHtml = await constructSection(urlOne,constructShippingAddress);
     let orderTotalHtml = await constructSection(urlTwo,constructOrderTotal);
-    let topBarHtml = constructTopBar('Confirm Order', 'checkout.html',undefined);
+    let topBarHtml = constructTopBar('Order Received', 'index.html',undefined);
     let sidebarHtml = constructSidebar(isAuthenticated,userId,NameOfUser);
 
     contentWrapper = `
+
                 <div class="contentWrapper">
+                    
                     ${topBarHtml}
+                    <div class="expectedDelivery">
+                        <p>An order confirmation mail has been sent to <span style="font-weight:bolder;"> ${shippingMail} </span></p>
+                     </div>
                     ${shippingAddressHtml}
-                    <div class="promoCode">
-                        <input type="text" id="promocodeinput" placeholder="Promo code #BOOKS50">
-                        <button id="applypromocode">Apply</button>
-                    </div>
                     ${orderTotalHtml}
                     <div class="expectedDelivery">
-                        <p>Get it delivered by <span style="font-weight: bolder;" id="fillDeliveryDate"></span></p>
+                        <p>Order would be delivered by <span style="font-weight: bolder;" id="fillDeliveryDate"></span></p>
                     </div>
-                    <div class="placeOrder" style="display: flex; justify-content: center; margin: 20px 10px 10px 10px;">
-                    <button class="order" style="background:#673AB7;"><span class="default" >Place Order</span><span class="success">Order Placed
-                    <svg viewBox="0 0 12 10">
-                      <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                    </svg></span>
-                  <div class="box"></div>
-                  <div class="truck">
-                    <div class="back"></div>
-                    <div class="front">
-                      <div class="window"></div>
-                    </div>
-                    <div class="light top"></div>
-                    <div class="light bottom"></div>
-                  </div>
-                  <div class="lines"></div>
-               
-                </button>
+                    <div class="expectedDelivery">
+                    <p>Thank you for shopping with us !! 😊</p>
+                 </div>
+                    <div class="placeOrder" style="display: flex; justify-content: center; margin: 20px 10px 20px 10px;">
+                        <a href="index.html"  style="text-decoration: none; background-color: #673AB7; color: white; padding: 10px; border-radius: 1px solid white; width: 100%; text-align: center; box-shadow: 0px 0px 3px #673AB7;">Continue Shopping</a>
                     </div>
                 </div>
     `
     rootElement.innerHTML = sidebarHtml + contentWrapper;
     utility.disableLoader(rootElement,loader);
-    utility.animateOrderButton();
     utility.loadOrderTotalJs();
     utility.loadUtilityJs();
 

@@ -343,24 +343,7 @@ export function loadOrderTotalJs(){
             enableBtn(applyButton)
         }
    }
-   placeorderbtn.onclick = async () => {
-    let url = 'https://jsonplaceholder.typicode.com/posts';
-    let obj = {
-        title: 'foo',
-        body: 'bar',
-        userId: 1,
-        // object here would be - code : promocode.value
-    }
-    const isPostRequestOk = postJsonData(url,obj);
-    disableBtn(placeorderbtn);
-    if (isPostRequestOk) {
-        window.location.replace('http://127.0.0.1:5501/index.html');    
-    }
-    else {
-        alert(`couldn't place order`);
-    }
-
-   }
+ 
    // abhi smj me nhi aa rha ki kya kru place order ke baad, payment gateway khulna chaiye yha pr
    // wo dekhenge kaise kre
 }
@@ -480,4 +463,29 @@ export function addDealToCart() {
     }
 
 
+}
+export function animateOrderButton(){
+    var orderBtn = document.getElementsByClassName('order')[0];
+    orderBtn.onclick = async (e) => {
+        console.log(orderBtn)
+        if (!orderBtn.classList.contains('animate')){
+            let url = 'https://jsonplaceholder.typicode.com/posts';
+            let obj = {
+                title: 'foo',
+                body: 'bar',
+                userId: 1,
+            }
+            const isPostRequestOk = await postJsonData(url,obj);
+            if (isPostRequestOk){
+                orderBtn.classList.add('animate');
+                setTimeout(() => {
+                    window.location.replace('https://himalaya0035.github.io/Bookstore/orderComplete.html');
+                },10000)
+            }
+            else {
+                alert('Could not place order, try again in some time');
+                return false;
+            }
+        }
+    }
 }
