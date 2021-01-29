@@ -360,6 +360,7 @@ function filterData(data,searchText){
     })
     outputHtml(matches)
 }
+
 function outputHtml(matches){
     var searchResults = document.getElementById('searchResults');
    let html = matches.map(match => `<div class="result">
