@@ -414,6 +414,7 @@ export function manageSearchResults(){
         }
         else {
             searchResults.style.display = 'none';
+            disableSearchLoader(loader2);
             searchIcon.classList.remove('fa-close');
             searchResults.innerHTML = '';
         }

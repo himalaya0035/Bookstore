@@ -109,7 +109,7 @@ export function constructSidebar(isAuthenticated,userId,NameOfUser){
 export function constructTopBar(pageName,previousLink,NextLink) {
    if(NextLink){
     return (
-        ` <div class="fixedPosition" style="z-index:8">
+        ` <div class="fixedPosition" style="z-index:20">
         <div class="topBar">
             <a href="javascript:0" aria-label="toggle sidebar" class="sidebarToggler"><i class="fa fa-bars"
                     style="font-size: 20px; font-weight: 100;"></i></a>
@@ -126,7 +126,7 @@ export function constructTopBar(pageName,previousLink,NextLink) {
    }
    else {
        return (
-            ` <div class="fixedPosition" style="z-index:8">
+            ` <div class="fixedPosition" style="z-index:20">
             <div class="topBar">
                 <a href="javascript:0" class="sidebarToggler"><i class="fa fa-bars"
                         style="font-size: 20px; font-weight: 100;"></i></a>

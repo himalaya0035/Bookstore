@@ -1,0 +1,13 @@
+Home page top bar
+sidebar
+search loader
+search results
+
+sbse top pr hona chaiye sidebar
+sidebar z-index : 50
+loader z-index : 40
+searchResults z-index : 30;
+topbar z-index : 20
+disableSearchLoader(loader2);
+loader top : 70px;
+
