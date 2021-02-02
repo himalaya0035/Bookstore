@@ -38,6 +38,8 @@ async function manageQuantity(e){
     }
     else if(clickedBtn.classList.contains('decreaseQuantity')){
         // decrease quantity post request here
+        var deleteBtns = document.getElementsByClassName('deleteCartItem');
+        // console.log(deleteBtnsLength)
         url = 'https://jsonplaceholder.typicode.com/posts';
         obj = {
             title: 'foo',
@@ -46,7 +48,23 @@ async function manageQuantity(e){
         }
         const isPostRequestOk = await postJsonData(url,obj);
         if (isPostRequestOk){
-             input.value = currentQty - 1;
+            input.value = currentQty - 1;
+            if (input.value == '1'){
+                let i = clickedBtn.getElementsByTagName('i')[0];
+                i.classList.add('fa-trash');
+            }
+            if (input.value == '0'){
+                clickedBtn.closest('.item').remove();
+            }
+            if (deleteBtns.length == 0){
+                var checkoutBtn = document.getElementById('checkoutBtn');
+                var nextLink = document.getElementById('nextLink');
+                document.getElementById('NoBookmarkedMsg').style.display = 'block';
+                checkoutBtn.href="#";
+                checkoutBtn.style.color = "#808080";
+                nextLink.href = "#";
+                nextLink.style.color = '#808080'
+            }
         }
         else {
             alert(`couldn't decrease quanity, request failed`)
@@ -100,6 +118,7 @@ export function orderProcessingUtility(){
         nextLink.href = "checkout.html";
         nextLink.style.color = 'white';
     }
+    
      for (let i=0;i<increase.length;i++){
         increase[i].addEventListener('click',manageQuantity);
         decrease[i].addEventListener('click',manageQuantity);

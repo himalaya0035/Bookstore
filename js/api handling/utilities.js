@@ -200,11 +200,21 @@ export function loadAccountModalJs() {
 
     var span = document.getElementsByClassName("close");
 
-
-    for (let i = 0; i < btn.length; i++) {
-        btn[i].onclick = function () {
-            modal[i].style.display = "block";
+    if (window.location.href.indexOf('order') > -1){
+        for (let i = 0; i < btn.length; i++) {
+            btn[i].onclick = function () {
+                modal[0].style.display = "block";
+            }
         }
+    }
+    else {
+        for (let i = 0; i < btn.length; i++) {
+            btn[i].onclick = function () {
+                modal[i].style.display = "block";
+            }
+        }
+    }
+    for (let i=0;i<span.length;i++){
         span[i].onclick = function () {
             modal[i].style.display = "none";
         }
@@ -314,7 +324,6 @@ export function loadOrderTotalJs(){
    setExpectedDeliveryDate();
    var promocode = document.getElementById('promocodeinput');
    var applyButton = document.getElementById('applypromocode')
-   var placeorderbtn = document.getElementById('placeOrder');
    applyButton.onclick = async () => {
        
         if (promocode.value.length < 3){
@@ -349,19 +358,20 @@ export function loadOrderTotalJs(){
 }
 
 var arrayForResults = [];
-
+var count = 0;
 function filterData(data,searchText){
     if (data){
         arrayForResults = data.results;
+        count = 1;
     }
     let matches = arrayForResults.filter(arrElement => {
         const regex = new RegExp(`^${searchText}`,'gi');
         return arrElement.name.match(regex)
     })
-    outputHtml(matches)
+    outputHtml(matches,searchText,count)
 }
 
-function outputHtml(matches){
+function outputHtml(matches,searchText,count){
     var searchResults = document.getElementById('searchResults');
    let html = matches.map(match => `<div class="result">
         <div class="resultImg">
@@ -372,7 +382,12 @@ function outputHtml(matches){
         </div>
      </div>`
    ).join('');
-   searchResults.innerHTML = html;
+   if (matches.length === 0 && count === 1){
+       searchResults.innerHTML = `<p style="display:flex; justify-content:center; margin-top:40px; color:#808080; text-align:center;">No search Result Found <br> with keyword "${searchText}"</p>`
+   }
+   else {
+    searchResults.innerHTML = html;
+   }
 }
 
 function enableSearchLoader(loader){
@@ -380,6 +395,7 @@ function enableSearchLoader(loader){
     loader.style.visibility = 1;
     loader.style.opacity = 1;
 }
+
 function disableSearchLoader(loader){
     loader.style.display = 'none';
     loader.style.visibility = 0;
@@ -404,6 +420,7 @@ export function manageSearchResults(){
             searchIcon.classList.add('fa-close');
             if (searchBox.value.length == 1){
                 arrayForResults = [];
+                count = 0;
                 enableSearchLoader(loader2) 
                 let aisehi = await constructSection('./js/api handling/sample.json',filterData,searchBox.value);
                 disableSearchLoader(loader2)
@@ -466,6 +483,7 @@ export function addDealToCart() {
 
 
 }
+
 export function animateOrderButton(){
     var orderBtn = document.getElementsByClassName('order')[0];
     orderBtn.onclick = async (e) => {

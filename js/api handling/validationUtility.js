@@ -93,7 +93,10 @@ export function validationUtility(){
         arr.map(a => {
             a.addEventListener('input', () => {
                 if (!isFieldsEmpty(arr) && isContactOk(contact) && isEmailOK(email) && isAddressOk(address)){
+                    console.log('Himalaya')
                     paymentBtn.href="confirmOrder.html";
+        
+                    // paymentBtn.onclick = localStorage.setItem('',JSON.stringify())
                     paymentBtn.style.color = "white";
                     nextLink.href = "confirmOrder.html";
                     nextLink.style.color = 'white';
