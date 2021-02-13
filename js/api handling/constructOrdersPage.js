@@ -32,43 +32,50 @@ function constructOrdersItem(data){
 }
 
 function constructOrderDetailModel(){
-    return (
-        `
-        <div id="myModal" class="modal">
-            <!-- Modal content -->
-            <div class="modal-content">
-                <div class="modal-header" >
+    var modal = document.getElementsByClassName("modal");
 
-                <h5 style="letter-spacing:1px;">Order Details</h5>
-                <span class="close">&times;</span>
-                </div>
-                <div class="modal-body">
-                    <div class="orderDetail">
-                        <p>From</p>
-                        <p>Cloudtail India Pvt Ltd.</p>
-                    </div>
-                    <div class="orderDetail">
-                        <p>Quanity</p>
-                        <p>x4</p>
-                    </div>
-                    <div class="orderDetail">
-                        <p>Price</p>
-                        <p>Rs 280</p>
-                    </div>
-                    <div class="orderDetail">
-                        <p>Total Amount</p>
-                        <p>Rs 1120</p>
-                    </div>
-                    <div class="orderDetail">
-                        <p>Status</p>
-                        <p>Delivered</p>
-                    </div>
-                  
-                </div>                
+    var btn = document.getElementsByClassName("myBtn");
+
+    var span = document.getElementsByClassName("close");
+
+    for (let i = 0; i < btn.length; i++) {
+        btn[i].onclick = function (e) {
+            console.log(e.target.id);
+            document.getElementById('bodyOfModal').innerHTML = `
+            
+            <div class="orderDetail">
+                <p>From</p>
+                <p>Cloudtail India Pvt Ltd.</p>
             </div>
-        </div>
-        `
-    )
+            <div class="orderDetail">
+                <p>Quanity</p>
+                <p>x${e.target.id}</p>
+            </div>
+            <div class="orderDetail">
+                <p>Price</p>
+                <p>Rs 280</p>
+            </div>
+            <div class="orderDetail">
+                <p>Total Amount</p>
+                <p>Rs 1120</p>
+            </div>
+            <div class="orderDetail">
+                <p>Status</p>
+                <p>Delivered</p>
+            </div>
+            <p style="font-family:'Poppins'; margin-top:10px;">Shipping to : House no 46, mohalla sahukara fatehganj west, bareilly - up 243501</p>
+        
+            
+            `
+        document.getElementById('myModal').style.display = 'block';
+        }
+        for (let i=0;i<span.length;i++){
+            span[i].onclick = function () {
+                document.getElementById('myModal').style.display = 'none';
+            }
+        }
+    }
+   
 
 }
 
@@ -80,17 +87,17 @@ async function constructOrdersPage(urlone,isAuthenticated){
     let ordersItem = await constructSection(urlone,constructOrdersItem);
     let topBarHtml = constructTopBar('Your Orders','index.html');
     let sidebarHtml = constructSidebar(isAuthenticated,userId,NameOfUser);
-    let orderDetailsModal = constructOrderDetailModel();
     contentWrapper = `
         <div class="contentWrapper">
             ${topBarHtml}
             ${ordersItem}
         </div>
     `
-    rootElement.innerHTML = sidebarHtml + contentWrapper + orderDetailsModal;
+    rootElement.innerHTML = sidebarHtml + contentWrapper;
     utility.disableLoader(rootElement,loader);
+    constructOrderDetailModel();
     utility.loadUtilityJs();
-    utility.loadAccountModalJs();
+    
 }
 
 constructOrdersPage("https://jsonplaceholder.typicode.com/todos/1",true)
